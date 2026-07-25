@@ -67,6 +67,7 @@ ul{ list-style:none; }
   font-size:20px;
   letter-spacing:-.38px;
   color:#fff;
+  text-decoration:none;
   padding:12px 24px;
   background-repeat:no-repeat;
   background-size:100% 100%;
@@ -649,6 +650,7 @@ ul{ list-style:none; }
   font-size:28px;
   letter-spacing:-.532px;
   color:#000;
+  text-decoration:none;
   white-space:nowrap;
 }
 
