@@ -7,9 +7,9 @@
    The design uses "Season Mix" (a licensed typeface — not a webfont).
    Drop the files into assets/fonts/ and uncomment to get an exact match.
 
-@font-face { font-family:"Season Mix"; src:url("assets/fonts/SeasonMix-Regular.woff2")  format("woff2"); font-weight:400; font-display:swap; }
-@font-face { font-family:"Season Mix"; src:url("assets/fonts/SeasonMix-Medium.woff2")   format("woff2"); font-weight:500; font-display:swap; }
-@font-face { font-family:"Season Mix"; src:url("assets/fonts/SeasonMix-SemiBold.woff2") format("woff2"); font-weight:600; font-display:swap; }
+@font-face { font-family:"Season Mix"; src:url("../assets/fonts/SeasonMix-Regular.woff2")  format("woff2"); font-weight:400; font-display:swap; }
+@font-face { font-family:"Season Mix"; src:url("../assets/fonts/SeasonMix-Medium.woff2")   format("woff2"); font-weight:500; font-display:swap; }
+@font-face { font-family:"Season Mix"; src:url("../assets/fonts/SeasonMix-SemiBold.woff2") format("woff2"); font-weight:600; font-display:swap; }
 -------------------------------------------------------------------------- */
 
 :root{
