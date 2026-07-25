@@ -1,0 +1,283 @@
+/* =========================================================================
+   Vahan — Corporate Page
+   Figma: SkZlY6SRTTisFlKok443kh  ·  node 5:41  ·  1920 × 6911
+
+   Loads on top of styles.css: the nav, buttons, stats, footer and case-study
+   card are shared with the homepage; everything below either re-positions
+   those shared pieces at their corporate-page coordinates or adds the
+   sections that only exist on this page.
+   ========================================================================= */
+
+.page{ height:6911px; }
+
+/* ===================== HERO ===================== */
+.hero-title{
+  left:524px; top:227px;
+  width:873px; height:188px;
+  font-size:78px;
+  line-height:94px;
+}
+.hero-sub{ top:438px; }
+
+.hero-field{ top:534px; }
+.hero-cta { top:534px; }
+
+.hero-note{
+  left:677px; top:616px;
+  width:567px;
+}
+
+.logo-strip{ top:783px; }
+
+/* ===================== THREE THINGS ===================== */
+.three-title{
+  position:absolute;
+  left:530px; top:1590px;
+  width:861px; height:140px;
+  font-family:var(--display);
+  font-weight:500;
+  font-size:56px;
+  line-height:70px;
+  text-align:center;
+  color:var(--brown);
+}
+
+.feat{
+  position:absolute;
+  top:1792px;
+  width:463px; height:692px;
+  border-radius:12px;
+  overflow:hidden;
+  cursor:pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.feat:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 16px 36px rgba(249, 118, 25, 0.28), 0 4px 14px rgba(255, 156, 56, 0.2);
+}
+.feat-img{
+  position:absolute;
+  left:0; top:0;
+  width:463px; height:502px;
+  border-radius:12px 12px 0 0;
+  object-fit:cover;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.feat:hover .feat-img{
+  transform: scale(1.03);
+}
+.feat-body{
+  position:absolute;
+  left:0; top:494px;
+  width:463px; height:198px;
+  background:#fff;
+  border-radius:0 0 12px 12px;
+  padding:0 50px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px;
+  text-align:center;
+}
+.feat-title{
+  font-family:var(--display);
+  font-weight:500;
+  font-size:28px;
+  line-height:31.2px;
+  letter-spacing:-.72px;
+  color:var(--brown);
+}
+.feat-desc{
+  font-size:20px;
+  line-height:27px;
+  color:rgba(43,24,10,.7);
+}
+
+/* ===================== AI AGENTS ===================== */
+.agents-title{
+  position:absolute;
+  left:567px; top:2584px;
+  width:786px; height:140px;
+  font-family:var(--display);
+  font-weight:500;
+  font-size:56px;
+  line-height:70px;
+  text-align:center;
+  color:var(--brown);
+}
+
+.agents-list{
+  position:absolute;
+  left:242px; top:2809px;
+  width:765px; height:715px;
+  overflow:hidden;
+}
+.agent-item{
+  width:765px;
+  border-radius:24px;
+  padding:40px 20px 40px 40px;
+  display:flex; flex-direction:column; gap:15.4px;
+}
+.agent-item.agent-active{ background:#fff; }
+
+.agent-head{
+  height:48px;
+  display:flex; align-items:center; gap:18px;
+}
+.agent-icon{
+  width:48px; height:48px;
+  flex:none;
+  border-radius:14px;
+  background:#efe7dd;
+  display:flex; align-items:center; justify-content:center;
+}
+.agent-active .agent-icon{
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -9.1091 3.2908 0 24 58.364)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
+  background-size:100% 100%;
+}
+.agent-name{
+  font-family:var(--display);
+  font-weight:400;
+  font-size:32px;
+  line-height:1.5;
+  letter-spacing:-.352px;
+  text-transform:capitalize;
+  color:#94877c;
+  white-space:nowrap;
+}
+.agent-active .agent-name{ color:var(--brown); }
+
+.agent-desc{
+  width:593px;
+  font-size:20px;
+  line-height:1.5;
+  letter-spacing:-.22px;
+  color:rgba(0,0,0,.8);
+}
+
+.agents-visual{
+  position:absolute;
+  left:1071px; top:2808px;
+  width:607px; height:718px;
+  background:#fff;
+  border-radius:24px;
+}
+.agents-visual img{
+  position:absolute;
+  left:25.5px; top:24px;
+  width:556px; height:670px;
+  border-radius:12px;
+}
+
+/* ===================== CASE STUDIES ===================== */
+.case-band { top:3688px; }
+.case-title{ top:3768px; }
+
+.case-slider{
+  top:3956px;
+}
+.case-dots{
+  top:4441px;
+}
+
+/* ===================== LOOKING FOR SOMETHING ELSE ===================== */
+.else-title{
+  position:absolute;
+  left:484px; top:4643px;
+  width:952px; height:70px;
+  font-family:var(--display);
+  font-weight:500;
+  font-size:56px;
+  line-height:70px;
+  text-align:center;
+  color:var(--brown);
+}
+
+.explore{
+  position:absolute;
+  top:4764px;
+  width:699px; height:877px;
+  background:var(--peach);
+  border-radius:24px;
+}
+.explore-img{
+  position:absolute;
+  left:35.0934px; top:35.0934px;
+  width:628.8132px; height:436.7181px;
+  border-radius:23.396px;
+}
+.explore-body{
+  position:absolute;
+  left:92.6356px; top:513.8115px;
+  width:513.7287px;
+  display:flex; flex-direction:column; align-items:flex-start;
+}
+.explore-eyebrow{
+  width:513.7287px;
+  font-family:var(--display);
+  font-weight:500;
+  font-size:34px;
+  line-height:1.22;
+  letter-spacing:-.646px;
+  color:var(--brown);
+  /* Figma: text-box-trim (cap / alphabetic) */
+  text-box-trim:trim-both;
+  text-box-edge:cap alphabetic;
+}
+@supports not (text-box-trim: trim-both){
+  .explore-eyebrow{ margin-top:-9.66px; margin-bottom:-7.54px; }
+}
+
+.explore-copy{
+  margin-top:23.396px;
+  width:513.7287px; height:145.2478px;
+  display:flex; flex-direction:column; justify-content:center; gap:11.698px;
+}
+.explore-head{
+  font-weight:500;
+  font-size:24px;
+  line-height:1.5;
+  letter-spacing:-.264px;
+  color:var(--brown);
+}
+.explore-desc{
+  width:484.4842px;
+  font-size:20px;
+  line-height:1.5;
+  letter-spacing:-.22px;
+  color:rgba(43,24,10,.8);
+}
+
+.explore-foot{
+  margin-top:15.597px;
+  width:491.3079px;
+  display:flex; flex-direction:column; align-items:flex-start; gap:23.396px;
+}
+.explore-stat{
+  font-size:24px;
+  line-height:1.5;
+  letter-spacing:-.264px;
+  color:rgba(43,24,10,.8);
+  white-space:nowrap;
+}
+.explore-stat b{ font-weight:500; }
+
+.explore-btn{
+  position:relative;
+  width:291px; height:55px;
+  gap:7.799px;
+  padding:11.698px 23.396px;
+  font-size:19.5px;
+  letter-spacing:-.3705px;
+  filter:drop-shadow(0 0 .975px rgba(128,115,115,.23));
+}
+.explore-btn .arrow{ width:19.496px; height:19.496px; }
+.explore-btn .arrow img{ width:12.185px; height:12.185px; }
+
+.grad-291{ background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 291 55' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -10.438 19.95 0 145.5 66.875)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>"); }
+
+/* ===================== CTA ===================== */
+.cta{ left:243px; top:5752px; }
+.cta-btn{ left:614px; }
+
+/* ===================== FOOTER ===================== */
+.footer{ top:6311px; }
+.footer-copy { top:541.5850px; }
+.footer-legal{ top:540.4463px; }
