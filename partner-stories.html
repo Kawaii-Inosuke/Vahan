@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=1920">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vahan — Partner Stories</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,16 +12,18 @@
     rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/partnerstories.css">
+<link rel="stylesheet" href="css/responsive.css">
 </head>
 
-<body>
-  <div class="page">
+<body class="p-partner-stories">
+    <div class="nav-scrim" hidden></div>
+<div class="page">
 
     <!-- ============ NAV ============ -->
     <header class="nav">
       <a class="nav-logo" href="index.html"><img src="assets/logos/vahan%20top%20logo.svg" alt="vahan"></a>
 
-      <nav class="nav-links">
+      <nav class="nav-links" id="site-menu">
         <div class="nav-item has-dropdown" style="width:139.2535px">
           <span>Solution</span>
           <img class="chev" src="assets/homepage/icons/chevron-down.svg" alt="">
@@ -59,6 +61,10 @@
         <span>Contact Us</span>
         <span class="arrow"><img src="assets/homepage/icons/arrow-right.svg" alt=""></span>
       </a>
+    <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
+      <span></span><span></span><span></span>
+    </button>
+
     </header>
 
     <!-- ============ background art ============ -->
@@ -67,7 +73,7 @@
     <img class="header-bg" src="assets/partner%20stories/hrader%20bg.svg" alt="">
 
     <!-- ============ HERO ============ -->
-    <h1 class="hero-title">Meet the Partners<br>Building Big Businesses<br>With Vahan.</h1>
+    <h1 class="hero-title">Meet the Partners <br>Building Big Businesses <br>With Vahan.</h1>
 
     <p class="ps-sub">Watch how recruitment partners across India built their businesses with Vahan.</p>
 
@@ -192,7 +198,8 @@
       <p class="footer-desc">India’s AI-powered workforce platform, bringing economic opportunity to millions through
         human-centric technology and mentorship.</p>
 
-      <div class="footer-col" style="left:749px;top:64.5537px">
+      <div class="footer-cols m-wrap">
+<div class="footer-col" style="left:749px;top:64.5537px">
         <p class="footer-col-title">Solution</p>
         <ul class="footer-list">
           <li><a href="corporate.html">Corporates</a></li>
@@ -234,7 +241,9 @@
         </ul>
       </div>
 
-      <p class="footer-copy">Copyright © 2026 Vahan.ai, Inc. All rights reserved.</p>
+            </div>
+
+<p class="footer-copy">Copyright © 2026 Vahan.ai, Inc. All rights reserved.</p>
 
       <p class="footer-legal" style="left:1250.3008px">Privacy Policy</p>
       <p class="footer-legal" style="left:1341.0208px">Terms &amp; Conditions</p>
@@ -302,6 +311,7 @@
       });
     </script>
   </div>
+<script src="js/site.js"></script>
 </body>
 
 </html>

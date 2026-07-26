@@ -2,22 +2,24 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1920">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vahan — Blue-Collar Hiring That Scales With You</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Inter:wght@100..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/corporate.css">
+<link rel="stylesheet" href="css/responsive.css">
 </head>
-<body>
+<body class="p-corporate">
+  <div class="nav-scrim" hidden></div>
 <div class="page">
 
   <!-- ============ NAV ============ -->
   <header class="nav">
     <a class="nav-logo" href="index.html"><img src="assets/logos/vahan%20top%20logo.svg" alt="vahan"></a>
 
-    <nav class="nav-links">
+    <nav class="nav-links" id="site-menu">
       <div class="nav-item has-dropdown" style="width:139.2535px">
         <span>Solution</span>
         <img class="chev" src="assets/homepage/icons/chevron-down.svg" alt="">
@@ -55,6 +57,10 @@
       <span>Contact Us</span>
       <span class="arrow"><img src="assets/homepage/icons/arrow-right.svg" alt=""></span>
     </a>
+    <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
+      <span></span><span></span><span></span>
+    </button>
+
   </header>
 
   <!-- ============ background art ============ -->
@@ -63,28 +69,31 @@
   <img class="header-bg" src="assets/homepage/header%20bg%20image.svg" alt="">
 
   <!-- ============ HERO ============ -->
-  <h1 class="hero-title">Blue-Collar Hiring That<br>Scales With You</h1>
+  <h1 class="hero-title">Blue-Collar Hiring That <br>Scales With You</h1>
 
   <p class="hero-sub">
-    Our AI recruiter calls, screens, verifies, onboards, and retains workers for<br>
+    Our AI recruiter calls, screens, verifies, onboards, and retains workers for <br>
     the corporates you serve across 900+ cities
   </p>
 
-  <div class="hero-field">
-    <span class="hero-cc">+91</span>
-    <input type="tel" class="hero-input" placeholder="Your mobile number" maxlength="10">
-  </div>
+  <div class="hero-form m-wrap">
+    <div class="hero-field">
+      <span class="hero-cc">+91</span>
+      <input type="tel" class="hero-input" placeholder="Your mobile number" maxlength="10">
+    </div>
 
-  <button class="btn btn-grad hero-cta">
-    <span>Try Now</span>
-    <span class="arrow"><img src="assets/homepage/icons/arrow-right.svg" alt=""></span>
-  </button>
+    <button class="btn btn-grad hero-cta">
+      <span>Try Now</span>
+      <span class="arrow"><img src="assets/homepage/icons/arrow-right.svg" alt=""></span>
+    </button>
+  </div>
 
   <p class="hero-note">Enter your number. Our AI recruiter will call you in seconds.</p>
 
   <img class="logo-strip" src="assets/homepage/logo%20strips.svg" alt="">
 
   <!-- ============ STATS ============ -->
+  <div class="msec msec-stats m-wrap">
   <div class="stats-band"></div>
 
   <div class="stat-card" style="left:242px"></div>
@@ -108,9 +117,10 @@
     <p class="stat-num">25%</p>
     <p class="stat-label">higher recruitment efficiency</p>
   </div>
+  </div><!-- /.msec-stats -->
 
   <!-- ============ THREE THINGS ============ -->
-  <h2 class="three-title">Hiring comes down to three things.<br>We deliver all three.</h2>
+  <h2 class="three-title">Hiring comes down to three things. <br>We deliver all three.</h2>
 
   <div class="feat" style="left:245px">
     <img class="feat-img" src="assets/Corporate/sacle%20image.svg" alt="">
@@ -137,7 +147,7 @@
   </div>
 
   <!-- ============ AI AGENTS ============ -->
-  <h2 class="agents-title">AI Agents Automating the<br>Entire Hiring Process</h2>
+  <h2 class="agents-title">AI Agents Automating the <br>Entire Hiring Process</h2>
 
   <div class="agents-list">
     <div class="agent-item agent-active" data-image="assets/Corporate/intelligent%20sourcing%20image.svg">
@@ -181,7 +191,7 @@
         </span>
         <p class="agent-name">Retention Intelligence</p>
       </div>
-      <p class="agent-desc">Signals that predict who will stay, so you hire<br>workers who last.</p>
+      <p class="agent-desc">Signals that predict who will stay, so you hire <br>workers who last.</p>
     </div>
 
     <div class="agent-item" data-image="assets/Corporate/Engagement%20Automation%20image.svg">
@@ -192,7 +202,7 @@
         </span>
         <p class="agent-name">Engagement Automation</p>
       </div>
-      <p class="agent-desc">Automated calls and nudges from first contact to<br>first shift, 24/7.</p>
+      <p class="agent-desc">Automated calls and nudges from first contact to <br>first shift, 24/7.</p>
     </div>
   </div>
 
@@ -201,9 +211,10 @@
   </div>
 
   <!-- ============ CASE STUDIES ============ -->
+  <div class="msec msec-case m-wrap">
   <div class="case-band"></div>
 
-  <h2 class="case-title">Case Studies and Testimonials from<br>India’s Top Companies</h2>
+  <h2 class="case-title">Case Studies and Testimonials from <br>India’s Top Companies</h2>
 
   <div class="case-slider">
     <div class="case-track">
@@ -289,6 +300,7 @@
     <span class="case-dot" data-slide="1"></span>
     <span class="case-dot" data-slide="2"></span>
   </div>
+  </div><!-- /.msec-case -->
 
   <!-- ============ LOOKING FOR SOMETHING ELSE ============ -->
   <h2 class="else-title">Looking for Something Else?</h2>
@@ -332,7 +344,7 @@
   <!-- ============ CTA ============ -->
   <div class="cta">
     <img class="cta-bg" src="assets/Corporate/footer%20card%20icon.svg" alt="">
-    <p class="cta-text">See What An AI Recruiter Can<br>Do for Your Hiring</p>
+    <p class="cta-text">See What An AI Recruiter Can <br>Do for Your Hiring</p>
     <a class="cta-btn" href="contact.html">Contact Us</a>
   </div>
 
@@ -341,7 +353,8 @@
     <a class="footer-logo" href="index.html"><img src="assets/logos/vahan%20footer%20logo.svg" alt="vahan"></a>
     <p class="footer-desc">India’ s AI-powered workforce platform, bringing economic support unity to millions through human-centric technology and mentorship.</p>
 
-    <div class="footer-col" style="left:749px;top:64.5537px">
+    <div class="footer-cols m-wrap">
+<div class="footer-col" style="left:749px;top:64.5537px">
       <p class="footer-col-title">Solution</p>
       <ul class="footer-list">
         <li><a href="corporate.html">Corporates</a></li>
@@ -383,7 +396,9 @@
       </ul>
     </div>
 
-    <p class="footer-copy">Copyright © 2026 Vahan.ai, Inc. All rights reserved.</p>
+        </div>
+
+<p class="footer-copy">Copyright © 2026 Vahan.ai, Inc. All rights reserved.</p>
 
     <p class="footer-legal" style="left:1250.3008px">Privacy Policy</p>
     <p class="footer-legal" style="left:1341.0208px">Terms &amp; Conditions</p>
@@ -439,7 +454,7 @@
     caseDots.forEach(d => d.classList.remove('active'));
     if (caseDots[index]) caseDots[index].classList.add('active');
     if (caseTrack) {
-      caseTrack.style.transform = `translateX(-${index * 1440}px)`;
+      caseTrack.style.transform = `translateX(-${index * (100 / 3)}%)`;
     }
   }
 
@@ -476,5 +491,6 @@
   }
   startAutoScroll();
 </script>
+<script src="js/site.js"></script>
 </body>
 </html>

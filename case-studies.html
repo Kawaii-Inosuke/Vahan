@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=1920">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vahan — Case Studies From India’s Biggest Employers</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,16 +12,18 @@
     rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/casestudies.css">
+<link rel="stylesheet" href="css/responsive.css">
 </head>
 
-<body>
-  <div class="page">
+<body class="p-case-studies">
+    <div class="nav-scrim" hidden></div>
+<div class="page">
 
     <!-- ============ NAV ============ -->
     <header class="nav">
       <a class="nav-logo" href="index.html"><img src="assets/logos/vahan%20top%20logo.svg" alt="vahan"></a>
 
-      <nav class="nav-links">
+      <nav class="nav-links" id="site-menu">
         <div class="nav-item has-dropdown" style="width:139.2535px">
           <span>Solution</span>
           <img class="chev" src="assets/homepage/icons/chevron-down.svg" alt="">
@@ -59,6 +61,10 @@
         <span>Contact Us</span>
         <span class="arrow"><img src="assets/homepage/icons/arrow-right.svg" alt=""></span>
       </a>
+    <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
+      <span></span><span></span><span></span>
+    </button>
+
     </header>
 
     <!-- ============ background art ============ -->
@@ -67,7 +73,7 @@
     <img class="header-bg" src="assets/case%20study%20listing%20page/header%20bg.svg" alt="">
 
     <!-- ============ HERO ============ -->
-    <h1 class="hero-title cs-reveal">Case Studies From India’s<br>Biggest Employers.</h1>
+    <h1 class="hero-title cs-reveal">Case Studies From India’s <br>Biggest Employers.</h1>
 
     <p class="hero-sub cs-reveal">See how India’s top corporates use Vahan’s AI recruiter to hire at scale, cut costs,
       and keep workers on the job.</p>
@@ -264,7 +270,7 @@
     <!-- ============ CTA ============ -->
     <div class="cta">
       <img class="cta-bg" src="assets/case%20study%20listing%20page/7%207.svg" alt="">
-      <p class="cta-text">India’s Biggest Corporates Hire With Vahan.<br>Join Them Today.</p>
+      <p class="cta-text">India’s Biggest Corporates Hire With Vahan. <br>Join Them Today.</p>
       <a class="cta-btn" href="contact.html">Get Started</a>
     </div>
 
@@ -274,7 +280,8 @@
       <p class="footer-desc">India’s largest AI recruiter for the blue-collar workforce, bringing opportunities to
         millions.</p>
 
-      <div class="footer-col" style="left:749px;top:64.5537px">
+      <div class="footer-cols m-wrap">
+<div class="footer-col" style="left:749px;top:64.5537px">
         <p class="footer-col-title">Solution</p>
         <ul class="footer-list">
           <li><a href="corporate.html">Corporates</a></li>
@@ -316,7 +323,9 @@
         </ul>
       </div>
 
-      <p class="footer-copy">Copyright © 2026 Vahan.ai, Inc. All rights reserved.</p>
+            </div>
+
+<p class="footer-copy">Copyright © 2026 Vahan.ai, Inc. All rights reserved.</p>
 
       <p class="footer-legal" style="left:1250.3008px">Privacy Policy</p>
       <p class="footer-legal" style="left:1341.0208px">Terms &amp; Conditions</p>
@@ -416,6 +425,7 @@
       });
     </script>
   </div>
+<script src="js/site.js"></script>
 </body>
 
 </html>

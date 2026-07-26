@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=1920">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vahan — Careers</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,16 +12,18 @@
     rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/careers.css">
+<link rel="stylesheet" href="css/responsive.css">
 </head>
 
-<body>
-  <div class="page">
+<body class="p-careers">
+    <div class="nav-scrim" hidden></div>
+<div class="page">
 
     <!-- ============ NAV ============ -->
     <header class="nav">
       <a class="nav-logo" href="index.html"><img src="assets/logos/vahan%20top%20logo.svg" alt="vahan"></a>
 
-      <nav class="nav-links">
+      <nav class="nav-links" id="site-menu">
         <div class="nav-item has-dropdown" style="width:139.2535px">
           <span>Solution</span>
           <img class="chev" src="assets/homepage/icons/chevron-down.svg" alt="">
@@ -59,6 +61,10 @@
         <span>Contact Us</span>
         <span class="arrow"><img src="assets/homepage/icons/arrow-right.svg" alt=""></span>
       </a>
+    <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
+      <span></span><span></span><span></span>
+    </button>
+
     </header>
 
     <!-- ============ background art ============ -->
@@ -67,7 +73,7 @@
     <img class="header-bg" src="assets/careers/header%20bg.svg" alt="">
 
     <!-- ============ HERO ============ -->
-    <h1 class="hero-title">Help a Billion People<br>Find Work.</h1>
+    <h1 class="hero-title">Help a Billion People <br>Find Work.</h1>
 
     <p class="hero-sub">We’re building the AI tools for India’s 5 crore+ blue-collar workers. Join the team doing it.</p>
 
@@ -278,6 +284,7 @@
     </div>
 
     <!-- ============ BACKED BY THE BEST ============ -->
+    <div class="msec msec-backers m-wrap">
     <div class="backers-band"></div>
     <h2 class="careers-h2 backers-title">Our mission is backed by the best.</h2>
 
@@ -286,6 +293,7 @@
     <img class="backer" style="left:1221px;top:5550px;width:313px;height:70px" src="assets/careers/Gaingels%20logo.svg" alt="Gaingels">
     <img class="backer" style="left:545px;top:5655px;width:338px;height:97px" src="assets/careers/Combinator%20logo.svg" alt="Y Combinator">
     <img class="backer" style="left:982px;top:5646px;width:318px;height:118px" src="assets/careers/khosla%20logo.svg" alt="khosla ventures">
+    </div><!-- /.msec-backers -->
 
     <!-- ============ PERKS & BENEFITS ============ -->
     <h2 class="careers-h2 perks-title">Perks &amp; benefits</h2>
@@ -342,7 +350,8 @@
       <p class="footer-desc">India’s AI-powered workforce platform, bringing economic support unity to millions through
         human-centric technology and mentorship.</p>
 
-      <div class="footer-col" style="left:749px;top:64.5537px">
+      <div class="footer-cols m-wrap">
+<div class="footer-col" style="left:749px;top:64.5537px">
         <p class="footer-col-title">Solution</p>
         <ul class="footer-list">
           <li><a href="corporate.html">Corporates</a></li>
@@ -384,7 +393,9 @@
         </ul>
       </div>
 
-      <p class="footer-copy">Copyright © 2026 Vahan.ai, Inc. All rights reserved.</p>
+            </div>
+
+<p class="footer-copy">Copyright © 2026 Vahan.ai, Inc. All rights reserved.</p>
 
       <p class="footer-legal" style="left:1250.3008px">Privacy Policy</p>
       <p class="footer-legal" style="left:1341.0208px">Terms &amp; Conditions</p>
@@ -445,6 +456,7 @@
       });
     </script>
   </div>
+<script src="js/site.js"></script>
 </body>
 
 </html>

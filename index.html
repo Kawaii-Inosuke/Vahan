@@ -2,27 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1920">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vahan — India’s AI Recruiter for Blue-Collar Hiring</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Inter:wght@100..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/responsive.css">
 </head>
-<body>
+<body class="p-home">
+  <div class="nav-scrim" hidden></div>
 <div class="page">
-  <!-- ============ stats band gradient (Rectangle 4447) ============ -->
-  <div class="stats-band"></div>
-
   <!-- ============ background glows (Ellipse 13 / Ellipse 14) ============ -->
   <img class="glow glow-left"  src="assets/homepage/icons/ellipse-13.svg" alt="">
   <img class="glow glow-right" src="assets/homepage/icons/ellipse-14.svg" alt="">
 
   <!-- ============ HERO ============ -->
-  <h1 class="hero-title">India’s AI Recruiter for<br>Blue-Collar Hiring</h1>
+  <h1 class="hero-title">India’s AI Recruiter for <br>Blue-Collar Hiring</h1>
 
   <p class="hero-sub">
-    AI-powered hiring built on India’s largest blue-collar worker network.<br>
+    AI-powered hiring built on India’s largest blue-collar worker network. <br>
     We source, screen, verify, and onboard quality hires at scale.
   </p>
 
@@ -36,7 +35,8 @@
     <a class="footer-logo" href="index.html"><img src="assets/logos/vahan%20footer%20logo.svg" alt="vahan"></a>
     <p class="footer-desc">India’ s AI-powered workforce platform, bringing economic support unity to millions through human-centric technology and mentorship.</p>
 
-    <div class="footer-col" style="left:749px;top:64.5547px">
+    <div class="footer-cols m-wrap">
+<div class="footer-col" style="left:749px;top:64.5547px">
       <p class="footer-col-title">Solution</p>
       <ul class="footer-list">
         <li><a href="corporate.html">Corporates</a></li>
@@ -78,7 +78,9 @@
       </ul>
     </div>
 
-    <p class="footer-copy">Copyright © 2026 Vahan.ai, Inc. All rights reserved.</p>
+        </div>
+
+<p class="footer-copy">Copyright © 2026 Vahan.ai, Inc. All rights reserved.</p>
 
     <p class="footer-legal" style="left:1250.3008px">Privacy Policy</p>
     <p class="footer-legal" style="left:1341.0208px">Terms &amp; Conditions</p>
@@ -103,13 +105,14 @@
   <!-- ============ CTA ============ -->
   <div class="cta">
     <img class="cta-bg" src="assets/homepage/footer%20card%20iimage.svg" alt="">
-    <p class="cta-text">Shape the Future of<br>Blue-Collar Hiring With Us</p>
+    <p class="cta-text">Shape the Future of <br>Blue-Collar Hiring With Us</p>
     <a class="cta-btn" href="contact.html">Contact Us</a>
   </div>
 
   <!-- ============ NEWSROOM ============ -->
   <h2 class="news-title">Making headlines across India</h2>
 
+  <div class="news-wrap m-wrap">
   <div class="news-card" style="left:240px">
     <div class="news-text">
       <p class="news-headline">OpenAI backs Vahan to automate Blue Collar Hiring with AI</p>
@@ -139,11 +142,13 @@
       <img src="assets/homepage/vahan%20team.svg" alt="">
     </div>
   </div>
+  </div><!-- /.news-wrap -->
 
   <!-- ============ CASE STUDIES ============ -->
+  <div class="msec msec-case m-wrap">
   <div class="case-band"></div>
 
-  <h2 class="case-title">Case studies and testimonials from<br>India’s top employers</h2>
+  <h2 class="case-title">Case studies and testimonials from <br>India’s top employers</h2>
 
   <div class="case-slider">
     <div class="case-track">
@@ -229,22 +234,25 @@
     <span class="case-dot" data-slide="1"></span>
     <span class="case-dot" data-slide="2"></span>
   </div>
+  </div><!-- /.msec-case -->
 
-  <div class="hero-field">
-    <span class="hero-cc">+91</span>
-    <input type="tel" class="hero-input" placeholder="Your mobile number" maxlength="10">
+  <div class="hero-form m-wrap">
+    <div class="hero-field">
+      <span class="hero-cc">+91</span>
+      <input type="tel" class="hero-input" placeholder="Your mobile number" maxlength="10">
+    </div>
+
+    <button class="btn btn-grad hero-cta">
+      <span>Try Now</span>
+      <span class="arrow"><img src="assets/homepage/icons/arrow-right.svg" alt=""></span>
+    </button>
   </div>
-
-  <button class="btn btn-grad hero-cta">
-    <span>Try Now</span>
-    <span class="arrow"><img src="assets/homepage/icons/arrow-right.svg" alt=""></span>
-  </button>
 
   <!-- ============ NAV ============ -->
   <header class="nav">
     <a class="nav-logo" href="index.html"><img src="assets/logos/vahan%20top%20logo.svg" alt="vahan"></a>
 
-    <nav class="nav-links">
+    <nav class="nav-links" id="site-menu">
       <div class="nav-item has-dropdown" style="width:139.2535px">
         <span>Solution</span>
         <img class="chev" src="assets/homepage/icons/chevron-down.svg" alt="">
@@ -282,9 +290,17 @@
       <span>Contact Us</span>
       <span class="arrow"><img src="assets/homepage/icons/arrow-right.svg" alt=""></span>
     </a>
+    <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
+      <span></span><span></span><span></span>
+    </button>
+
   </header>
 
   <!-- ============ STATS ============ -->
+  <div class="msec msec-stats m-wrap">
+  <!-- stats band gradient (Rectangle 4447) -->
+  <div class="stats-band"></div>
+
   <div class="stat-card" style="left:242px"></div>
   <div class="stat-card" style="left:607.1621px"></div>
   <div class="stat-card" style="left:972.3262px"></div>
@@ -306,9 +322,10 @@
     <p class="stat-num">25%</p>
     <p class="stat-label">higher recruitment efficiency</p>
   </div>
+  </div><!-- /.msec-stats -->
 
   <!-- ============ ONE AI ENGINE ============ -->
-  <h2 class="engine-title">One AI engine. Three sides of India's<br>blue-collar economy.</h2>
+  <h2 class="engine-title">One AI engine. Three sides of India's <br>blue-collar economy.</h2>
   <p class="engine-sub">The companies hiring, the recruiters placing, and the workers earning. All on Vahan.</p>
 
   <div class="tabbar">
@@ -413,7 +430,7 @@
     caseDots.forEach(d => d.classList.remove('active'));
     if (caseDots[index]) caseDots[index].classList.add('active');
     if (caseTrack) {
-      caseTrack.style.transform = `translateX(-${index * 1440}px)`;
+      caseTrack.style.transform = `translateX(-${index * (100 / 3)}%)`;
     }
   }
 
@@ -450,5 +467,6 @@
   }
   startAutoScroll();
 </script>
+<script src="js/site.js"></script>
 </body>
 </html>

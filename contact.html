@@ -2,15 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1920">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vahan — Contact Us</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Inter:wght@100..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/contact.css">
+<link rel="stylesheet" href="css/responsive.css">
 </head>
-<body>
+<body class="p-contact">
+  <div class="nav-scrim" hidden></div>
 <div class="page">
 
   <!-- ============ background art ============ -->
@@ -24,7 +26,7 @@
   <header class="nav">
     <a class="nav-logo" href="index.html"><img src="assets/logos/vahan%20top%20logo.svg" alt="vahan"></a>
 
-    <nav class="nav-links">
+    <nav class="nav-links" id="site-menu">
       <div class="nav-item has-dropdown" style="width:139.2535px">
         <span>Solution</span>
         <img class="chev" src="assets/homepage/icons/chevron-down.svg" alt="">
@@ -62,19 +64,25 @@
       <span>Contact Us</span>
       <span class="arrow"><img src="assets/homepage/icons/arrow-right.svg" alt=""></span>
     </a>
+    <button class="nav-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
+      <span></span><span></span><span></span>
+    </button>
+
   </header>
 
   <!-- ============ HERO ============ -->
-  <h1 class="contact-title">Your Blue-Collar Workforce<br>Is One Conversation Away.</h1>
+  <h1 class="contact-title">Your Blue-Collar Workforce <br>Is One Conversation Away.</h1>
 
   <p class="contact-sub">Send us your high-volume hiring needs. Our AI recruiter and team take it from there.</p>
 
+  <div class="contact-stats m-wrap">
   <p class="contact-stat-num"   style="left:240px">20 Lakh+</p>
   <p class="contact-stat-label" style="left:240px">workers placed</p>
   <p class="contact-stat-num"   style="left:515px">900+</p>
   <p class="contact-stat-label" style="left:515px">cities</p>
   <p class="contact-stat-num"   style="left:729px">5 Crore+</p>
   <p class="contact-stat-label" style="left:729px">worker network</p>
+  </div><!-- /.contact-stats -->
 
   <!-- ============ FORM ============ -->
   <form class="form-card" autocomplete="off" onsubmit="return false">
@@ -186,7 +194,8 @@
     <a class="footer-logo" href="index.html"><img src="assets/logos/vahan%20footer%20logo.svg" alt="vahan"></a>
     <p class="footer-desc">India’ s AI-powered workforce platform, bringing economic support unity to millions through human-centric technology and mentorship.</p>
 
-    <div class="footer-col" style="left:749px;top:64.5547px">
+    <div class="footer-cols m-wrap">
+<div class="footer-col" style="left:749px;top:64.5547px">
       <p class="footer-col-title">Solution</p>
       <ul class="footer-list">
         <li><a href="corporate.html">Corporates</a></li>
@@ -228,7 +237,9 @@
       </ul>
     </div>
 
-    <p class="footer-copy">Copyright © 2026 Vahan.ai, Inc. All rights reserved.</p>
+        </div>
+
+<p class="footer-copy">Copyright © 2026 Vahan.ai, Inc. All rights reserved.</p>
 
     <p class="footer-legal" style="left:1250.3008px">Privacy Policy</p>
     <p class="footer-legal" style="left:1341.0208px">Terms &amp; Conditions</p>
@@ -250,13 +261,6 @@
 
 </div>
 
-<script>
-  // Industry select: darken the label once a real option is picked
-  const industry = document.querySelector('.form-field-select select');
-  industry.addEventListener('change', () => {
-    industry.classList.toggle('has-value', industry.value !== '');
-  });
-</script>
   <!-- JS for custom dropdown -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -292,5 +296,6 @@
       }
     });
   </script>
+<script src="js/site.js"></script>
 </body>
 </html>
