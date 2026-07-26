@@ -175,15 +175,15 @@
       <!-- Slide 2 -->
       <div class="case-card">
         <div class="case-left">
-          <div class="case-logo"><img src="assets/homepage/zomato%20logo.svg" alt="zomato"></div>
+          <div class="case-logo"><img src="assets/homepage/dunzo%20logo.svg" alt="dunzo"></div>
 
           <div class="case-quote-block">
-            <p class="case-quote">“Vahan is a critical partner for Zomato and has time and again demonstrated the ability to deliver numbers for us in times of need.”</p>
+            <p class="case-quote">“Our sourcing cost reduced by 40% in the first three months that we worked with Vahan. Vahan is the channel that has helped us source at scale efficiently.”</p>
             <div class="case-person">
               <img class="case-avatar" src="assets/homepage/Nupur%20Mittal.svg" alt="">
               <div class="case-person-text">
-                <p class="case-person-name">Mohnish Rajput</p>
-                <p class="case-person-role">Program Manager, Zomato</p>
+                <p class="case-person-name">Prasanth Chandramouli</p>
+                <p class="case-person-role">Former Bangalore Lead, Dunzo</p>
               </div>
             </div>
           </div>
@@ -194,21 +194,21 @@
           </button>
         </div>
 
-        <div class="case-image"><img src="assets/homepage/zomato%20image.svg" alt=""></div>
+        <div class="case-image"><img src="assets/homepage/dunzo%20image.svg" alt=""></div>
       </div>
 
       <!-- Slide 3 -->
       <div class="case-card">
         <div class="case-left">
-          <div class="case-logo"><img src="assets/homepage/zomato%20logo.svg" alt="zomato"></div>
+          <div class="case-logo"><img src="assets/homepage/squadstack%20logo.svg" alt="squadstack"></div>
 
           <div class="case-quote-block">
-            <p class="case-quote">“Vahan is a critical partner for Zomato and has time and again demonstrated the ability to deliver numbers for us in times of need.”</p>
+            <p class="case-quote">“Working with Vahan has been a pleasure. The team is incredibly thoughtful and responsive and has been working with us with a strong win-win attitude in mind.”</p>
             <div class="case-person">
               <img class="case-avatar" src="assets/homepage/Nupur%20Mittal.svg" alt="">
               <div class="case-person-text">
-                <p class="case-person-name">Mohnish Rajput</p>
-                <p class="case-person-role">Program Manager, Zomato</p>
+                <p class="case-person-name">Saswata Shankar De</p>
+                <p class="case-person-role">CBO, SquadStack</p>
               </div>
             </div>
           </div>
@@ -219,14 +219,14 @@
           </button>
         </div>
 
-        <div class="case-image"><img src="assets/homepage/zomato%20image.svg" alt=""></div>
+        <div class="case-image"><img src="assets/homepage/squadstack%20image.svg" alt=""></div>
       </div>
     </div>
   </div>
 
   <div class="case-dots">
-    <span class="case-dot" data-slide="0"></span>
-    <span class="case-dot active" data-slide="1"></span>
+    <span class="case-dot active" data-slide="0"></span>
+    <span class="case-dot" data-slide="1"></span>
     <span class="case-dot" data-slide="2"></span>
   </div>
 
@@ -404,28 +404,51 @@
   // Case Studies slider functionality
   const caseTrack = document.querySelector('.case-track');
   const caseDots = document.querySelectorAll('.case-dot');
+  let autoScrollInterval;
+  let autoScrollTimeout;
+  let currentSlide = 0;
 
-  caseDots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      const slideIndex = parseInt(dot.getAttribute('data-slide'));
-      
-      // Update active dot
-      caseDots.forEach(d => d.classList.remove('active'));
-      dot.classList.add('active');
+  function goToSlide(index) {
+    currentSlide = index;
+    caseDots.forEach(d => d.classList.remove('active'));
+    if (caseDots[index]) caseDots[index].classList.add('active');
+    if (caseTrack) {
+      caseTrack.style.transform = `translateX(-${index * 1440}px)`;
+    }
+  }
 
-      // Slide track
-      if (caseTrack) {
-        caseTrack.style.transform = `translateX(-${slideIndex * 1440}px)`;
+  function startAutoScroll() {
+    clearInterval(autoScrollInterval);
+    autoScrollInterval = setInterval(() => {
+      if (caseDots.length > 0) {
+        let nextSlide = (currentSlide + 1) % caseDots.length;
+        goToSlide(nextSlide);
       }
+    }, 4000);
+  }
+
+  function resetAutoScroll() {
+    clearInterval(autoScrollInterval);
+    clearTimeout(autoScrollTimeout);
+    autoScrollTimeout = setTimeout(() => {
+      startAutoScroll();
+    }, 15000);
+  }
+
+  caseDots.forEach((dot, idx) => {
+    dot.addEventListener('click', () => {
+      goToSlide(idx);
+      resetAutoScroll();
     });
   });
 
-  // Set initial slider position matching active dot
+  // Initialize
   const initialActiveDot = document.querySelector('.case-dot.active');
   if (initialActiveDot && caseTrack) {
-    const initialIndex = parseInt(initialActiveDot.getAttribute('data-slide'));
-    caseTrack.style.transform = `translateX(-${initialIndex * 1440}px)`;
+    currentSlide = parseInt(initialActiveDot.getAttribute('data-slide'));
+    goToSlide(currentSlide);
   }
+  startAutoScroll();
 </script>
 </body>
 </html>
