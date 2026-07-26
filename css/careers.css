@@ -1,0 +1,359 @@
+/* =========================================================================
+   Vahan — Careers Page
+   Figma: SkZlY6SRTTisFlKok443kh  ·  node 36:569  ·  1920 × 8068
+
+   Loads on top of styles.css: nav, buttons, glows, header art, CTA card and
+   footer are the shared site pieces; everything below re-positions them at
+   their careers-page coordinates or adds the sections unique to this page.
+   ========================================================================= */
+
+.page{ height:8068px; }
+
+/* ===================== HERO ===================== */
+.hero-sub{
+  left:607px;
+  width:706px;
+}
+
+/* Button — Figma gradient geometry for the 236.64 × 58 instance */
+.roles-cta{
+  left:842px; top:605px;
+  width:236.6364px; height:58px;
+  gap:8.909px;
+  padding:13.3636px 26.7273px;
+  border-radius:12px;
+  font-size:22.27px;
+  letter-spacing:-.4231px;
+  filter:drop-shadow(0 0 1.114px rgba(128,115,115,.23));
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 236.64 58' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -11.007 16.223 0 118.32 70.523)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
+}
+.roles-cta .arrow{ width:22.273px; height:22.273px; }
+.roles-cta .arrow img{ width:13.92px; height:13.92px; }
+
+.logo-strip{ top:822px; }
+
+/* ===================== shared section headings ===================== */
+.careers-h2{
+  position:absolute;
+  left:436px;
+  width:1048px; height:70px;
+  font-family:var(--display);
+  font-weight:500;
+  font-size:56px;
+  line-height:70px;
+  text-align:center;
+  color:var(--brown);
+}
+.careers-sub{
+  position:absolute;
+  left:479px;
+  width:963px; height:36px;
+  font-size:24px;
+  line-height:1.5;
+  letter-spacing:-.456px;
+  text-align:center;
+  color:var(--brown);
+}
+
+/* ===================== OPEN ROLES ===================== */
+.roles-title{ left:504px; top:1072px; width:913px; }
+
+.role-chips{
+  position:absolute;
+  left:243px; top:1208px;
+  display:flex; align-items:center; gap:12px;
+}
+.role-chip{
+  padding:6.777px 23.721px;
+  border:1.084px solid #ffd1b2;
+  border-radius:12px;
+  background:#fff6ef;
+  display:flex; align-items:center; justify-content:center;
+  font-size:19.519px;
+  line-height:40.664px;
+  color:#000;
+  white-space:nowrap;
+  cursor:pointer;
+  transition:background .2s ease, border-color .2s ease, color .2s ease;
+}
+.role-chip:not(.role-chip-active):hover{ background:#ffe3cd; }
+.role-chip-active{
+  background:var(--orange);
+  border-color:#ffd1b2;
+  color:#fff;
+}
+
+/* search bar — fixed size, no expansion on focus */
+.role-search{
+  position:absolute;
+  right:240px; top:1208px;
+  width:312px; height:54.5547px;
+  padding:6.777px 23.721px;
+  border:1.084px solid #ffd1b2;
+  border-radius:12px;
+  background:#fff6ef;
+  display:flex; align-items:center; gap:11px;
+  cursor:text;
+  transition:border-color .2s ease;
+  box-sizing:border-box;
+}
+.role-search:focus-within{
+  border-color:var(--orange);
+}
+.role-search img{ flex:none; width:18px; height:18px; }
+.role-search input{
+  flex:1;
+  min-width:0;
+  border:none;
+  outline:none;
+  background:transparent;
+  padding:0;
+  font-family:var(--body);
+  font-size:19.519px;
+  line-height:40.664px;
+  color:#000;
+}
+.role-search input::placeholder{ color:#000; }
+
+/* --- role groups --- */
+.jobs{
+  position:absolute;
+  left:242px; top:1298.5547px;
+  width:1438px;
+  display:flex; flex-direction:column; gap:36px;
+}
+.job-group{
+  width:1438px;
+  background:#fff6ef;
+  border-radius:12px;
+  padding:56px 45px;
+  display:flex; flex-direction:column; gap:57px;
+}
+.job-group.is-hidden{ display:none; }
+
+.job-group-title{
+  height:26px;
+  font-family:var(--body);
+  font-weight:600;
+  font-size:36px;
+  line-height:26px;
+  letter-spacing:-.684px;
+  color:var(--brown);
+}
+.job-rows{
+  display:flex; flex-direction:column; gap:36px;
+}
+.job-row{
+  height:54.5547px;
+  display:flex; align-items:center;
+}
+.job-row.is-hidden{ display:none; }
+
+.job-title{
+  width:598px;
+  margin-right:-9px;
+  font-weight:600;
+  font-size:24px;
+  line-height:23px;
+  letter-spacing:-.456px;
+  color:var(--brown);
+}
+.job-loc{
+  width:549px;
+  margin-right:-9px;
+  font-weight:500;
+  font-size:22px;
+  line-height:1.22;
+  letter-spacing:-.418px;
+  color:var(--brown);
+}
+.job-apply{
+  flex:none;
+  width:219px;
+  padding:6.777px 23.721px;
+  border-radius:12px;
+  background:var(--orange);
+  display:flex; align-items:center; justify-content:center;
+  font-weight:500;
+  font-size:20px;
+  line-height:40.664px;
+  color:#fff;
+  text-decoration:none;
+  transition:background .2s ease, transform .2s ease;
+}
+.job-apply:hover{ background:#e2620d; transform:translateY(-2px); }
+
+/* ===================== A PLACE TO LEARN, GROW ===================== */
+.learn-title{ top:3365px; }
+
+.learn-card{
+  position:absolute;
+  top:3531.3101px;
+  height:539.3802px;
+  background:#fff;
+  border-radius:12px;
+  padding:16.66px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:37.486px;
+  filter:none;
+  transition:transform .35s cubic-bezier(.16,1,.3,1), filter .35s cubic-bezier(.16,1,.3,1);
+}
+.learn-card:hover{
+  transform:translateY(-10px);
+  filter:drop-shadow(0 10px 24px rgba(249,115,22,.55));
+}
+.learn-img{
+  flex:1;
+  width:100%;
+  min-height:0;
+  border-radius:12px;
+  overflow:hidden;
+}
+.learn-img img{
+  width:100%; height:100%;
+  object-fit:cover;
+  transition:transform .5s cubic-bezier(.16,1,.3,1);
+}
+.learn-card:hover .learn-img img{ transform:scale(1.05); }
+
+.learn-text{
+  flex:none;
+  width:100%;
+  display:flex; flex-direction:column; align-items:center; gap:12.495px;
+  text-align:center;
+}
+.learn-name{
+  width:100%;
+  font-family:var(--display);
+  font-weight:400;
+  font-size:28px;
+  line-height:32.488px;
+  letter-spacing:-.7497px;
+  color:var(--brown);
+}
+.learn-desc{
+  width:344.662px;
+  font-size:20px;
+  line-height:28.114px;
+  color:rgba(43,24,10,.7);
+}
+
+/* ===================== OUR VALUES ===================== */
+.values-title{ top:4202px; }
+.values-sub{ top:4301px; }
+
+/* no hover animation here, by design */
+.value-card{
+  position:absolute;
+  width:348px; min-height:343px;
+  border-radius:24px;
+  padding:36px;
+  display:flex; flex-direction:column; align-items:flex-start; gap:43px;
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 348 343' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)' opacity='0.32'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -94.077 95.448 0 174 863.7)'><stop stop-color='rgba(249,118,25,0.72)' offset='0'/><stop stop-color='rgba(250,135,54,0.755)' offset='0.125'/><stop stop-color='rgba(251,152,83,0.79)' offset='0.25'/><stop stop-color='rgba(252,187,140,0.86)' offset='0.5'/><stop stop-color='rgba(254,221,198,0.93)' offset='0.75'/><stop stop-color='rgba(255,255,255,1)' offset='1'/></radialGradient></defs></svg>");
+  background-size:100% 100%;
+}
+.value-icon{
+  flex:none;
+  width:100px; height:100px;
+  border-radius:99px;
+  overflow:hidden;
+  display:flex; align-items:center; justify-content:center;
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -20.023 7.2334 0 50 190)'><stop stop-color='rgb(255,164,97)' offset='0'/><stop stop-color='rgb(255,187,136)' offset='0.25'/><stop stop-color='rgb(255,210,176)' offset='0.5'/><stop stop-color='rgb(255,232,215)' offset='0.75'/><stop stop-color='rgb(255,255,255)' offset='1'/></radialGradient></defs></svg>");
+  background-size:100% 100%;
+}
+.value-icon img{ width:54px; height:54px; }
+
+.value-text{
+  width:276px;
+  display:flex; flex-direction:column; gap:18px;
+}
+.value-name{
+  font-family:var(--display);
+  font-weight:500;
+  font-size:24px;
+  line-height:normal;
+  color:var(--brown);
+}
+.value-desc{
+  font-size:20px;
+  line-height:normal;
+  color:rgba(43,24,10,.7);
+}
+
+/* ===================== BACKED BY THE BEST ===================== */
+.backers-band{
+  position:absolute;
+  left:0; top:5287px;
+  width:1920px; height:560px;
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 1920 560' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)' opacity='0.52'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -138.15 171.11 0 960 969.73)'><stop stop-color='rgb(255,164,97)' offset='0'/><stop stop-color='rgb(255,187,136)' offset='0.25'/><stop stop-color='rgb(255,210,176)' offset='0.5'/><stop stop-color='rgb(255,232,215)' offset='0.75'/><stop stop-color='rgb(255,255,255)' offset='1'/></radialGradient></defs></svg>");
+  background-size:100% 100%;
+}
+.backers-title{ top:5379px; }
+.backer{ position:absolute; }
+
+/* ===================== PERKS & BENEFITS ===================== */
+.perks-title{ top:5948px; }
+.perks-sub{ left:471px; top:6047px; }
+
+.perk-card{
+  position:absolute;
+  width:416px; height:320px;
+  border-radius:24px;
+  padding:36px;
+  display:flex; flex-direction:column; align-items:flex-start; gap:43px;
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 416 320' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)' opacity='0.18'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -87.769 114.1 0 208 805.78)'><stop stop-color='rgba(249,118,25,0.72)' offset='0'/><stop stop-color='rgba(250,135,54,0.755)' offset='0.125'/><stop stop-color='rgba(251,152,83,0.79)' offset='0.25'/><stop stop-color='rgba(252,187,140,0.86)' offset='0.5'/><stop stop-color='rgba(254,221,198,0.93)' offset='0.75'/><stop stop-color='rgba(255,255,255,1)' offset='1'/></radialGradient></defs></svg>");
+  background-size:100% 100%;
+  text-decoration:none;
+  color:inherit;
+  transition:transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s cubic-bezier(.16,1,.3,1);
+}
+/* the Wellness Leaves drop shadow, applied on hover */
+.perk-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 4px 0 0 rgba(249,118,25,.72);
+}
+.perk-icon{
+  flex:none;
+  width:48px; height:48px;
+  border-radius:10px;
+  background:rgba(249,115,22,.2);
+  display:flex; align-items:center; justify-content:center;
+}
+.perk-icon img{ width:24px; height:24px; }
+.perk-name{
+  font-family:var(--display);
+  font-weight:500;
+  font-size:24px;
+  line-height:30px;
+  color:#262729;
+  white-space:nowrap;
+}
+.perk-desc{
+  width:334px;
+  font-size:20px;
+  line-height:28px;
+  color:rgba(43,24,10,.7);
+  opacity:.7;
+}
+
+/* ===================== CTA ===================== */
+.cta{ top:6919px; }
+.cta-text{
+  left:74.5px; top:84px;
+  width:1291px;
+  font-size:56px;
+}
+.cta-sub{
+  position:absolute;
+  left:51px; top:162px;
+  width:1338px;
+  font-weight:500;
+  font-size:38px;
+  line-height:68px;
+  text-align:center;
+  color:#fff;
+}
+.cta-btn{ left:395px; top:286px; width:297.6364px; }
+.cta-btn-alt{ left:753.1364px; width:292.6364px; }
+
+/* ===================== FOOTER ===================== */
+.footer{ top:7468px; }
