@@ -1,0 +1,199 @@
+/* =========================================================================
+   Vahan — Case Study Listing Page
+   Figma: SkZlY6SRTTisFlKok443kh  ·  node 30:635  ·  1920 × 3388
+
+   Loads on top of styles.css: nav, buttons, hero heading, logo strip, CTA card
+   and footer are the shared site pieces; everything below re-positions them at
+   their case-study coordinates or adds the sections unique to this page.
+   ========================================================================= */
+
+.page{ height:3388px; }
+
+/* ===================== HERO ===================== */
+.hero-title{ left:452px; width:1016px; }
+.hero-sub  { left:579px; width:762px;  }
+
+.cs-hero-cta{
+  left:864px; top:611px;
+  width:191.6364px; height:58px;
+  gap:8px;
+  padding:12px 24px;
+  border-radius:12px;
+  font-size:20px;
+  letter-spacing:-.38px;
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 172.08 52.082' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -9.8837 11.797 0 86.041 63.327)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
+}
+
+.logo-strip{ top:822px; }
+
+/* ===================== INDUSTRY CHIPS ===================== */
+.cs-chip-row{
+  position:absolute;
+  left:0;
+  width:1920px; height:54.5547px;
+  display:flex; align-items:center; justify-content:center;
+  gap:32px;
+}
+.cs-chip-row-1{ top:992px;  }
+.cs-chip-row-2{ top:1069px; }
+
+.cs-chip{
+  height:54.5547px;
+  padding:6.7773px 23.7207px;
+  border:1.084px solid #ffd1b2;
+  border-radius:12px;
+  background:#fff6ef;
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--body);
+  font-size:19.519px;
+  line-height:40.664px;
+  color:#000;
+  white-space:nowrap;
+  cursor:pointer;
+  user-select:none;
+  /* same treatment as the blog page filter chips */
+  transition:background .2s ease, border-color .2s ease;
+}
+.cs-chip.cs-chip-active{
+  background:#f97316;
+  border-color:#f97316;
+  font-family:var(--ui);
+  color:#fff;
+}
+
+/* ===================== CASE STUDY CARDS ===================== */
+.cs-card{
+  position:absolute;
+  top:1181px;
+  width:701px; height:830px;
+  background:var(--peach);
+  border-radius:24px;
+  padding:32px;
+  display:flex; flex-direction:column; align-items:center; justify-content:space-between;
+  text-decoration:none;
+  color:inherit;
+  cursor:pointer;
+  transition:transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s cubic-bezier(.16,1,.3,1);
+}
+.cs-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px rgba(249,118,25,.20), 0 4px 14px rgba(0,0,0,.05);
+}
+.cs-card-hidden{ display:none; }
+
+.cs-slot-1{ left:240px; }
+.cs-slot-2{ left:979px; }
+
+/* card enters on filter / page change */
+@keyframes cs-card-in{
+  from{ opacity:0; transform:translateY(28px) scale(.985); }
+  to  { opacity:1; transform:none; }
+}
+.cs-card-enter{ animation:cs-card-in .5s cubic-bezier(.16,1,.3,1) both; }
+.cs-slot-2.cs-card-enter{ animation-delay:.09s; }
+
+.cs-card-img{
+  width:637px; height:379px;
+  border-radius:19.989px;
+  overflow:hidden;
+  flex:none;
+  background:#fff;
+}
+.cs-card-img img{
+  width:637px; height:379px;
+  object-fit:cover;
+  transition:transform .55s cubic-bezier(.16,1,.3,1);
+}
+.cs-card:hover .cs-card-img img{ transform:scale(1.045); }
+
+.cs-card-body{
+  width:637px; height:342px;
+  display:flex; flex-direction:column; justify-content:center; gap:32px;
+}
+.cs-logo{ width:213px; height:64px; object-fit:contain; object-position:left center; }
+
+.cs-title{
+  width:603px;
+  font-family:var(--body);
+  font-weight:500;
+  font-size:34px;
+  line-height:normal;
+  color:#000;
+  transition:color .25s ease;
+}
+.cs-card:hover .cs-title{ color:#f97316; }
+
+.cs-sub{
+  width:603px;
+  font-size:24px;
+  line-height:normal;
+  color:#000;
+}
+
+.cs-card-body .btn{
+  position:relative;
+  width:264px; height:58px;
+  flex:none;
+}
+.cs-card-body .btn .arrow img{ transition:transform .3s cubic-bezier(.16,1,.3,1); }
+.cs-card:hover .btn .arrow img{ transform:translate(-50%,-50%) translateX(3px); }
+
+/* ===================== PAGINATION ===================== */
+.pager{
+  position:absolute;
+  left:828px; top:2103px;
+  width:265px; height:46.1091px;
+  display:flex; align-items:center; justify-content:center; gap:5.7636px;
+}
+.pager-nums{
+  display:flex; align-items:center;
+  gap:5.7636px;
+}
+.pager-nav{
+  width:51.8727px; height:46.1091px;
+  border-radius:34.582px;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer;
+  transition:opacity .2s ease, transform .2s ease;
+}
+.pager-nav:hover{ transform:scale(1.12); }
+.pager-nav.pager-disabled{ opacity:.5; cursor:default; }
+.pager-nav.pager-disabled:hover{ transform:none; }
+.pager-nav img{ width:23.0545px; height:23.0545px; }
+.pager-num{
+  width:46.1091px; height:46.1091px;
+  border-radius:34.582px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:20.1727px;
+  line-height:28.818px;
+  color:#18181b;
+  cursor:pointer;
+  transition:background .25s ease, color .25s ease, transform .25s cubic-bezier(.34,1.56,.64,1);
+}
+.pager-num:not(.active):hover{ background:#ffe8d6; }
+.pager-num.active{ background:#f97316; color:#fff; transform:scale(1.08); }
+
+/* ===================== CTA ===================== */
+.cta{ top:2256px; }
+.cta-text{
+  left:95px; top:104px;
+  width:1196px;
+  height:136px;
+}
+.cta-btn{
+  left:607px; top:301px;
+  width:228.6363px; height:73px;
+}
+
+/* ===================== FOOTER ===================== */
+.footer{ top:2788px; }
+
+/* ===================== ON-LOAD REVEAL ===================== */
+@keyframes cs-rise{
+  from{ opacity:0; transform:translateY(18px); }
+  to  { opacity:1; transform:none; }
+}
+.cs-reveal{ animation:cs-rise .7s cubic-bezier(.16,1,.3,1) both; }
+.hero-sub.cs-reveal    { animation-delay:.10s; }
+.cs-hero-cta.cs-reveal { animation-delay:.20s; }
+.logo-strip.cs-reveal  { animation-delay:.30s; }

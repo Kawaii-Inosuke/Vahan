@@ -1,0 +1,342 @@
+/* =========================================================================
+   Vahan — Rider Hub
+   Figma: SkZlY6SRTTisFlKok443kh  ·  node 30:348  ·  1920 × 4376
+
+   Loads on top of styles.css: nav, buttons, hero heading, CTA card and footer
+   are the shared site pieces; everything below re-positions them at their
+   rider-hub coordinates or adds the sections unique to this page.
+   ========================================================================= */
+
+.page{ height:4376px; }
+
+/* ===================== background art ===================== */
+/* "vahan wave 1" — masked to 0 → 533 on this page */
+.header-bg{
+  left:0; top:0;
+  width:1920px; height:533px;
+}
+
+/* Rectangle 4447 — band behind the "Alert Me" section */
+.rh-band{
+  position:absolute;
+  left:0; top:1805px;
+  width:1920px; height:594px;
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 1920 594' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)' opacity='0.4'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -146.53 171.11 0 960 1028.6)'><stop stop-color='rgb(255,164,97)' offset='0'/><stop stop-color='rgb(255,187,136)' offset='0.25'/><stop stop-color='rgb(255,210,176)' offset='0.5'/><stop stop-color='rgb(255,232,215)' offset='0.75'/><stop stop-color='rgb(255,255,255)' offset='1'/></radialGradient></defs></svg>");
+  background-size:100% 100%;
+}
+
+/* ===================== HERO ===================== */
+.hero-title{
+  left:349px; top:295px;
+  width:1223px; height:99px;
+}
+
+.rh-sub{
+  position:absolute;
+  left:495px; top:428px;
+  width:930px; height:36px;
+  font-size:24px;
+  line-height:1.5;
+  letter-spacing:-.456px;
+  text-align:center;
+  color:#000;
+}
+
+/* ===================== CATEGORY CHIPS ===================== */
+.rh-chip-row{
+  position:absolute;
+  left:0;
+  width:1920px; height:54.5547px;
+  display:flex; align-items:center; justify-content:center;
+  gap:32px;
+}
+.rh-chip-row-1{ top:627px; }
+.rh-chip-row-2{ top:704px; }
+
+.rh-chip{
+  height:54.5547px;
+  padding:6.7773px 23.7207px;
+  border:1.084px solid #ffd1b2;
+  border-radius:12px;
+  background:#fff6ef;
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--body);
+  font-size:19.519px;
+  line-height:40.664px;
+  color:#000;
+  white-space:nowrap;
+  cursor:pointer;
+  user-select:none;
+  transition:background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
+}
+.rh-chip:hover{ border-color:#f97316; transform:translateY(-1px); }
+.rh-chip.rh-chip-active{
+  background:#f97316;
+  border-color:#f97316;
+  color:#fff;
+}
+
+/* ===================== VIDEO CARDS ===================== */
+.vcard{
+  position:absolute;
+  width:463px; height:393px;
+  background:var(--peach);
+  border-radius:7.336px;
+  padding:26px 27.0947px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-decoration:none;
+  color:inherit;
+  cursor:pointer;
+  transition:transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s cubic-bezier(.16,1,.3,1),
+             left .4s ease, top .4s ease, opacity .3s ease;
+}
+.vcard:hover{
+  transform:translateY(-4px);
+  box-shadow:0 10px 24px rgba(249,118,25,.15), 0 2px 8px rgba(0,0,0,.04);
+}
+.vcard:hover .vcard-title{ color:#f97316; }
+.vcard-hidden{ opacity:0; pointer-events:none; }
+
+.vcard-inner{
+  width:408.8105px;
+  display:flex; flex-direction:column; gap:24px;
+}
+.vcard-thumb{
+  width:409px; height:223px;
+  border-radius:8.006px;
+  overflow:hidden;
+  flex:none;
+}
+.vcard-thumb img{
+  width:409px; height:223px;
+  object-fit:cover;
+  transition:transform .35s cubic-bezier(.16,1,.3,1);
+}
+.vcard:hover .vcard-thumb img{ transform:scale(1.03); }
+
+.vcard-text{
+  width:409px; height:94px;
+  display:flex; flex-direction:column; justify-content:center; gap:16px;
+}
+.vcard-title{
+  font-family:var(--display);
+  font-weight:400;
+  font-size:19.126px;
+  line-height:normal;
+  color:#000;
+  transition:color .2s ease;
+}
+.vcard-meta{
+  width:409px;
+  display:flex; align-items:flex-start; justify-content:space-between;
+  font-family:var(--body);
+  font-weight:300;
+  font-size:16px;
+  line-height:normal;
+  color:#000;
+}
+.vcard-views b{ font-weight:400; }
+.vcard-tags{ white-space:nowrap; }
+
+/* ===================== PAGINATION ===================== */
+.pager{
+  position:absolute;
+  left:828px; top:1669px;
+  width:265px; height:46.1091px;
+  display:flex; align-items:center; gap:5.7636px;
+}
+.pager-nav{
+  width:51.8727px; height:46.1091px;
+  border-radius:34.582px;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer;
+  transition:opacity .2s ease;
+}
+.pager-nav:hover{ opacity:.8; }
+.pager-prev{ opacity:.5; }
+.pager-nav img{ width:23.0545px; height:23.0545px; }
+.pager-num{
+  width:46.1091px; height:46.1091px;
+  border-radius:34.582px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:20.1727px;
+  line-height:28.818px;
+  color:#18181b;
+  cursor:pointer;
+  transition:background .2s ease, color .2s ease;
+}
+.pager-num:not(.active):hover{ background:#ffe8d6; }
+.pager-num.active{ background:#f97316; color:#fff; }
+
+/* ===================== ALERT ME FOR A JOB ===================== */
+.rh-alert-title{
+  position:absolute;
+  left:244px; top:1967px;
+  width:745px; height:70px;
+  display:flex; flex-direction:column; justify-content:center;
+  font-family:var(--display);
+  font-weight:500;
+  font-size:56px;
+  line-height:70px;
+  color:var(--brown);
+}
+.rh-alert-sub{
+  position:absolute;
+  left:240px; top:2065px;
+  width:511px; height:36px;
+  font-size:24px;
+  line-height:1.5;
+  letter-spacing:-.456px;
+  color:#000;
+}
+
+.rh-field{
+  position:absolute;
+  top:2153px;
+  height:68.8096px;
+  background:#fff;
+  border-radius:14.236px;
+  overflow:hidden;
+  display:flex; align-items:center;
+  transition:box-shadow .25s ease;
+}
+.rh-field:focus-within{ box-shadow:0 0 0 2px rgba(249,115,22,.45); }
+.rh-field-area { left:240px;      width:173.7672px; }
+.rh-field-phone{ left:433.9142px; width:272.8228px; }
+
+.rh-field input{
+  width:100%; height:100%;
+  border:none; outline:none;
+  background:transparent;
+  padding:0 12px;
+  font-family:var(--ui);
+  font-size:21.355px;
+  line-height:normal;
+  letter-spacing:-.8542px;
+  text-align:center;
+  color:#000;
+}
+.rh-field input::placeholder{ color:#b8b8b8; }
+
+.rh-submit{
+  left:727px; top:2153px;
+  width:144px; height:69px;
+  gap:10.5697px;
+  padding:15.854px 20px;
+  border-radius:14.236px;
+  font-size:24px;
+  letter-spacing:-.456px;
+  filter:drop-shadow(0 0 1.321px rgba(128,115,115,.23));
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 144 69' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -13.094 9.8723 0 72 83.898)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
+}
+
+.rh-map{
+  position:absolute;
+  left:1058px; top:1860px;
+  width:595px; height:484px;
+  pointer-events:none;
+}
+
+/* ===================== LATEST FROM THE BLOG ===================== */
+.rh-blog-title{
+  position:absolute;
+  left:507px; top:2489px;
+  width:906px; height:70px;
+  font-family:var(--display);
+  font-weight:500;
+  font-size:56px;
+  line-height:70px;
+  text-align:center;
+  color:var(--brown);
+}
+
+.post-card{
+  position:absolute;
+  top:2605px;
+  width:463px; height:433.5157px;
+  background:var(--peach);
+  border-radius:7.336px;
+  padding:26.2978px 27.0947px;
+  display:block;
+  text-decoration:none;
+  color:inherit;
+  cursor:pointer;
+  transition:transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s cubic-bezier(.16,1,.3,1);
+}
+.post-card:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 16px 36px rgba(249, 118, 25, 0.28), 0 4px 14px rgba(255, 156, 56, 0.2);
+}
+.post-card:hover .post-title{ color:#f97316; }
+.post-img{
+  width:409px; height:223px;
+  border-radius:8.006px;
+  object-fit:cover;
+  transition:transform .3s ease;
+}
+.post-card:hover .post-img{ transform:scale(1.02); }
+.post-text{
+  margin-top:19.1263px;
+  width:409px; height:94px;
+  display:flex; flex-direction:column; justify-content:center; gap:14.673px;
+}
+.post-title{
+  font-family:var(--display);
+  font-weight:400;
+  font-size:19.126px;
+  line-height:normal;
+  color:#000;
+  transition:color .2s ease;
+}
+.post-desc{
+  font-weight:300;
+  font-size:16px;
+  line-height:normal;
+  color:#000;
+}
+.post-meta{
+  position:absolute;
+  left:27.0947px; right:27.0947px; bottom:26.2978px;
+  height:23.84px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.post-by{ display:flex; align-items:center; gap:7.336px; }
+.post-avatar{ width:23.84px; height:23.84px; border-radius:50%; }
+.post-author{
+  font-weight:600;
+  font-size:7.336px;
+  line-height:normal;
+  color:#000;
+}
+.post-date{
+  font-size:10px;
+  line-height:normal;
+  white-space:nowrap;
+  color:#000;
+}
+
+.rh-more-btn{
+  left:850px; top:3085px;
+  width:221px; height:69px;
+  gap:8px;
+  padding:12px 24px;
+  border-radius:14.236px;
+  font-size:23.727px;
+  letter-spacing:-.4508px;
+  filter:drop-shadow(0 0 1px rgba(128,115,115,.23));
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 221 69' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -13.094 15.156 0 110.5 83.898)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
+}
+
+/* ===================== CTA ===================== */
+.cta{ top:3244px; }
+.cta-text{
+  left:253px; top:125px;
+  width:934px;
+}
+.cta-btn{
+  left:582px; top:250px;
+  width:278.6363px; height:73px;
+}
+
+/* ===================== FOOTER ===================== */
+.footer{ top:3776px; }

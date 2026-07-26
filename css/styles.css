@@ -139,6 +139,7 @@ ul{ list-style:none; }
   padding:9.69px 24.225px;
   border-radius:9.69px;
   cursor:pointer;
+  text-decoration:none;
 }
 .nav-item span{
   font-family:var(--body);
