@@ -10,13 +10,10 @@
 .page{ height:6812px; }
 
 /* ===================== HERO ===================== */
-/* Figma sets this headline at 76px on 99px leading (the shared hero is 86px),
-   in a 903 box centred on x=960.5. Season Mix isn't a webfont, so the Georgia
-   fallback runs wider — the box is widened about the same centre so the <br>
-   break holds at 2 lines. */
+/* Figma sets this headline at 76px on 99px leading — the shared hero is 86px */
 .hero-title{
-  left:460.5px; top:189px;
-  width:1000px; height:198px;
+  left:509px; top:189px;
+  width:903px; height:198px;
   font-size:76px;
   line-height:99px;
 }
@@ -436,8 +433,7 @@
   color:var(--brown);
 }
 
-/* min-height, not height: Season Mix / Open Sans fall back to wider metrics
-   than Figma measures, so a fixed 417 clipped the last line of the longer
+/* min-height, not height: a fixed 417 clipped the last line of the longer
    quotes. The card grows instead; the dots sit 48 px below it. */
 .rider-card{
   position:absolute;

@@ -11,13 +11,10 @@
 .page{ height:7129px; }
 
 /* ===================== HERO ===================== */
-/* Figma sets this headline at 76px on 99px leading (the shared hero is 86px),
-   in a 1131 box centred on x=960. Season Mix isn't a webfont, so the Georgia
-   fallback runs wider and would spill the first line onto a third row — the
-   box is widened about the same centre so the <br> break holds at 2 lines. */
+/* Figma sets this headline at 76px on 99px leading — the shared hero is 86px */
 .hero-title{
-  left:295px; top:259px;
-  width:1330px; height:198px;
+  left:395px; top:259px;
+  width:1131px; height:198px;
   font-size:76px;
   line-height:99px;
 }
