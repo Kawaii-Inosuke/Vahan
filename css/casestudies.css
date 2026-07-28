@@ -1,74 +1,103 @@
 /* =========================================================================
    Vahan — Case Study Listing Page
-   Figma: SkZlY6SRTTisFlKok443kh  ·  node 30:635  ·  1920 × 3388
+   Figma: JmFGyR5BxquecSttAjGEsh  ·  node 2115:7563  ·  1920 × 3926
 
-   Loads on top of styles.css: nav, buttons, hero heading, logo strip, CTA card
-   and footer are the shared site pieces; everything below re-positions them at
-   their case-study coordinates or adds the sections unique to this page.
+   Loads on top of styles.css: nav, buttons, hero heading, logo strip, stats
+   band, CTA card and footer are the shared site pieces; everything below
+   re-positions them at their case-study coordinates or adds the sections
+   unique to this page.
    ========================================================================= */
 
-.page{ height:3388px; }
+.page{ height:3926px; }
 
 /* ===================== HERO ===================== */
-.hero-title{ left:452px; width:1016px; }
+.hero-title{ left:413px; top:259px; width:1094px; height:198px; }
 .hero-sub  { left:579px; width:762px;  }
 
 .cs-hero-cta{
-  left:864px; top:611px;
-  width:191.6364px; height:58px;
-  gap:8px;
-  padding:12px 24px;
+  left:833.68px; top:611px;
+  width:252.6364px; height:58px;
+  gap:8.909px;
+  padding:13.364px 26.727px;
   border-radius:12px;
-  font-size:20px;
-  letter-spacing:-.38px;
-  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 172.08 52.082' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -9.8837 11.797 0 86.041 63.327)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
+  font-size:22.27px;
+  letter-spacing:-.4231px;
+  filter:drop-shadow(0 0 1.114px rgba(128,115,115,.23));
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 252.64 58' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -11.007 17.32 0 126.32 70.523)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
 }
+.cs-hero-cta .arrow{ width:22.273px; height:22.273px; }
+.cs-hero-cta .arrow img{ width:13.92px; height:13.92px; }
 
-.logo-strip{ top:822px; }
+.logo-strip{ top:783px; }
 
-/* ===================== INDUSTRY CHIPS ===================== */
-.cs-chip-row{
+/* ===================== BROWSE HEADING ===================== */
+.cs-browse-title{
   position:absolute;
-  left:0;
-  width:1920px; height:54.5547px;
-  display:flex; align-items:center; justify-content:center;
-  gap:32px;
+  left:516px; top:1579px;
+  width:906px; height:70px;
+  font-family:var(--display);
+  font-weight:500;
+  font-size:56px;
+  line-height:70px;
+  text-align:center;
+  color:var(--brown);
+  scroll-margin-top:120px;
 }
-.cs-chip-row-1{ top:992px;  }
-.cs-chip-row-2{ top:1069px; }
+
+/* ===================== INDUSTRY FILTERS ===================== */
+/* vertical rail down the left edge of the grid — Figma 240 / 1720, seven
+   rows on a 115 px rhythm */
+.cs-filters{
+  position:absolute;
+  left:240px; top:1720px;
+  width:318px;
+  display:flex; flex-direction:column;
+  gap:36px;
+}
 
 .cs-chip{
-  height:54.5547px;
-  padding:6.7773px 23.7207px;
-  border:1.084px solid #ffd1b2;
-  border-radius:12px;
-  background:#fff6ef;
-  display:flex; align-items:center; justify-content:center;
+  height:79px;
+  display:flex; align-items:center;
+  gap:24px;
+  padding:0 10px 0 0;
+  border:0;
+  border-radius:0;
+  background:linear-gradient(90deg, #e2e2e2 1.8%, rgba(255,255,255,0) 100%);
+  cursor:pointer;
+  text-align:left;
+  transition:background .25s ease;
+}
+.cs-chip-bar{
+  width:5px; height:52px;
+  flex:none;
+  background:#e3e3e2;
+  transition:height .25s ease, background .25s ease;
+}
+.cs-chip-label{
   font-family:var(--body);
+  font-weight:400;
   font-size:19.519px;
   line-height:40.664px;
   color:#000;
   white-space:nowrap;
-  cursor:pointer;
-  user-select:none;
-  /* same treatment as the blog page filter chips */
-  transition:background .2s ease, border-color .2s ease;
+  transition:font-size .25s ease;
 }
+.cs-chip:hover{ background:linear-gradient(90deg, #ededed 1.8%, rgba(255,255,255,0) 100%); }
+.cs-chip:hover .cs-chip-bar{ height:66px; }
+
 .cs-chip.cs-chip-active{
-  background:#f97316;
-  border-color:#f97316;
-  font-family:var(--ui);
-  color:#fff;
+  background:linear-gradient(90deg, #ffd3b3 1.8%, rgba(255,255,255,0) 100%);
 }
+.cs-chip.cs-chip-active .cs-chip-bar{ height:79px; background:#ff9c38; }
+.cs-chip.cs-chip-active .cs-chip-label{ font-size:22px; }
 
 /* ===================== CASE STUDY CARDS ===================== */
 .cs-card{
   position:absolute;
-  top:1181px;
-  width:701px; height:830px;
+  width:511.6222px; height:438px;
   background:var(--peach);
-  border-radius:24px;
-  padding:32px;
+  border-radius:17.4832px;
+  padding:23.311px;
   display:flex; flex-direction:column; align-items:center; justify-content:space-between;
   text-decoration:none;
   color:inherit;
@@ -81,8 +110,10 @@
 }
 .cs-card-hidden{ display:none; }
 
-.cs-slot-1{ left:240px; }
-.cs-slot-2{ left:979px; }
+.cs-slot-1{ left:632px;     top:1720px; }
+.cs-slot-2{ left:1168.69px; top:1720px; }
+.cs-slot-3{ left:632px;     top:2183px; }
+.cs-slot-4{ left:1168.69px; top:2183px; }
 
 /* card enters on filter / page change */
 @keyframes cs-card-in{
@@ -90,33 +121,43 @@
   to  { opacity:1; transform:none; }
 }
 .cs-card-enter{ animation:cs-card-in .5s cubic-bezier(.16,1,.3,1) both; }
-.cs-slot-2.cs-card-enter{ animation-delay:.09s; }
+.cs-slot-2.cs-card-enter{ animation-delay:.07s; }
+.cs-slot-3.cs-card-enter{ animation-delay:.14s; }
+.cs-slot-4.cs-card-enter{ animation-delay:.21s; }
 
 .cs-card-img{
-  width:637px; height:379px;
-  border-radius:19.989px;
+  width:464px; height:150px;
+  border-radius:14.5607px;
   overflow:hidden;
   flex:none;
   background:#fff;
 }
 .cs-card-img img{
-  width:637px; height:379px;
+  width:100%; height:100%;
   object-fit:cover;
   transition:transform .55s cubic-bezier(.16,1,.3,1);
 }
 .cs-card:hover .cs-card-img img{ transform:scale(1.045); }
 
 .cs-card-body{
-  width:637px; height:342px;
-  display:flex; flex-direction:column; justify-content:center; gap:32px;
+  width:465px; height:224px;
+  display:flex; flex-direction:column; justify-content:center; gap:16px;
 }
-.cs-logo{ width:213px; height:64px; object-fit:contain; object-position:left center; }
+.cs-logo-wrap{
+  width:123px; height:46px;
+  flex:none;
+  padding:7.285px 0;
+  display:flex; align-items:center;
+}
+.cs-logo{ width:100%; height:100%; object-fit:contain; object-position:left center; }
+
+.cs-card-copy{ display:flex; flex-direction:column; gap:12px; }
 
 .cs-title{
-  width:603px;
+  width:439.269px;
   font-family:var(--body);
   font-weight:500;
-  font-size:34px;
+  font-size:24px;
   line-height:normal;
   color:#000;
   transition:color .25s ease;
@@ -124,24 +165,35 @@
 .cs-card:hover .cs-title{ color:#f97316; }
 
 .cs-sub{
-  width:603px;
-  font-size:24px;
+  width:439.269px;
+  font-size:14px;
   line-height:normal;
   color:#000;
 }
 
-.cs-card-body .btn{
+.cs-card-btn{
   position:relative;
-  width:264px; height:58px;
+  width:192.3607px; height:42.2511px;
   flex:none;
+  gap:5.8277px;
+  padding:8.7416px 17.4832px;
+  border-radius:10px;
+  font-family:var(--ui);
+  font-weight:500;
+  font-size:10.61px;
+  letter-spacing:-.2016px;
+  filter:drop-shadow(0 0 .7278px rgba(128,115,115,.23));
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 192.36 42.251' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -8.0182 13.188 0 96.182 51.374)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
 }
-.cs-card-body .btn .arrow img{ transition:transform .3s cubic-bezier(.16,1,.3,1); }
-.cs-card:hover .btn .arrow img{ transform:translate(-50%,-50%) translateX(3px); }
+.cs-card-btn .arrow{ width:14.5693px; height:14.5693px; }
+.cs-card-btn .arrow img{ width:9.1058px; height:9.1058px; }
+.cs-card-btn .arrow img{ transition:transform .3s cubic-bezier(.16,1,.3,1); }
+.cs-card:hover .cs-card-btn .arrow img{ transform:translate(-50%,-50%) translateX(3px); }
 
 /* ===================== PAGINATION ===================== */
 .pager{
   position:absolute;
-  left:828px; top:2103px;
+  left:827.5px; top:2676px;
   width:265px; height:46.1091px;
   display:flex; align-items:center; justify-content:center; gap:5.7636px;
 }
@@ -151,6 +203,8 @@
 }
 .pager-nav{
   width:51.8727px; height:46.1091px;
+  border:0;
+  background:none;
   border-radius:34.582px;
   display:flex; align-items:center; justify-content:center;
   cursor:pointer;
@@ -162,8 +216,11 @@
 .pager-nav img{ width:23.0545px; height:23.0545px; }
 .pager-num{
   width:46.1091px; height:46.1091px;
+  border:0;
+  background:none;
   border-radius:34.582px;
   display:flex; align-items:center; justify-content:center;
+  font-family:var(--body);
   font-size:20.1727px;
   line-height:28.818px;
   color:#18181b;
@@ -174,19 +231,21 @@
 .pager-num.active{ background:#f97316; color:#fff; transform:scale(1.08); }
 
 /* ===================== CTA ===================== */
-.cta{ top:2256px; }
+.cta{ left:240px; top:2823px; width:1440px; height:384px; }
+.cta-bg{ width:1440px; height:384px; }
 .cta-text{
-  left:95px; top:104px;
-  width:1196px;
-  height:136px;
+  left:204px; top:74px;
+  width:1032px; height:136px;
+  font-size:54px;
+  line-height:68px;
 }
 .cta-btn{
-  left:607px; top:301px;
+  left:605.68px; top:234px;
   width:228.6363px; height:73px;
 }
 
 /* ===================== FOOTER ===================== */
-.footer{ top:2788px; }
+.footer{ top:3326px; }
 
 /* ===================== ON-LOAD REVEAL ===================== */
 @keyframes cs-rise{

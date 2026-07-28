@@ -1,23 +1,24 @@
 /* =========================================================================
    Vahan — Careers Page
-   Figma: SkZlY6SRTTisFlKok443kh  ·  node 36:569  ·  1920 × 8068
+   Figma: JmFGyR5BxquecSttAjGEsh  ·  node 2115:8088  ·  1920 × 8885
 
    Loads on top of styles.css: nav, buttons, glows, header art, CTA card and
    footer are the shared site pieces; everything below re-positions them at
    their careers-page coordinates or adds the sections unique to this page.
    ========================================================================= */
 
-.page{ height:8068px; }
+.page{ height:8885px; }
 
 /* ===================== HERO ===================== */
+.hero-title{ top:305px; }
 .hero-sub{
-  left:607px;
+  left:607px; top:543px;
   width:706px;
 }
 
 /* Button — Figma gradient geometry for the 236.64 × 58 instance */
 .roles-cta{
-  left:842px; top:605px;
+  left:842px; top:651px;
   width:236.6364px; height:58px;
   gap:8.909px;
   padding:13.3636px 26.7273px;
@@ -29,8 +30,6 @@
 }
 .roles-cta .arrow{ width:22.273px; height:22.273px; }
 .roles-cta .arrow img{ width:13.92px; height:13.92px; }
-
-.logo-strip{ top:822px; }
 
 /* ===================== shared section headings ===================== */
 .careers-h2{
@@ -56,69 +55,75 @@
 }
 
 /* ===================== OPEN ROLES ===================== */
-.roles-title{ left:504px; top:1072px; width:913px; }
+.roles-title{ left:504px; top:972px; width:913px; }
 
-.role-chips{
+/* --- filter dropdowns (Department / Role Type / Location) --- */
+.role-filters{
   position:absolute;
-  left:243px; top:1208px;
-  display:flex; align-items:center; gap:12px;
+  left:537px; top:1111px;
+  height:54.5547px;
+  display:flex; align-items:center; gap:40px;
 }
-.role-chip{
-  padding:6.777px 23.721px;
-  border:1.084px solid #ffd1b2;
-  border-radius:12px;
-  background:#fff6ef;
+.role-select{
+  position:relative;
+  height:54.5547px;
   display:flex; align-items:center; justify-content:center;
-  font-size:19.519px;
-  line-height:40.664px;
-  color:#000;
-  white-space:nowrap;
-  cursor:pointer;
-  transition:background .2s ease, border-color .2s ease, color .2s ease;
-}
-.role-chip:not(.role-chip-active):hover{ background:#ffe3cd; }
-.role-chip-active{
-  background:var(--orange);
-  border-color:#ffd1b2;
-  color:#fff;
-}
-
-/* search bar — fixed size, no expansion on focus */
-.role-search{
-  position:absolute;
-  right:240px; top:1208px;
-  width:312px; height:54.5547px;
   padding:6.777px 23.721px;
   border:1.084px solid #ffd1b2;
   border-radius:12px;
   background:#fff6ef;
-  display:flex; align-items:center; gap:11px;
-  cursor:text;
-  transition:border-color .2s ease;
-  box-sizing:border-box;
+  cursor:pointer;
+  transition:border-color .2s ease, background .2s ease;
 }
-.role-search:focus-within{
-  border-color:var(--orange);
-}
-.role-search img{ flex:none; width:18px; height:18px; }
-.role-search input{
-  flex:1;
-  min-width:0;
-  border:none;
+.role-select-dept{ width:272px; }
+.role-select-type{ width:240px; }
+.role-select-loc { width:224px; }
+
+.role-select:hover{ border-color:var(--orange); }
+.role-select:focus-within{ border-color:var(--orange); }
+
+.role-select select{
+  width:100%;
+  border:0;
   outline:none;
   background:transparent;
-  padding:0;
+  padding-right:28.94px;      /* room for the caret: 16.943 gap + 12 icon */
   font-family:var(--body);
+  font-weight:400;
   font-size:19.519px;
   line-height:40.664px;
   color:#000;
+  text-align:center;
+  text-align-last:center;
+  cursor:pointer;
+  appearance:none;
+  -webkit-appearance:none;
 }
-.role-search input::placeholder{ color:#000; }
+.role-select select.is-set{ font-weight:600; color:var(--orange); }
+.role-select-caret{
+  position:absolute;
+  right:23.721px;
+  width:12px; height:6.84px;
+  pointer-events:none;
+  transition:transform .2s ease;
+}
+.role-select:hover .role-select-caret{ transform:translateY(1px); }
+
+.role-empty{
+  position:absolute;
+  left:242px; top:1235px;
+  width:1438px;
+  font-size:20px;
+  line-height:1.5;
+  text-align:center;
+  color:rgba(43,24,10,.6);
+}
+.role-empty[hidden]{ display:none; }
 
 /* --- role groups --- */
 .jobs{
   position:absolute;
-  left:242px; top:1298.5547px;
+  left:242px; top:1235px;
   width:1438px;
   display:flex; flex-direction:column; gap:36px;
 }
@@ -184,11 +189,11 @@
 .job-apply:hover{ background:#e2620d; transform:translateY(-2px); }
 
 /* ===================== A PLACE TO LEARN, GROW ===================== */
-.learn-title{ top:3365px; }
+.learn-title{ top:3283px; }
 
 .learn-card{
   position:absolute;
-  top:3531.3101px;
+  top:3449.3101px;
   height:539.3802px;
   background:#fff;
   border-radius:12px;
@@ -237,9 +242,80 @@
   color:rgba(43,24,10,.7);
 }
 
+/* ===================== LIFE AT VAHAN ===================== */
+.life-title{ top:4102px; }
+.life-sub  { top:4200px; }
+
+/* Three panels on a 1438 stage: the centre one is larger;
+   the flankers are clipped by .life-carousel's overflow:hidden. */
+.life-carousel{
+  position:absolute;
+  left:242px; top:4241px;
+  width:1438px; height:628px;
+  overflow:hidden;
+}
+.life-track{
+  position:absolute;
+  left:-259px; top:42px;
+  width:1956px; height:539px;
+}
+.life-slide{
+  position:absolute;
+  padding:16.66px;
+  border-radius:12px;
+  background:#fff;
+  filter:drop-shadow(0 0 4.686px rgba(249,115,22,.5));
+  cursor:pointer;
+  transition:left .5s cubic-bezier(.16,1,.3,1), top .5s cubic-bezier(.16,1,.3,1),
+             width .5s cubic-bezier(.16,1,.3,1), height .5s cubic-bezier(.16,1,.3,1);
+}
+.life-slide-prev  { left:0px;    top:37px; width:592px; height:465px; }
+.life-slide-active{ left:634px;  top:0;    width:688px; height:539px; }
+.life-slide-next  { left:1364px; top:37px; width:592px; height:465px; }
+
+.life-media{
+  position:relative;
+  width:100%; height:100%;
+  border-radius:12px;
+  overflow:hidden;
+  background:var(--peach);
+}
+.life-media > img:first-child{
+  width:100%; height:100%;
+  object-fit:cover;
+  transition:transform .55s cubic-bezier(.16,1,.3,1);
+}
+.life-slide:hover .life-media > img:first-child{ transform:scale(1.04); }
+
+.life-play{
+  position:absolute;
+  left:50%; top:50%;
+  transform:translate(-50%,-50%);
+  width:152px; height:152px;
+  transition:transform .3s cubic-bezier(.34,1.56,.64,1);
+}
+.life-slide:hover .life-play{ transform:translate(-50%,-50%) scale(1.08); }
+
+.life-dots{
+  position:absolute;
+  left:902px; top:4894px;
+  height:10.69px;
+  display:flex; align-items:center; gap:12px;
+}
+.life-dot{
+  width:10.69px; height:10.69px;
+  border-radius:132px;
+  background:var(--orange);
+  opacity:.35;
+  cursor:pointer;
+  transition:width .35s ease, opacity .35s ease;
+}
+.life-dot:hover{ opacity:.6; }
+.life-dot.active{ width:88.22px; opacity:1; }
+
 /* ===================== OUR VALUES ===================== */
-.values-title{ top:4202px; }
-.values-sub{ top:4301px; }
+.values-title{ top:5041px; }
+.values-sub{ top:5139px; }
 
 /* no hover animation here, by design */
 .value-card{
@@ -282,17 +358,17 @@
 /* ===================== BACKED BY THE BEST ===================== */
 .backers-band{
   position:absolute;
-  left:0; top:5287px;
+  left:0; top:6104px;
   width:1920px; height:560px;
   background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 1920 560' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)' opacity='0.52'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -138.15 171.11 0 960 969.73)'><stop stop-color='rgb(255,164,97)' offset='0'/><stop stop-color='rgb(255,187,136)' offset='0.25'/><stop stop-color='rgb(255,210,176)' offset='0.5'/><stop stop-color='rgb(255,232,215)' offset='0.75'/><stop stop-color='rgb(255,255,255)' offset='1'/></radialGradient></defs></svg>");
   background-size:100% 100%;
 }
-.backers-title{ top:5379px; }
+.backers-title{ top:6196px; }
 .backer{ position:absolute; }
 
 /* ===================== PERKS & BENEFITS ===================== */
-.perks-title{ top:5948px; }
-.perks-sub{ left:471px; top:6047px; }
+.perks-title{ top:6765px; }
+.perks-sub{ left:471px; top:6863px; }
 
 .perk-card{
   position:absolute;
@@ -336,7 +412,7 @@
 }
 
 /* ===================== CTA ===================== */
-.cta{ top:6919px; }
+.cta{ top:7736px; }
 .cta-text{
   left:74.5px; top:84px;
   width:1291px;
@@ -356,4 +432,4 @@
 .cta-btn-alt{ left:753.1364px; width:292.6364px; }
 
 /* ===================== FOOTER ===================== */
-.footer{ top:7468px; }
+.footer{ top:8285px; }

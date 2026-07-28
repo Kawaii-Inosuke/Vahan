@@ -1,0 +1,645 @@
+/* =========================================================================
+   Vahan — Job Seekers
+   Figma: JmFGyR5BxquecSttAjGEsh  ·  node 1933:630  ·  1920 × 6812
+
+   Loads on top of styles.css: nav, buttons, hero form, CTA card and footer are
+   the shared site pieces; everything below re-positions them at their
+   job-seekers coordinates or adds the sections unique to this page.
+   ========================================================================= */
+
+.page{ height:6812px; }
+
+/* ===================== HERO ===================== */
+/* Figma sets this headline at 76px on 99px leading (the shared hero is 86px),
+   in a 903 box centred on x=960.5. Season Mix isn't a webfont, so the Georgia
+   fallback runs wider — the box is widened about the same centre so the <br>
+   break holds at 2 lines. */
+.hero-title{
+  left:460.5px; top:189px;
+  width:1000px; height:198px;
+  font-size:76px;
+  line-height:99px;
+}
+.js-salary{
+  position:absolute;
+  left:730px; top:427px;
+  width:460px; height:42px;
+  font-weight:600;
+  font-size:24px;
+  line-height:42px;
+  letter-spacing:-.264px;
+  text-align:center;
+  color:var(--brown);
+}
+
+/* ---- three-step strip ---- */
+.js-step{
+  position:absolute;
+  top:533px;
+  width:391px; height:108px;
+  border-radius:12px;
+  background:rgba(249,118,25,.2);
+}
+.js-step-num{
+  position:absolute;
+  left:36px; top:30px;
+  width:48px; height:48px;
+  border-radius:99px;
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--body);
+  font-weight:600;
+  font-size:22px;
+  line-height:1.5;
+  color:#fff;
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -9.1091 3.2908 0 24 58.364)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
+  background-size:100% 100%;
+}
+.js-step-text{
+  position:absolute;
+  left:100px; top:26px;
+  display:flex; flex-direction:column;
+  color:#000;
+}
+.js-step-text b{ font-weight:400; font-size:22px; line-height:1.5; }
+.js-step-text span{ font-size:16px; line-height:1.5; }
+
+/* the hero field / CTA and note already sit at 676 / 977 / 553 once nudged */
+.hero-field{ left:676px; top:714px; }
+.hero-cta{
+  left:977px; top:714px;
+  width:266.6364px;
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 266.64 58' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -11.007 18.28 0 133.32 70.523)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
+}
+.hero-note{ top:808px; }
+
+/* ===================== TOP COMPANIES ===================== */
+.brands-band{
+  position:absolute;
+  left:0; top:978px;
+  width:1920px; height:402px;
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 1920 402' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)' opacity='0.55'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -99.15 171.11 0 960 696.15)'><stop stop-color='rgb(255,164,97)' offset='0'/><stop stop-color='rgb(255,187,136)' offset='0.25'/><stop stop-color='rgb(255,210,176)' offset='0.5'/><stop stop-color='rgb(255,232,215)' offset='0.75'/><stop stop-color='rgb(255,255,255)' offset='1'/></radialGradient></defs></svg>");
+  background-size:100% 100%;
+}
+.brands-title{
+  position:absolute;
+  left:504px; top:1062px;
+  width:913px; height:70px;
+  font-family:var(--display);
+  font-weight:500;
+  font-size:56px;
+  line-height:70px;
+  text-align:center;
+  color:var(--brown);
+}
+.brand-row{
+  position:absolute;
+  left:345px; top:1168px;
+  width:1231px; height:114px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.brand-tile{
+  width:114px; height:114px;
+  flex:none;
+  border-radius:16px;
+  transition:transform .25s cubic-bezier(.16,1,.3,1);
+}
+.brand-tile:hover{ transform:translateY(-4px) scale(1.04); }
+
+/* ===================== VERIFIED JOBS ===================== */
+.js-jobs-title{
+  position:absolute;
+  left:504px; top:1488px;
+  width:913px; height:70px;
+  font-family:var(--display);
+  font-weight:500;
+  font-size:56px;
+  line-height:70px;
+  text-align:center;
+  color:var(--brown);
+}
+
+.job-card{
+  position:absolute;
+  top:1622px;
+  width:461px; height:306px;
+  padding:24px;
+  border-radius:12px;
+  background:#fff;
+  filter:drop-shadow(0 4px 3px rgba(0,0,0,.1)) drop-shadow(0 2px 2px rgba(0,0,0,.1));
+  display:flex; flex-direction:column; align-items:flex-start; justify-content:space-between;
+  transition:transform .3s cubic-bezier(.16,1,.3,1);
+}
+.job-card:hover{ transform:translateY(-4px); }
+
+.job-head{
+  width:100%;
+  display:flex; align-items:center; gap:8px;
+}
+.job-head-text{ flex:1 1 auto; min-width:0; }
+.job-title{
+  font-family:var(--body);
+  font-weight:600;
+  font-size:20px;
+  line-height:24px;
+  color:#101828;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.job-company{
+  margin-top:8px;
+  font-size:14px;
+  line-height:20px;
+  color:#4a5565;
+}
+.job-logo{
+  width:51px; height:51px;
+  flex:none;
+  border-radius:10.2px;
+  background:#f3f4f6;
+  overflow:hidden;
+}
+.job-logo img{ width:100%; height:100%; object-fit:contain; }
+
+.job-row{
+  width:100%;
+  display:flex; align-items:center; gap:8px;
+  font-size:16px;
+  line-height:20px;
+  color:#4a5565;
+}
+.job-icon{ width:16px; height:16px; flex:none; }
+
+/* Figma wraps the hairline in a container with 8 px of vertical padding, so
+   `justify-content:space-between` lands the six rows on the design's rhythm */
+.job-rule{
+  width:100%; height:17px;
+  display:flex; flex-direction:column; justify-content:center;
+}
+.job-rule::before{
+  content:"";
+  display:block;
+  width:100%; height:1px;
+  background:#e5e7eb;
+}
+
+.job-perks{
+  width:100%;
+  font-size:14px;
+  line-height:20px;
+  color:#4a5565;
+}
+
+.job-foot{
+  width:100%; height:36px;
+  display:flex; align-items:center; justify-content:flex-end; gap:8px;
+}
+.job-more{
+  font-family:var(--body);
+  font-weight:500;
+  font-size:12.883px;
+  line-height:normal;
+  color:#f97619;
+  text-decoration:underline;
+  text-underline-position:from-font;
+  transition:color .2s ease;
+}
+.job-more:hover{ color:#c25a0f; }
+
+.job-apply{
+  width:124.2px;
+  display:flex; align-items:center; justify-content:center;
+  gap:7.157px;
+  padding:7.157px;
+  border-radius:70.856px;
+  background:rgba(249,118,25,.19);
+  font-family:var(--body);
+  font-weight:500;
+  font-size:12.883px;
+  line-height:normal;
+  color:var(--brown);
+  text-decoration:none;
+  white-space:nowrap;
+  transition:background .2s ease, transform .2s ease;
+}
+.job-apply:hover{ background:rgba(249,118,25,.3); transform:translateY(-1px); }
+.job-apply img{ width:18px; height:18px; flex:none; }
+
+/* ===================== REFERRAL BANNER ===================== */
+.js-refer{
+  position:absolute;
+  left:240px; top:2020px;
+  width:1440px; height:267px;
+  border-radius:18px;
+  overflow:hidden;
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 1440 267' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -50.669 98.723 0 720 324.65)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
+  background-size:100% 100%;
+}
+/* The export is already cropped to the banner window (324 × 267) — the -92
+   offset Figma reports belongs to the artwork *inside* that frame, so it must
+   not be applied again here or the figure rides up out of the banner. */
+.js-refer-img{
+  position:absolute;
+  left:17px; bottom:0;
+  width:324px; height:267px;
+  pointer-events:none;
+}
+.js-refer-title{
+  position:absolute;
+  left:388px; top:75px;
+  width:638px; height:68px;
+  font-family:var(--display);
+  font-weight:500;
+  font-size:44px;
+  line-height:68px;
+  color:#fff;
+}
+.js-refer-sub{
+  position:absolute;
+  left:388px; top:148px;
+  width:711px; height:27px;
+  font-size:18px;
+  line-height:27px;
+  color:rgba(255,255,255,.9);
+}
+.js-refer-btn{
+  position:absolute;
+  left:1164px; top:103.4px;
+  width:207px; height:60.2px;
+  border-radius:10px;
+  background:#fff;
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--body);
+  font-weight:600;
+  font-size:20px;
+  letter-spacing:-.38px;
+  color:var(--brown);
+  text-decoration:none;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.js-refer-btn:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,0,0,.16); }
+
+/* ===================== ALERT ME FOR A JOB ===================== */
+.js-alert-band{
+  position:absolute;
+  left:0; top:2394px;
+  width:1920px; height:594px;
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 1920 594' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)' opacity='0.4'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -146.53 171.11 0 960 1028.6)'><stop stop-color='rgb(255,164,97)' offset='0'/><stop stop-color='rgb(255,187,136)' offset='0.25'/><stop stop-color='rgb(255,210,176)' offset='0.5'/><stop stop-color='rgb(255,232,215)' offset='0.75'/><stop stop-color='rgb(255,255,255)' offset='1'/></radialGradient></defs></svg>");
+  background-size:100% 100%;
+}
+.js-alert-title{
+  position:absolute;
+  left:244px; top:2556px;
+  width:745px; height:70px;
+  display:flex; flex-direction:column; justify-content:center;
+  font-family:var(--display);
+  font-weight:500;
+  font-size:56px;
+  line-height:70px;
+  color:var(--brown);
+}
+.js-alert-sub{
+  position:absolute;
+  left:240px; top:2654px;
+  width:511px; height:36px;
+  font-size:24px;
+  line-height:1.5;
+  letter-spacing:-.456px;
+  color:#000;
+}
+
+.js-field{
+  position:absolute;
+  top:2742px;
+  height:68.8096px;
+  background:#fff;
+  border-radius:14.236px;
+  overflow:hidden;
+  display:flex; align-items:center;
+  transition:box-shadow .25s ease;
+}
+.js-field:focus-within{ box-shadow:0 0 0 2px rgba(249,115,22,.45); }
+.js-field-area { left:240px;      width:173.7672px; }
+.js-field-phone{ left:433.9142px; width:272.8228px; }
+
+.js-field input{
+  width:100%; height:100%;
+  border:none; outline:none;
+  background:transparent;
+  padding:0 12px;
+  font-family:var(--ui);
+  font-size:21.355px;
+  line-height:normal;
+  letter-spacing:-.8542px;
+  text-align:center;
+  color:#000;
+}
+.js-field input::placeholder{ color:#b8b8b8; }
+
+.js-submit{
+  left:727px; top:2742px;
+  width:144px; height:69px;
+  gap:10.5697px;
+  padding:15.854px 20px;
+  border-radius:14.236px;
+  font-size:24px;
+  letter-spacing:-.456px;
+  filter:drop-shadow(0 0 1.321px rgba(128,115,115,.23));
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 144 69' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -13.094 9.8723 0 72 83.898)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
+}
+
+.js-map{
+  position:absolute;
+  left:1085px; top:2449px;
+  width:595px; height:484px;
+  border-radius:36px;
+  object-fit:cover;
+  pointer-events:none;
+}
+
+/* ===================== WHY RIDERS CHOOSE US ===================== */
+.js-why-title{
+  position:absolute;
+  left:504px; top:3076px;
+  width:913px; height:70px;
+  font-family:var(--display);
+  font-weight:500;
+  font-size:56px;
+  line-height:70px;
+  text-align:center;
+  color:var(--brown);
+}
+
+.why-card{
+  position:absolute;
+  top:3194px;
+  width:347px; height:365px;
+  padding:36px;
+  border-radius:24px;
+  box-shadow:0 0 2.5px 0 rgba(43,24,10,.18);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:48px;
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 347 365' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)' opacity='0.18'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -100.11 95.174 0 173.5 919.1)'><stop stop-color='rgba(249,118,25,0.72)' offset='0'/><stop stop-color='rgba(250,135,54,0.755)' offset='0.125'/><stop stop-color='rgba(251,152,83,0.79)' offset='0.25'/><stop stop-color='rgba(252,187,140,0.86)' offset='0.5'/><stop stop-color='rgba(254,221,198,0.93)' offset='0.75'/><stop stop-color='rgba(255,255,255,1)' offset='1'/></radialGradient></defs></svg>");
+  background-size:100% 100%;
+  transition:transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s cubic-bezier(.16,1,.3,1);
+}
+.why-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 10px 26px rgba(249,118,25,.22);
+}
+.why-icon{
+  flex:none;
+  width:110px; height:110px;
+  border-radius:19.946px;
+  background:rgba(249,118,25,.2);
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden;
+}
+.why-icon img{ width:64px; height:64px; }
+
+.why-text{
+  width:285px;
+  display:flex; flex-direction:column; align-items:center; gap:16px;
+  text-align:center;
+}
+.why-name{
+  width:100%;
+  font-family:var(--display);
+  font-weight:500;
+  font-size:24px;
+  line-height:30px;
+  color:var(--brown);
+}
+.why-desc{
+  width:100%;
+  font-size:20px;
+  line-height:28px;
+  color:rgba(43,24,10,.7);
+}
+
+/* ===================== TESTIMONIALS ===================== */
+.riders-band{
+  position:absolute;
+  left:0; top:3648px;
+  width:1920px; height:844px;
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 1920 844' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)' opacity='0.52'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -208.21 171.11 0 960 1461.5)'><stop stop-color='rgb(255,164,97)' offset='0'/><stop stop-color='rgb(255,187,136)' offset='0.25'/><stop stop-color='rgb(255,210,176)' offset='0.5'/><stop stop-color='rgb(255,232,215)' offset='0.75'/><stop stop-color='rgb(255,255,255)' offset='1'/></radialGradient></defs></svg>");
+  background-size:100% 100%;
+}
+.js-riders-title{
+  position:absolute;
+  left:504px; top:3763px;
+  width:913px; height:70px;
+  font-family:var(--display);
+  font-weight:500;
+  font-size:56px;
+  line-height:70px;
+  text-align:center;
+  color:var(--brown);
+}
+
+/* min-height, not height: Season Mix / Open Sans fall back to wider metrics
+   than Figma measures, so a fixed 417 clipped the last line of the longer
+   quotes. The card grows instead; the dots sit 48 px below it. */
+.rider-card{
+  position:absolute;
+  top:3881px;
+  width:456px; min-height:417px;
+  padding:51px 42px;
+  border-radius:24px;
+  background:rgba(255,255,255,.7);
+  display:flex; flex-direction:column; align-items:flex-start;
+}
+.rider-card-hidden{ display:none; }
+.rider-slot-1{ left:240px;  }
+.rider-slot-2{ left:732px;  }
+.rider-slot-3{ left:1224px; }
+
+@keyframes rider-in{
+  from{ opacity:0; transform:translateY(20px); }
+  to  { opacity:1; transform:none; }
+}
+.rider-enter{ animation:rider-in .45s cubic-bezier(.16,1,.3,1) both; }
+.rider-slot-2.rider-enter{ animation-delay:.08s; }
+.rider-slot-3.rider-enter{ animation-delay:.16s; }
+
+.rider-quote{
+  width:46px; height:46px;
+  flex:none;
+  transform:rotate(180deg);
+}
+/* Figma spacing: 34 px after the quote mark, 8 px before the byline */
+.rider-text{
+  width:372px;
+  flex:1 1 auto;
+  margin-top:34px;
+  font-family:var(--body);
+  font-size:24px;
+  line-height:1.35;
+  color:#000;
+}
+.rider-who{
+  width:372px;
+  margin-top:8px;
+  display:flex; align-items:center; gap:12px;
+}
+.rider-avatar{
+  width:55px; height:55px;
+  flex:none;
+  border-radius:99px;
+  object-fit:cover;
+}
+.rider-meta{ display:flex; flex-direction:column; gap:4px; }
+.rider-name{
+  font-weight:600;
+  font-size:18px;
+  line-height:24px;
+  letter-spacing:.08px;
+  color:#2d2e2e;
+}
+.rider-place{
+  font-size:14px;
+  line-height:20px;
+  letter-spacing:.07px;
+  color:#2d2e2e;
+}
+
+.rider-dots{
+  position:absolute;
+  left:893px; top:4346px;
+  height:10.69px;
+  display:flex; align-items:center; gap:12px;
+}
+.rider-dot{
+  width:10.69px; height:10.69px;
+  border:0;
+  border-radius:132px;
+  background:var(--orange);
+  opacity:.35;
+  cursor:pointer;
+  padding:0;
+  transition:width .35s ease, opacity .35s ease;
+}
+.rider-dot:hover{ opacity:.6; }
+.rider-dot.active{ width:88.22px; opacity:1; }
+
+/* ===================== FAQ ===================== */
+.js-faq-title{
+  position:absolute;
+  left:615px; top:4625px;
+  width:690px; height:69px;
+  font-family:var(--display);
+  font-weight:500;
+  font-size:56px;
+  line-height:69px;
+  text-align:center;
+  color:var(--brown);
+}
+
+.faq{
+  position:absolute;
+  left:393px; top:4757px;
+  width:1104px;
+  display:flex; flex-direction:column; gap:26px;
+}
+.faq-item{
+  width:1104px;
+  padding:34.99px;
+  border-radius:11.663px;
+  background:#fff;
+  overflow:hidden;
+}
+.faq-q{
+  width:100%;
+  border:0;
+  background:none;
+  padding:0;
+  display:flex; align-items:center; gap:29.158px;
+  cursor:pointer;
+  text-align:left;
+}
+.faq-q > span:first-child{
+  flex:1 1 auto;
+  min-width:0;
+  font-family:var(--body);
+  font-weight:600;
+  font-size:24px;
+  line-height:normal;
+  letter-spacing:-.264px;
+  color:rgba(0,0,0,.8);
+}
+/* a plus that loses its vertical stroke when the item opens */
+.faq-icon{
+  position:relative;
+  width:34.99px; height:34.99px;
+  flex:none;
+}
+.faq-icon::before,
+.faq-icon::after{
+  content:"";
+  position:absolute;
+  left:50%; top:50%;
+  background:var(--brown);
+  border-radius:144px;
+  transform:translate(-50%,-50%);
+  transition:opacity .25s ease, transform .25s ease;
+}
+.faq-icon::before{ width:27.701px; height:2.916px; }
+.faq-icon::after { width:2.916px; height:27.701px; }
+.faq-open .faq-icon::after{ opacity:0; transform:translate(-50%,-50%) rotate(90deg); }
+
+.faq-a{
+  max-height:0;
+  opacity:0;
+  overflow:hidden;
+  transition:max-height .35s ease, opacity .35s ease, margin-top .35s ease;
+}
+.faq-open .faq-a{
+  max-height:200px;
+  opacity:1;
+  margin-top:45.196px;
+}
+.faq-a p{
+  width:934px;
+  font-size:24px;
+  line-height:normal;
+  letter-spacing:-.264px;
+  color:rgba(0,0,0,.8);
+}
+
+/* ===================== CTA ===================== */
+.cta{ left:240px; top:5631px; width:1440px; height:384px; }
+.cta-bg{ width:1440px; height:384px; }
+.cta-text{
+  left:267px; top:111px;
+  width:907px; height:68px;
+  font-size:54px;
+  line-height:68px;
+}
+.cta-form{
+  position:absolute;
+  left:455px; top:215px;
+  width:529.6364px; height:58px;
+  display:flex; align-items:center;
+}
+.cta-form .hero-field{
+  position:relative;
+  left:auto; top:auto;
+  width:325px; height:58px;
+  flex:none;
+}
+.cta-form-btn{
+  position:relative;
+  margin-left:13px;
+  width:191.6364px; height:58px;
+  gap:8.909px;
+  padding:13.364px 26.727px;
+  border-radius:12px;
+  font-size:22.27px;
+  letter-spacing:-.4231px;
+  filter:drop-shadow(0 0 1.114px rgba(128,115,115,.23));
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 191.64 58' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -11.007 13.136 0 95.818 70.523)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
+}
+.cta-form-btn .arrow{ width:22.273px; height:22.273px; }
+.cta-form-btn .arrow img{ width:13.92px; height:13.92px; }
+
+/* ===================== FOOTER ===================== */
+.footer{ top:6212px; }

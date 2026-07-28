@@ -305,10 +305,47 @@ ul{ list-style:none; }
   color:#000;
 }
 
-.logo-strip{
-  position:absolute;
-  left:361px; top:854px;
-  width:1200px; height:92px;
+/* ===================== LOGO STRIP MARQUEE ===================== */
+@keyframes logo-scroll {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.logo-strip {
+  position: absolute;
+  left: 361px; top: 854px;
+  width: 1200px;
+  height: 92px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  /* subtle fade-out on edges matching original SVG bleed */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+}
+
+.logo-strip-track {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  white-space: nowrap;
+  animation: logo-scroll 20s linear infinite;
+  will-change: transform;
+}
+
+.logo-strip-track img {
+  height: 26px;
+  width: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+  filter: sepia(1) saturate(0.5) brightness(0.7);
+  opacity: 0.85;
+  transition: opacity 0.3s, filter 0.3s;
+}
+
+.logo-strip-track img:hover {
+  opacity: 1;
+  filter: none;
 }
 
 /* ===================== STATS ===================== */

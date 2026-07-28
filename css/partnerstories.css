@@ -1,25 +1,25 @@
 /* =========================================================================
    Vahan — Partner Stories
-   Figma: JmFGyR5BxquecSttAjGEsh  ·  node 1736:1506  ·  1920 × 3274
+   Figma: JmFGyR5BxquecSttAjGEsh  ·  node 2115:8778  ·  1920 × 3009
 
    Loads on top of styles.css: nav, buttons, glows, header art, CTA card and
    footer are the shared site pieces; everything below re-positions them at
    their partner-stories coordinates or adds the sections unique to this page.
    ========================================================================= */
 
-.page{ height:3326px; }
+.page{ height:3009px; }
 
 /* ===================== HERO ===================== */
 .hero-title{
-  left:554px; top:231px;
-  width:812px; height:auto;
-  font-size:75px;
-  line-height:84px;
+  left:394px; top:187px;
+  width:1133px; height:162px;
+  font-size:62px;
+  line-height:81px;
 }
 
 .ps-sub{
   position:absolute;
-  left:532px; top:511px;
+  left:532px; top:377px;
   width:857px; height:36px;
   font-size:24px;
   line-height:1.5;
@@ -28,81 +28,176 @@
   color:#000;
 }
 
-.ps-hero-cta{
-  left:849px; top:575px;
-  width:221.4545px; height:58px;
-  gap:8.909px;
-  padding:13.3636px 26.7273px;
-  border-radius:12px;
-  font-size:22.27px;
-  letter-spacing:-.4231px;
-  filter:drop-shadow(0 0 1.114px rgba(128,115,115,.23));
-}
-
-.logo-strip{ top:855px; }
-
-/* ===================== CATEGORY CHIPS ===================== */
-.ps-chips{
+/* ===================== FEATURED STORY ===================== */
+.ps-feature{
   position:absolute;
-  left:50%;
-  transform:translateX(-50%);
-  display:flex; align-items:center; gap:32px;
+  left:241px; top:486px;
+  width:1440px; height:399px;
+  padding:32px;
+  border-radius:16px;
+  background:var(--peach);
+  display:flex; align-items:center; gap:51px;
+  text-decoration:none;
+  color:inherit;
+  cursor:pointer;
+  transition:transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s cubic-bezier(.16,1,.3,1);
 }
-.ps-chips-row1{ top:992px; }
-.ps-chips-row2{ top:1069px; }
+.ps-feature:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 40px rgba(249,118,25,.18), 0 4px 14px rgba(0,0,0,.05);
+}
+.ps-feature-thumb{
+  position:relative;
+  width:751px; height:335px;
+  flex:none;
+  border-radius:14.194px;
+  overflow:hidden;
+  background:#000;
+}
+.ps-feature-thumb > img{
+  width:100%; height:100%;
+  object-fit:cover;
+  transition:transform .55s cubic-bezier(.16,1,.3,1);
+}
+.ps-feature:hover .ps-feature-thumb > img{ transform:scale(1.04); }
+
+.ps-feature-text{
+  width:574px; height:335px;
+  flex:none;
+  display:flex; flex-direction:column; justify-content:space-between;
+}
+.ps-feature-title{
+  height:165px;
+  display:flex; flex-direction:column; justify-content:center;
+  font-family:var(--display);
+  font-weight:400;
+  font-size:36px;
+  line-height:normal;
+  color:#000;
+  transition:color .25s ease;
+}
+.ps-feature:hover .ps-feature-title{ color:var(--orange); }
+.ps-feature-meta{
+  height:65px;
+  display:flex; align-items:flex-start; justify-content:space-between;
+  font-family:var(--body);
+  font-weight:300;
+  font-size:16px;
+  line-height:normal;
+  color:#000;
+}
+.ps-feature-views b{ font-weight:400; }
+.ps-feature-tags{ white-space:nowrap; }
+
+/* the Vahan chip that sits on every thumbnail */
+.ps-badge{
+  position:absolute;
+  right:13px; top:9px;
+  height:19px;
+  padding:0 8px;
+  border-radius:24px;
+  background:#fff;
+  display:flex; align-items:center; justify-content:center;
+}
+.ps-badge img{ height:11px; width:auto; }
+.ps-feature-thumb .ps-badge{ right:20px; top:14px; height:26px; padding:0 11px; }
+.ps-feature-thumb .ps-badge img{ height:15px; }
+
+/* ===================== INDUSTRY FILTERS ===================== */
+/* vertical rail down the left edge of the grid — Figma 240 / 952,
+   seven rows on a 117 px rhythm */
+.ps-filters{
+  position:absolute;
+  left:240px; top:952px;
+  width:318px;
+  display:flex; flex-direction:column;
+  gap:38px;
+}
 
 .ps-chip{
-  padding:6.777px 23.721px;
-  border:1.084px solid #ffd1b2;
-  border-radius:12px;
-  background:#fff6ef;
-  display:flex; align-items:center; justify-content:center;
+  height:79px;
+  display:flex; align-items:center;
+  gap:24px;
+  padding:0 10px 0 0;
+  border:0;
+  border-radius:0;
+  background:linear-gradient(90deg, #e2e2e2 1.8%, rgba(255,255,255,0) 100%);
+  cursor:pointer;
+  text-align:left;
+  transition:background .25s ease;
+}
+.ps-chip-bar{
+  width:5px; height:52px;
+  flex:none;
+  background:#e3e3e2;
+  transition:height .25s ease, background .25s ease;
+}
+.ps-chip-label{
+  font-family:var(--body);
+  font-weight:400;
   font-size:19.519px;
   line-height:40.664px;
   color:#000;
   white-space:nowrap;
-  cursor:pointer;
-  transition:background .2s ease, border-color .2s ease, color .2s ease;
+  transition:font-size .25s ease;
 }
-.ps-chip:not(.ps-chip-active):hover{ background:#ffe3cd; }
-.ps-chip-active{
-  background:var(--orange);
-  border-color:#ffd1b2;
-  color:#fff;
-}
+.ps-chip:hover{ background:linear-gradient(90deg, #ededed 1.8%, rgba(255,255,255,0) 100%); }
+.ps-chip:hover .ps-chip-bar{ height:66px; }
 
-/* ===================== VIDEO CARDS ===================== */
+.ps-chip.ps-chip-active{
+  background:linear-gradient(90deg, #ffd3b3 1.8%, rgba(255,255,255,0) 100%);
+}
+.ps-chip.ps-chip-active .ps-chip-bar{ height:79px; background:#ff9c38; }
+.ps-chip.ps-chip-active .ps-chip-label{ font-size:22px; }
+
+/* ===================== STORY CARDS ===================== */
 .ps-card{
   position:absolute;
-  width:463px; height:343px;
+  width:533.0336px; height:394.8823px;
   background:var(--peach);
-  border-radius:7.336px;
-  padding:0 27.095px;
-  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px;
+  border-radius:8.446px;
+  padding:0 31.193px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:20.723px;
   text-decoration:none;
   color:inherit;
   cursor:pointer;
-  transition:transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s cubic-bezier(.16,1,.3,1), opacity .3s ease;
+  transition:transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s cubic-bezier(.16,1,.3,1);
 }
 .ps-card:hover{
   transform:translateY(-8px);
   box-shadow:0 16px 36px rgba(249,118,25,.28), 0 4px 14px rgba(255,156,56,.2);
 }
+.ps-card-hidden{ display:none; }
+
+.ps-slot-1{ left:585px;      top:952px;      }
+.ps-slot-2{ left:1147.9663px; top:952px;      }
+.ps-slot-3{ left:585px;      top:1375.6638px; }
+.ps-slot-4{ left:1147.9663px; top:1375.6638px; }
+
+@keyframes ps-card-in{
+  from{ opacity:0; transform:translateY(24px) scale(.985); }
+  to  { opacity:1; transform:none; }
+}
+.ps-card-enter{ animation:ps-card-in .5s cubic-bezier(.16,1,.3,1) both; }
+.ps-slot-2.ps-card-enter{ animation-delay:.07s; }
+.ps-slot-3.ps-card-enter{ animation-delay:.14s; }
+.ps-slot-4.ps-card-enter{ animation-delay:.21s; }
 
 .ps-thumb{
   position:relative;
-  width:409px; height:223px;
-  border-radius:8.006px;
+  width:470.8656px; height:256.7311px;
+  border-radius:9.217px;
   overflow:hidden;
   flex:none;
   background:#000;
 }
-.ps-thumb img{
+.ps-thumb > img{
   width:100%; height:100%;
   object-fit:cover;
   transition:transform .4s cubic-bezier(.16,1,.3,1);
 }
-.ps-card:hover .ps-thumb img{ transform:scale(1.04); }
+.ps-card:hover .ps-thumb > img{ transform:scale(1.04); }
 
 /* play affordance — only on hover, so the card still reads as the design */
 .ps-play{
@@ -128,34 +223,35 @@
 
 .ps-duration{
   position:absolute;
-  right:16px; bottom:13.7px;
-  min-width:48px;
-  padding:2.979px 10.428px;
-  border-radius:5.275px;
+  right:18px; bottom:14px;
+  width:55.261px;
+  padding:3.43px 12.005px;
+  border-radius:6.073px;
   background:#fff;
   display:flex; align-items:center; justify-content:center;
-  font-size:12px;
-  line-height:17.876px;
+  font-size:13.815px;
+  line-height:20.58px;
   color:#000;
   white-space:nowrap;
 }
 
 .ps-card-foot{
-  width:409px; height:51px;
-  display:flex; align-items:center;
+  width:470.8656px; height:58.7143px;
+  display:flex; align-items:flex-start; justify-content:space-between;
   flex:none;
 }
 .ps-card-title{
-  width:340px;
-  font-family:var(--display);
-  font-weight:400;
-  font-size:19.126px;
-  line-height:normal;
-  color:#000;
+  width:336.1681px;
+  height:58.7143px;
   display:-webkit-box;
   -webkit-line-clamp:2;
   -webkit-box-orient:vertical;
   overflow:hidden;
+  font-family:var(--display);
+  font-weight:400;
+  font-size:22.019px;
+  line-height:normal;
+  color:#000;
   transition:color .2s ease;
 }
 .ps-card:hover .ps-card-title{ color:var(--orange); }
@@ -163,55 +259,57 @@
 /* ===================== PAGINATION ===================== */
 .pager{
   position:absolute;
-  left:828px; top:1959px;
+  left:828px; top:1817px;
   width:265px; height:46.1091px;
-  display:flex; align-items:center; gap:5.7636px;
+  display:flex; align-items:center; justify-content:center; gap:5.7636px;
+  transition:top .35s cubic-bezier(.16,1,.3,1);
 }
+/* a single row of results — the grid is 423.66 px shorter */
+.pager.pager-tight{ top:1393.34px; }
+
+.pager-nums{ display:flex; align-items:center; gap:5.7636px; }
 .pager-nav{
   width:51.8727px; height:46.1091px;
+  border:0;
+  background:none;
   border-radius:34.582px;
   display:flex; align-items:center; justify-content:center;
   cursor:pointer;
-  transition:opacity .2s ease;
+  transition:opacity .2s ease, transform .2s ease;
 }
+.pager-nav:hover{ transform:scale(1.12); }
+.pager-nav.pager-disabled{ opacity:.5; cursor:default; }
+.pager-nav.pager-disabled:hover{ transform:none; }
 .pager-nav img{ width:23.0545px; height:23.0545px; }
-.pager-nav:hover{ opacity:.8; }
-.pager-nav.disabled{ opacity:.5; cursor:default; }
 .pager-num{
   width:46.1091px; height:46.1091px;
+  border:0;
+  background:none;
   border-radius:34.582px;
   display:flex; align-items:center; justify-content:center;
+  font-family:var(--body);
   font-size:20.1727px;
   line-height:28.818px;
   color:#18181b;
   cursor:pointer;
-  transition:background .2s ease, color .2s ease;
+  transition:background .25s ease, color .25s ease, transform .25s cubic-bezier(.34,1.56,.64,1);
 }
 .pager-num:not(.active):hover{ background:#ffe8d6; }
-.pager-num.active{ background:var(--orange); color:#fff; }
+.pager-num.active{ background:var(--orange); color:#fff; transform:scale(1.08); }
 
 /* ===================== CTA ===================== */
-.cta{ top:2116px; height:500px; }
-.cta-bg{ height:500px; }
+.cta{ left:240px; top:1951px; width:1440px; height:370px; }
+.cta-bg{ width:1440px; height:370px; }
 .cta-text{
-  left:95px; top:104px;
-  width:1271px;
-}
-.cta-sub{
-  position:absolute;
-  left:95px; top:183px;
-  width:1271px;
-  font-weight:500;
-  font-size:32px;
+  left:95px; top:97px;
+  width:1271px; height:68px;
+  font-size:44px;
   line-height:68px;
-  text-align:center;
-  color:#fff;
 }
 .cta-btn{
-  width:300px;
-  top:330px;
-  left:570px;
+  left:564.5px; top:201px;
+  width:313.6364px; height:73px;
 }
 
 /* ===================== FOOTER ===================== */
-.footer{ top:2726px; }
+.footer{ top:2409px; }
