@@ -263,6 +263,85 @@ ul{ list-style:none; }
   width:178px; height:44px;
 }
 
+/* ===================== NAV — language picker ===================== */
+.nav-lang{
+  position:absolute;
+  left:1338.6775px; top:22px;
+  width:146px; height:44px;
+  z-index:30;
+}
+.nav-lang-btn{
+  width:100%; height:100%;
+  display:flex; align-items:center; justify-content:center;
+  gap:12px;
+  padding:12px 24px;
+  border:1px solid #f97619;
+  border-radius:10px;
+  background:#fff;
+  cursor:pointer;
+  filter:drop-shadow(0 0 1px rgba(128,115,115,.23));
+  transition:background .2s ease;
+}
+.nav-lang-btn:hover{ background:#fff6ef; }
+.nav-lang-globe{ width:26px; height:26px; flex:none; }
+.nav-lang-label{
+  font-family:var(--body);
+  font-weight:600;
+  font-size:20px;
+  line-height:normal;
+  letter-spacing:-.38px;
+  color:#f97619;
+  white-space:nowrap;
+}
+.nav-lang-chev{ width:12px; height:12px; flex:none; transition:transform .3s ease; }
+.nav-lang.is-open .nav-lang-chev{ transform:rotate(180deg); }
+
+.nav-lang-menu{
+  position:absolute;
+  top:calc(100% + 8px);
+  left:50%;
+  transform:translateX(-50%) translateY(8px);
+  min-width:100%;
+  padding:8px 0;
+  border:1px solid rgba(0,0,0,.06);
+  border-radius:12px;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  box-shadow:0 12px 40px rgba(43,24,10,.10), 0 2px 8px rgba(0,0,0,.04);
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:opacity .25s ease, visibility .25s ease, transform .25s ease;
+}
+.nav-lang.is-open .nav-lang-menu{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transform:translateX(-50%) translateY(0);
+}
+.nav-lang-menu button{
+  width:100%;
+  padding:9px 20px;
+  border:0;
+  background:none;
+  font-family:var(--body);
+  font-weight:500;
+  font-size:15px;
+  color:var(--nav-text);
+  text-align:left;
+  white-space:nowrap;
+  cursor:pointer;
+  border-left:3px solid transparent;
+  transition:background .2s ease, color .2s ease, border-color .2s ease;
+}
+.nav-lang-menu button:hover,
+.nav-lang-menu button[aria-selected="true"]{
+  background:rgba(249,115,22,.07);
+  color:var(--orange);
+  border-left-color:var(--orange);
+}
+
 /* ===================== HERO ===================== */
 .hero-title{
   position:absolute;
@@ -807,3 +886,115 @@ ul{ list-style:none; }
 }
 .social{ position:absolute; display:block; overflow:hidden; opacity:.5; }
 .social img{ position:absolute; left:2px; top:2px; }
+
+/* =========================================================================
+   VIDEO LIGHTBOX
+   Built and appended to <body> by js/site.js, deliberately outside `.page`:
+   the 1024–1919 px breakpoint puts `zoom` on `.page`, which would scale a
+   fixed-position descendant along with the canvas.
+   ========================================================================= */
+.vbox{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:5vmin;
+  background:rgba(43,24,10,.86);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .3s ease, visibility .3s ease;
+}
+.vbox.is-open{ opacity:1; visibility:visible; }
+
+.vbox-frame{
+  position:relative;
+  width:min(1100px, 100%);
+  aspect-ratio:16 / 9;
+  max-height:90vh;
+  border-radius:18px;
+  overflow:hidden;
+  background:#000;
+  box-shadow:0 30px 80px rgba(0,0,0,.5);
+  transform:translateY(18px) scale(.98);
+  transition:transform .35s cubic-bezier(.16,1,.3,1);
+}
+.vbox.is-open .vbox-frame{ transform:none; }
+
+.vbox-frame iframe{
+  position:absolute;
+  inset:0;
+  width:100%; height:100%;
+  border:0;
+}
+
+.vbox-close{
+  position:absolute;
+  right:0; top:-54px;
+  width:42px; height:42px;
+  border:0;
+  border-radius:50%;
+  background:rgba(255,255,255,.14);
+  color:#fff;
+  font-size:26px;
+  line-height:1;
+  cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:background .2s ease, transform .2s ease;
+}
+.vbox-close:hover{ background:var(--orange); transform:scale(1.08); }
+
+/* on short or narrow screens the button sits inside the frame instead */
+@media (max-width:640px), (max-height:520px){
+  .vbox-close{
+    right:8px; top:8px;
+    width:34px; height:34px;
+    font-size:21px;
+    background:rgba(0,0,0,.55);
+  }
+}
+
+/* the whole site's play affordances read as buttons once they are wired */
+[data-video]{ cursor:pointer; }
+
+/* shown in place of the player when the page is opened from disk, where
+   YouTube's referrer check cannot pass (its "Error 153") */
+.vbox-note{
+  position:absolute;
+  inset:0;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:18px;
+  padding:32px;
+  text-align:center;
+  background:var(--brown);
+}
+.vbox-note p{
+  max-width:460px;
+  font-family:var(--body);
+  font-size:17px;
+  line-height:1.6;
+  color:rgba(255,255,255,.85);
+}
+.vbox-note code{
+  padding:9px 16px;
+  border-radius:8px;
+  background:rgba(255,255,255,.12);
+  font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size:15px;
+  color:#ffd3b3;
+}
+.vbox-note-btn{
+  padding:12px 26px;
+  border-radius:10px;
+  background:var(--orange);
+  font-family:var(--body);
+  font-weight:600;
+  font-size:16px;
+  color:#fff;
+  text-decoration:none;
+  transition:transform .2s ease;
+}
+.vbox-note-btn:hover{ transform:translateY(-2px); }

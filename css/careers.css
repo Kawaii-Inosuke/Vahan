@@ -295,6 +295,10 @@
   transition:transform .3s cubic-bezier(.34,1.56,.64,1);
 }
 .life-slide:hover .life-play{ transform:translate(-50%,-50%) scale(1.08); }
+.life-play{ cursor:pointer; }
+/* the play button only belongs to the centre panel — hidden and inert on the
+   flankers so clicking those still rotates the carousel */
+.life-slide:not(.life-slide-active) .life-play{ opacity:0; pointer-events:none; }
 
 .life-dots{
   position:absolute;

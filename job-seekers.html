@@ -57,6 +57,21 @@
       </a>
     </nav>
 
+    <div class="nav-lang">
+      <button class="nav-lang-btn" type="button" aria-expanded="false" aria-haspopup="listbox">
+        <img class="nav-lang-globe" src="assets/rider%20hub/language-icon.svg" alt="">
+        <span class="nav-lang-label">English</span>
+        <img class="nav-lang-chev" src="assets/homepage/icons/chevron-down.svg" alt="">
+      </button>
+      <ul class="nav-lang-menu" role="listbox">
+        <li><button type="button" role="option" aria-selected="true" data-lang="English">English</button></li>
+        <li><button type="button" role="option" aria-selected="false" data-lang="हिन्दी">हिन्दी</button></li>
+        <li><button type="button" role="option" aria-selected="false" data-lang="मराठी">मराठी</button></li>
+        <li><button type="button" role="option" aria-selected="false" data-lang="தமிழ்">தமிழ்</button></li>
+        <li><button type="button" role="option" aria-selected="false" data-lang="తెలుగు">తెలుగు</button></li>
+      </ul>
+    </div>
+
     <a class="btn btn-grad nav-cta" href="contact.html">
       <span>Contact Us</span>
       <span class="arrow"><img src="assets/homepage/icons/arrow-right.svg" alt=""></span>
@@ -410,8 +425,8 @@
         <span class="faq-icon" aria-hidden="true"></span>
       </button>
       <div class="faq-a">
-        <p>Food delivery, quick commerce, e-commerce parcels, and bike-taxi rides — full-time and part-time, across
-          900+ cities.</p>
+        <p>Food delivery, grocery delivery, e-commerce parcel delivery, courier services, van or mini-truck logistics,
+          and warehouse roles such as picker and packer. Options vary by city.</p>
       </div>
     </div>
 
@@ -421,8 +436,8 @@
         <span class="faq-icon" aria-hidden="true"></span>
       </button>
       <div class="faq-a">
-        <p>Most roles need your own two-wheeler with a valid licence and RC. Some warehouse and on-foot roles need no
-          vehicle at all.</p>
+        <p>For most delivery roles, a personal two-wheeler or commercial vehicle is required. Some cities have
+          vehicle-leasing options or bicycle-friendly zones.</p>
       </div>
     </div>
 
@@ -432,8 +447,7 @@
         <span class="faq-icon" aria-hidden="true"></span>
       </button>
       <div class="faq-a">
-        <p>Both. Many partners pick their own shifts and work part-time; others take fixed full-time rosters with a
-          guaranteed monthly payout.</p>
+        <p>Many roles offer flexible hours; some, like warehouse or courier operations, follow fixed shifts.</p>
       </div>
     </div>
 
@@ -443,8 +457,8 @@
         <span class="faq-icon" aria-hidden="true"></span>
       </button>
       <div class="faq-a">
-        <p>No. Most of our partners start with no delivery experience. If you can ride and read a map, the brand
-          trains you on the rest.</p>
+        <p>Most entry-level roles need no experience. You usually need a smartphone, valid ID, and a driving licence
+          where applicable.</p>
       </div>
     </div>
   </div>
@@ -538,6 +552,35 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+
+      /* ---------- language picker ---------- */
+      const lang     = document.querySelector('.nav-lang');
+      const langBtn  = document.querySelector('.nav-lang-btn');
+      const langText = document.querySelector('.nav-lang-label');
+
+      function closeLang() {
+        lang.classList.remove('is-open');
+        langBtn.setAttribute('aria-expanded', 'false');
+      }
+
+      langBtn.addEventListener('click', e => {
+        e.stopPropagation();
+        const open = lang.classList.toggle('is-open');
+        langBtn.setAttribute('aria-expanded', String(open));
+      });
+
+      lang.querySelectorAll('[data-lang]').forEach(opt => {
+        opt.addEventListener('click', () => {
+          lang.querySelectorAll('[data-lang]').forEach(o => o.setAttribute('aria-selected', 'false'));
+          opt.setAttribute('aria-selected', 'true');
+          langText.textContent = opt.dataset.lang;
+          document.documentElement.lang = opt.dataset.lang === 'English' ? 'en' : 'hi';
+          closeLang();
+        });
+      });
+
+      document.addEventListener('click', closeLang);
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLang(); });
 
       /* ---------- phone fields: digits only, then a confirmation ---------- */
       function wireNumberForm(input, button, restLabel) {
