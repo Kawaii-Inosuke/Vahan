@@ -1,0 +1,249 @@
+/* =========================================================================
+   Vahan — Our Story
+   Figma: JmFGyR5BxquecSttAjGEsh  ·  node 2161:6547  ·  1920 × 6861
+
+   Loads on top of styles.css: nav, buttons, glows, header art, hero form,
+   logo strip, stat cards, CTA card and footer are the shared site pieces;
+   everything below re-positions them at their our-story coordinates or adds
+   the sections unique to this page.
+   ========================================================================= */
+
+.page{ height:6861px; }
+
+/* ===================== HERO ===================== */
+.hero-title{
+  left:394.5px; top:259px;
+  width:1131px; height:198px;
+  font-size:76px;
+}
+.hero-sub{ left:550.5px; top:497px; width:819px; }
+.hero-note{ left:552.5px; top:699px; width:815px; }
+
+/* the strip sits higher on this page than on the homepage */
+.logo-strip{ top:786px; }
+
+/* ===================== STATS ===================== */
+.stats-band{ left:0; top:1005px; }
+.stat-card{ top:1100px; }
+.stat-body{ top:1175px; }
+
+/* ===================== shared section heading ===================== */
+.os-h2{
+  position:absolute;
+  left:436px;
+  width:1048px; height:70px;
+  font-family:var(--display);
+  font-weight:500;
+  font-size:56px;
+  line-height:70px;
+  text-align:center;
+  color:var(--brown);
+}
+
+/* ===================== WHY WE EXIST ===================== */
+.os-why-title{ left:503.5px; top:1549px; width:913px; }
+
+.os-why-text{
+  position:absolute;
+  left:240px; top:1678px;
+  width:776px;
+  font-size:26px;
+  line-height:1.5;
+  letter-spacing:-.494px;
+  color:var(--brown);
+}
+/* the design separates the three blocks with an empty line of body copy */
+.os-why-text p + p{ margin-top:39px; }
+
+.os-why-img{
+  position:absolute;
+  left:1076px; top:1679px;
+  width:604px; height:701px;
+  border-radius:19.989px;
+  overflow:hidden;
+  background:#fff;
+}
+.os-why-img img{ width:100%; height:100%; object-fit:cover; }
+
+/* ===================== THE JOURNEY ===================== */
+.os-journey-title{ top:2512px; }
+
+/* One row = year · arrow · gradient band, laid out on the 240 → 1680 stage.
+   Rows repeat every 162 px; the dotted connector hangs off each row except
+   the last. */
+.os-jr{
+  position:absolute;
+  left:240px;
+  width:1440px; height:124px;
+  display:flex; align-items:center;
+}
+.os-jr-year{
+  flex:none;
+  width:170px;
+  font-family:var(--display);
+  font-weight:500;
+  font-size:42px;
+  line-height:70px;
+  text-align:center;
+  color:var(--brown);
+}
+.os-jr-arrow{
+  flex:none;
+  margin-left:23px;
+  width:24px; height:24px;
+}
+.os-jr-band{
+  flex:none;
+  margin-left:61px;
+  width:1162px; height:124px;
+  display:flex; align-items:center;
+  padding:0 22px 0 57px;
+  /* Figma "Vahan gradient" at 25 % — peach at the year end, fading right */
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 1162 124' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)' opacity='0.25'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(141.35 0 0 478.52 -184 62)'><stop stop-color='rgb(255,164,97)' offset='0'/><stop stop-color='rgb(255,187,136)' offset='0.25'/><stop stop-color='rgb(255,210,176)' offset='0.5'/><stop stop-color='rgb(255,232,215)' offset='0.75'/><stop stop-color='rgb(255,255,255)' offset='1'/></radialGradient></defs></svg>");
+  background-size:100% 100%;
+}
+.os-jr-text{
+  font-size:26px;
+  line-height:1.5;
+  letter-spacing:-.494px;
+  color:var(--brown);
+}
+.os-jr-text b{ font-weight:600; color:#f97619; }
+
+.os-jr-dot{
+  position:absolute;
+  left:86px; top:106px;
+  width:2px; height:74px;
+}
+
+/* ===================== THE PEOPLE BEHIND IT ===================== */
+.os-people-title{ top:3722px; width:932px; }
+
+/* --- founder, full-width card --- */
+.os-founder{
+  position:absolute;
+  left:240px; top:3852px;
+  width:1440px; height:525px;
+  background:var(--peach);
+  border-radius:24px;
+  padding:32px 42px;
+  display:flex; align-items:center; gap:32px;
+}
+.os-founder-img{
+  flex:none;
+  width:507px; height:441px;
+  border-radius:19.989px;
+  overflow:hidden;
+  background:#fff;
+}
+.os-founder-img img{ width:100%; height:100%; object-fit:cover; }
+
+.os-founder-text{
+  flex:1; min-width:0;
+  display:flex; flex-direction:column; justify-content:center; gap:45px;
+}
+.os-founder-name{
+  font-weight:600;
+  font-size:26px;
+  line-height:normal;
+  color:#000;
+}
+.os-founder-bio{
+  font-size:22px;
+  line-height:1.36;
+  color:#000;
+}
+
+/* --- three leader cards --- */
+.os-person{
+  position:absolute;
+  top:4422px;
+  width:450px; height:573px;
+  background:var(--peach);
+  border-radius:24px;
+  padding:24px 25px;
+  display:flex; flex-direction:column; gap:32px;
+  transition:transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s cubic-bezier(.16,1,.3,1);
+}
+.os-person:hover{
+  transform:translateY(-8px);
+  box-shadow:0 16px 36px rgba(249,118,25,.22);
+}
+.os-person-img{
+  flex:1; min-height:0;
+  border-radius:19.989px;
+  overflow:hidden;
+  background:#fff;
+}
+.os-person-img img{
+  width:100%; height:100%;
+  object-fit:cover;
+  transition:transform .5s cubic-bezier(.16,1,.3,1);
+}
+.os-person:hover .os-person-img img{ transform:scale(1.04); }
+
+.os-person-text{
+  flex:none;
+  height:154px;
+  padding:0 24px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:32px;
+}
+.os-person-id{
+  width:100%;
+  display:flex; flex-direction:column; gap:12px;
+}
+.os-person-name{
+  font-weight:600;
+  font-size:26px;
+  line-height:normal;
+  text-align:center;
+  color:#000;
+}
+.os-person-role{
+  font-size:24px;
+  line-height:normal;
+  text-align:center;
+  color:#000;
+}
+.os-person-link{
+  font-weight:600;
+  font-size:24px;
+  line-height:normal;
+  text-align:center;
+  color:#f97619;
+  text-decoration:none;
+  transition:opacity .2s ease;
+}
+.os-person-link:hover{ opacity:.75; }
+
+/* ===================== BACKED BY THE BEST ===================== */
+.backers-band{
+  position:absolute;
+  left:0; top:5103px;
+  width:1920px; height:560px;
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 1920 560' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)' opacity='0.52'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -138.15 171.11 0 960 969.73)'><stop stop-color='rgb(255,164,97)' offset='0'/><stop stop-color='rgb(255,187,136)' offset='0.25'/><stop stop-color='rgb(255,210,176)' offset='0.5'/><stop stop-color='rgb(255,232,215)' offset='0.75'/><stop stop-color='rgb(255,255,255)' offset='1'/></radialGradient></defs></svg>");
+  background-size:100% 100%;
+}
+.backers-title{ top:5195px; }
+.backer{ position:absolute; }
+
+/* ===================== CTA ===================== */
+.cta{
+  left:240px; top:5773px;
+  width:1440px; height:378px;
+}
+.cta-bg{
+  width:1440px; height:378px;
+  object-fit:cover;
+}
+.cta-text{
+  left:299.5px; top:90px;
+  width:841px;
+}
+.cta-btn{
+  left:605.5px; top:214px;
+  width:229px;
+}
+
+/* ===================== FOOTER ===================== */
+.footer{ top:6261px; }
