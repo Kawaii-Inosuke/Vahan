@@ -1,0 +1,229 @@
+/* =========================================================================
+   Vahan — Careers, individual role
+   Figma: JmFGyR5BxquecSttAjGEsh  ·  node 2151:1520  ·  1920 × 9054
+
+   Loads on top of styles.css AND careers.css: the Life at Vahan carousel,
+   Perks, Values, Backers band and CTA card are the careers page's own
+   components, reused verbatim and only re-hung at this page's coordinates.
+   Everything with a `jr-` prefix is specific to the role view.
+   ========================================================================= */
+
+.page{ height:9054px; }
+
+/* ===================== JOB HEADER ===================== */
+.jr-title{
+  position:absolute;
+  left:242px; top:196px;
+  width:849px; height:70px;
+  font-family:var(--display);
+  font-weight:500;
+  font-size:56px;
+  line-height:70px;
+  color:var(--brown);
+}
+.jr-meta{
+  position:absolute;
+  left:242px; top:284px;
+  width:963px; height:36px;
+  font-size:24px;
+  line-height:1.5;
+  letter-spacing:-.456px;
+  color:var(--brown);
+}
+.jr-pill{
+  position:absolute;
+  left:812px; top:282px;
+  width:133px; height:40.6154px;
+  display:flex; align-items:center; justify-content:center;
+  padding:7.308px;
+  border:.731px solid #4c4b4b;
+  border-radius:5.846px;
+  background:#fff;
+  font-size:17.538px;
+  line-height:1.5;
+  letter-spacing:-.3332px;
+  color:#4c4b4b;
+  white-space:nowrap;
+}
+
+/* ===================== JOB DESCRIPTION ===================== */
+/* The description runs long and is authored per role, so it flows rather
+   than sitting on fixed coordinates — the gaps below are the Figma ones. */
+.jr-body{
+  position:absolute;
+  left:242px; top:387px;
+  width:1437px;
+}
+.jr-block + .jr-block{ margin-top:40px; }
+.jr-block + .jr-block.jr-block-wide{ margin-top:59px; }
+
+.jr-h{
+  font-weight:600;
+  font-size:24px;
+  line-height:1.72;
+  color:var(--brown);
+  margin-bottom:1.72em;
+}
+.jr-sub-h{
+  font-weight:600;
+  font-size:20px;
+  line-height:1.72;
+  color:var(--brown);
+}
+.jr-p{
+  font-size:20px;
+  line-height:1.72;
+  color:rgba(43,24,10,.7);
+}
+.jr-list{
+  list-style:disc;
+  font-size:20px;
+  line-height:1.72;
+  color:rgba(43,24,10,.7);
+}
+.jr-list li{ margin-left:30px; }
+.jr-list + .jr-sub-h{ margin-top:1.72em; }
+
+.jr-apply{
+  position:relative;
+  margin-top:53px;
+  width:290px; height:58px;
+  gap:8.909px;
+  padding:13.364px 26.727px;
+  border-radius:12px;
+  font-size:22.27px;
+  letter-spacing:-.4231px;
+  filter:drop-shadow(0 0 1.114px rgba(128,115,115,.23));
+}
+.jr-apply .arrow{ width:22.273px; height:22.273px; }
+.jr-apply .arrow img{ width:13.92px; height:13.92px; }
+
+/* ===================== APPLICATION FORM ===================== */
+.jr-form{
+  position:relative;
+  margin-top:45px;
+  width:1438px;
+  padding:23px 36px 46px;
+  border:1px solid #e6ddd6;
+  border-radius:8px;
+  background:#fff;
+}
+.jr-field{ padding-top:10px; }
+.jr-field:first-child{ padding-top:20px; }
+.jr-field label{
+  display:block;
+  height:29px;
+  padding-top:5.667px;
+  font-size:16px;
+  line-height:normal;
+  color:rgba(37,55,63,.7);
+}
+.jr-field input,
+.jr-field select{
+  height:29.3333px;
+  padding:0 6px;
+  border:1.333px solid #ccc;
+  border-radius:3px;
+  background:#fff;
+  box-shadow:inset 0 1px 1px rgba(0,0,0,.08);
+  font-family:var(--body);
+  font-size:14px;
+  color:#000;
+}
+.jr-field input:focus,
+.jr-field select:focus{ outline:none; border-color:var(--orange); }
+.jr-field-300 input{ width:300px; }
+.jr-field-200 input{ width:200px; }
+.jr-field-file input{ width:354.6667px; height:31.3333px; padding:2px 4px; }
+.jr-field-drop select{ width:113.3333px; margin-top:9px; }
+
+.jr-submit{
+  position:relative;
+  margin-top:36px;
+  width:290px; height:58px;
+  gap:8.909px;
+  padding:13.364px 26.727px;
+  border-radius:12px;
+  font-size:22.27px;
+  letter-spacing:-.4231px;
+  filter:drop-shadow(0 0 1.114px rgba(128,115,115,.23));
+  border:0;
+  cursor:pointer;
+}
+.jr-submit .arrow{ width:22.273px; height:22.273px; }
+.jr-submit .arrow img{ width:13.92px; height:13.92px; }
+
+/* ===================== NOT THE RIGHT ROLE ===================== */
+.jr-band{
+  position:absolute;
+  left:0; top:3949px;
+  width:1920px; height:353px;
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 1920 353' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)' opacity='0.52'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -87.1 171.11 0 960 611.5)'><stop stop-color='rgb(255,164,97)' offset='0'/><stop stop-color='rgb(255,187,136)' offset='0.25'/><stop stop-color='rgb(255,210,176)' offset='0.5'/><stop stop-color='rgb(255,232,215)' offset='0.75'/><stop stop-color='rgb(255,255,255)' offset='1'/></radialGradient></defs></svg>");
+  background-size:100% 100%;
+}
+.jr-band-title{
+  position:absolute;
+  left:585px; top:4024px;
+  width:751px; height:70px;
+  font-family:var(--display);
+  font-weight:500;
+  font-size:56px;
+  line-height:70px;
+  text-align:center;
+  color:var(--brown);
+}
+.jr-band-btn{
+  position:absolute;
+  left:792px; top:4137px;
+  width:336.6364px; height:73px;
+  display:flex; align-items:center; justify-content:center;
+  border-radius:10px;
+  background:#fff;
+  filter:drop-shadow(0 0 1.659px rgba(128,115,115,.23));
+  font-weight:600;
+  font-size:28px;
+  letter-spacing:-.532px;
+  color:#000;
+  text-decoration:none;
+  white-space:nowrap;
+  transition:transform .2s ease;
+}
+.jr-band-btn:hover{ transform:translateY(-2px); }
+
+/* ===================== reused careers sections, re-hung ===================== */
+.life-title{ top:4390px; }
+.life-sub  { top:4488px; }
+.life-carousel{ top:4529px; }
+.life-dots { top:5182px; }
+
+.perks-title{ left:428px; top:5312px; }
+.perks-sub  { left:471px; top:5411px; }
+
+.values-title{ top:6252px; }
+.values-sub  { top:6350px; }
+
+.backers-band { top:7259px; }
+.backers-title{ top:7351px; }
+
+/* ===================== CTA ===================== */
+.cta{ top:7905px; }
+.cta-text{
+  left:345px; top:80px;
+  width:751px;
+  font-size:56px;
+}
+.cta-sub{
+  position:absolute;
+  left:51px; top:167px;
+  width:1338px;
+  font-weight:500;
+  font-size:38px;
+  line-height:68px;
+  text-align:center;
+  color:#fff;
+}
+.cta-btn    { left:419px; top:278px; width:321.6364px; }
+.cta-btn-alt{ left:763px; width:258.6364px; }
+
+/* ===================== FOOTER ===================== */
+.footer{ top:8454px; }

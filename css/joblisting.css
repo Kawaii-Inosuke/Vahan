@@ -1,0 +1,219 @@
+/* =========================================================================
+   Vahan — Job seeker, individual job listing
+   Figma: JmFGyR5BxquecSttAjGEsh  ·  node 1933:1136  ·  1920 × 6537
+
+   Loads on top of styles.css AND jobseekers.css: the nearby-job cards, the
+   referral banner, the "Alert me" band, Why Riders Choose Us, the rider
+   testimonials, the FAQ and the CTA are the job seekers page's own
+   components, reused verbatim and only re-hung at this page's coordinates.
+   Everything with a `jl-` prefix belongs to the job detail view.
+   ========================================================================= */
+
+.page{ height:6537px; }
+
+/* ===================== background art ===================== */
+.glow{ top:-1819px; }
+/* the wave sits mid-page here, behind the "See more jobs" band */
+.header-bg{ top:1280px; }
+
+/* ===================== JOB HEADER ===================== */
+.jl-title{
+  position:absolute;
+  left:240px; top:199px;
+  width:934px; height:156px;
+  font-family:var(--display);
+  font-weight:500;
+  font-size:64px;
+  line-height:78px;
+  color:var(--brown);
+}
+.jl-loc{
+  position:absolute;
+  left:240px; top:387px;
+  width:353px; height:24px;
+  display:flex; align-items:center; gap:16px;
+}
+.jl-loc img{ width:24px; height:24px; flex:none; }
+.jl-loc span{
+  font-size:24px;
+  line-height:20px;
+  color:var(--brown);
+  white-space:nowrap;
+}
+
+.jl-h2{
+  position:absolute;
+  left:242px;
+  height:41px;
+  font-weight:600;
+  font-size:24px;
+  line-height:1.72;
+  color:var(--brown);
+}
+
+.jl-do{
+  position:absolute;
+  left:240px; top:531px;
+  width:897px;
+  list-style:disc;
+  font-size:20px;
+  color:rgba(43,24,10,.7);
+}
+.jl-do li{ margin-left:30px; line-height:1.91; }
+
+.jl-note{
+  position:absolute;
+  left:240px; top:745px;
+  width:934px; height:79px;
+  padding:12px 16px 12px 16px;
+  border:1px solid #64cf8c;
+  border-radius:12px;
+  background:#e9f7ef;
+  display:flex; align-items:center; gap:18px;
+}
+.jl-note img{ width:38px; height:38px; flex:none; }
+.jl-note p{
+  font-size:20px;
+  line-height:1.91;
+  color:#288d2c;
+  white-space:nowrap;
+}
+
+/* ---------- earning tips ---------- */
+.jl-tip{
+  position:absolute;
+  height:115px;
+  padding:17px;
+  border:1px solid #ffe0c9;
+  border-radius:12px;
+  background:#fff;
+  display:flex; align-items:center; gap:12px;
+}
+.jl-tip-dot{
+  flex:1 1 auto;
+  display:flex; align-items:center; justify-content:center;
+}
+.jl-tip-dot i{
+  display:block;
+  width:12px; height:12px;
+  border-radius:50%;
+  background:var(--orange);
+}
+.jl-tip p{
+  flex:none;
+  width:386px;
+  font-size:20px;
+  line-height:1.71;
+  color:rgba(43,24,10,.7);
+}
+
+/* ===================== JOB DETAIL CARD ===================== */
+.jl-job{
+  position:absolute;
+  left:1201px; top:202px;
+  width:479px; height:569px;
+  padding:36px;
+  border-radius:18.796px;
+  background:rgba(255,255,255,.51);
+  box-shadow:0 0 4.5px 0 rgba(0,0,0,.26);
+  display:flex; flex-direction:column; gap:21px;
+}
+.jl-job-logo{
+  flex:none;
+  height:117.4779px;
+  border-radius:14.097px;
+  background:#e23744;
+  display:flex; align-items:center; justify-content:center;
+}
+.jl-job-logo img{
+  width:171.584px; height:36.194px;
+  object-fit:contain;
+}
+.jl-job-body{ display:flex; flex-direction:column; gap:24px; }
+
+.jl-salary{
+  font-weight:500;
+  font-size:28.195px;
+  line-height:37.593px;
+  letter-spacing:.141px;
+  color:var(--brown);
+  white-space:nowrap;
+}
+.jl-salary-sub{
+  padding-top:2.35px;
+  font-size:16px;
+  line-height:23.496px;
+  color:rgba(43,24,10,.7);
+}
+
+.jl-req-block{ display:flex; flex-direction:column; gap:21px; }
+.jl-req-title{
+  font-weight:500;
+  font-size:23.496px;
+  line-height:32.894px;
+  letter-spacing:.1175px;
+  color:var(--brown);
+}
+.jl-req-grid{ display:flex; flex-direction:column; gap:36px; }
+.jl-reqs{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:24px 14px;
+}
+.jl-req{
+  display:flex; align-items:center; gap:9.398px;
+  font-size:16px;
+  line-height:23.496px;
+  color:rgba(43,24,10,.7);
+}
+.jl-req img{ width:18.796px; height:18.796px; flex:none; }
+
+.jl-job-btn{
+  height:56.3894px;
+  border-radius:28.195px;
+  display:flex; align-items:center; justify-content:center;
+  font-weight:600;
+  font-size:20px;
+  line-height:28.195px;
+  color:#fff;
+  text-decoration:none;
+  transition:transform .2s ease;
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 407 56.389' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -10.701 27.903 0 203.5 68.564)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
+  background-size:100% 100%;
+}
+.jl-job-btn:hover{ transform:translateY(-2px); }
+
+/* ===================== reused job-seeker sections, re-hung ===================== */
+/* "Not this job? See more jobs near you." — wider than the listing heading */
+.js-jobs-title{ left:471px; top:1322px; width:978px; }
+
+/* the nearby cards run two-up at 696 instead of three-up at 461 */
+.job-card{ top:1455px; width:696px; }
+.jl-near-1{ left:244px; }
+.jl-near-2{ left:979px; }
+
+.js-refer{ top:1850px; }
+
+.js-alert-band { top:2206px; }
+.js-alert-title{ top:2368px; }
+.js-alert-sub  { top:2466px; }
+.js-field      { top:2554px; }
+.js-submit     { top:2554px; }
+.js-map        { top:2261px; }
+
+.js-why-title{ top:2889px; }
+.why-card    { top:3007px; }
+
+.riders-band    { top:3461px; }
+.js-riders-title{ top:3576px; }
+.rider-card     { top:3694px; }
+.rider-dots     { top:4159px; }
+
+.js-faq-title{ top:4409px; }
+.faq         { top:4541px; }
+
+/* ===================== CTA ===================== */
+.cta{ left:226px; top:5427px; }
+
+/* ===================== FOOTER ===================== */
+.footer{ top:5937px; }
