@@ -6,9 +6,15 @@
    footer are the shared site pieces; everything below is the article layout —
    a 986 px content column at x=244 with a 398 px sticky-feeling rail at
    x=1282, exactly as the design places them.
+
+   The masthead (title, hero image, byline, rail) keeps the design's absolute
+   coordinates because it is identical on every article. Everything from the
+   Key Takeaways card down lives inside `.bp-flow`, a normal-flow column, so
+   articles of any length lay out correctly — a page of baked `top` values
+   only ever describes one article.
    ========================================================================= */
 
-.page{ height:8035px; }
+.page{ height:auto; }
 
 /* ===================== HERO ===================== */
 .bp-title{
@@ -63,10 +69,18 @@
   white-space:pre;
 }
 
-/* ===================== SUMMARIZE WITH ===================== */
-.bp-summarize{
+/* ===================== RIGHT RAIL ===================== */
+/* the three rail cards stack in flow inside one absolutely-placed column, so
+   a contents list that runs to ten entries pushes the promo card down instead
+   of being covered by it */
+.bp-rail{
   position:absolute;
   left:1282px; top:1267px;
+  width:398px;
+}
+
+/* ===================== SUMMARIZE WITH ===================== */
+.bp-summarize{
   width:398px; height:69px;
   background:rgba(254,126,9,.11);
   border-radius:8px;
@@ -101,8 +115,7 @@
 
 /* ===================== TABLE OF CONTENTS ===================== */
 .bp-toc{
-  position:absolute;
-  left:1282px; top:1362px;
+  margin-top:26px;      /* 1362 - 1336 */
   width:398px;
   border-radius:8px;
 }
@@ -123,17 +136,20 @@
 .bp-toc-chev{ width:24px; height:24px; flex:none; transition:transform .3s ease; }
 .bp-toc.is-closed .bp-toc-chev{ transform:rotate(180deg); }
 
+/* the design's 408 px box fits the eight-entry contents page; longer articles
+   run to ten entries, so the box hugs its list and `max-height` carries the
+   collapse animation instead of a fixed height that would clip it */
 .bp-toc-body{
-  height:408.4px;
+  max-height:900px;
   padding:15px 10px 28px;
   border:1px solid #ffdfc3;
   border-radius:0 0 6px 6px;
-  display:flex; align-items:center; justify-content:center;
+  display:flex; align-items:flex-start; justify-content:center;
   overflow:hidden;
-  transition:height .3s ease, padding .3s ease, opacity .3s ease;
+  transition:max-height .3s ease, padding .3s ease, opacity .3s ease;
 }
 .bp-toc.is-closed .bp-toc-body{
-  height:0;
+  max-height:0;
   padding-top:0; padding-bottom:0;
   border-width:0 1px;
   opacity:0;
@@ -151,8 +167,8 @@
 
 /* ===================== SIDE CTA CARD ===================== */
 .bp-side{
-  position:absolute;
-  left:1282px; top:1854px;
+  position:relative;
+  margin-top:26px;
   width:398px; height:460px;
 }
 .bp-side-bg{ position:absolute; inset:0; width:398px; height:460px; }
@@ -189,42 +205,68 @@
 .bp-side-btn:hover{ transform:translateY(-2px); }
 
 /* ===================== ARTICLE BODY ===================== */
-/* every article block is placed at its own Figma coordinate */
+.bp-article{
+  margin:44px 0 0 244px;
+  width:986px;
+}
+.bp-article > * + *{ margin-top:40px; }
+.bp-article > .bp-h2{ margin-top:64px; }
+.bp-article > .bp-h2:first-child{ margin-top:0; }
+.bp-article > .bp-h2 + *{ margin-top:36px; }
+
 .bp-h2{
-  position:absolute;
-  left:244px;
-  width:933.157px; height:25px;
-  display:flex; flex-direction:column; justify-content:center;
   font-family:var(--display);
   font-weight:500;
   font-size:32px;
-  line-height:24px;
+  line-height:1.25;
   color:#000;
   scroll-margin-top:110px;
 }
 .bp-p{
-  position:absolute;
-  left:244px;
   font-family:var(--ui);
   font-size:18px;
   line-height:32px;
   color:#4d4d4d;
 }
+.bp-p b{ font-weight:600; color:#000; }
 .bp-ul{
-  position:absolute;
-  left:244px;
   list-style:disc;
   font-family:var(--ui);
   font-size:18px;
   color:#4d4d4d;
 }
-.bp-ul li{ margin-left:27px; line-height:42px; }
+.bp-ul li{ margin-left:27px; line-height:32px; }
+.bp-ul li + li{ margin-top:10px; }
+.bp-ul li b{ font-weight:600; color:#000; }
+
+/* numbered how-to steps */
+.bp-ol{
+  list-style:decimal;
+  font-family:var(--ui);
+  font-size:18px;
+  color:#4d4d4d;
+}
+.bp-ol li{ margin-left:27px; line-height:32px; }
+.bp-ol li + li{ margin-top:10px; }
+
+/* a numbered sub-heading inside a section, e.g. "1. Weather aur Fatigue" */
+.bp-h3{
+  font-family:var(--body);
+  font-weight:600;
+  font-size:22px;
+  line-height:32px;
+  color:#000;
+}
+.bp-article > .bp-h3{ margin-top:36px; }
+.bp-article > .bp-h3 + *{ margin-top:14px; }
 
 /* ---------- key takeaways ---------- */
+/* the masthead above is absolutely positioned, so this is the page's first
+   in-flow box — the margin drops it onto its Figma coordinate and everything
+   after it simply flows */
 .bp-takeaways{
-  position:absolute;
-  left:244px; top:1362px;
-  width:986px; height:438px;
+  margin:1362px 0 0 244px;
+  width:986px; min-height:438px;
   padding:30px 41px;
   border-radius:21px;
   box-shadow:0 4px 0 0 #f97316;
@@ -261,12 +303,11 @@
 /* the wrapper is what carries the canvas coordinate; below the breakpoint it
    becomes the horizontal scrollport so the 987 px grid stays readable */
 .bp-table-wrap{
-  position:absolute;
-  left:243px;
+  margin-left:-1px;
   width:987px;
 }
 .bp-table{
-  width:987px; height:358px;
+  width:987px;
   border-collapse:collapse;
   table-layout:fixed;
   background:#fff;
@@ -294,10 +335,19 @@
 }
 
 /* ===================== FAQs ===================== */
+/* copy rail on the left at x=243, accordion on the right at x=603 */
+.bp-faq-sec{
+  margin:88px 0 0 243px;
+  width:987px;
+  display:flex; align-items:flex-start;
+}
+.bp-faq-side{
+  flex:none;
+  width:360px;          /* 603 - 243 */
+  padding-right:15px;
+}
 .bp-faq-title{
-  position:absolute;
-  left:243px; top:5344px;
-  width:295px; height:117px;
+  width:295px;
   font-family:var(--display);
   font-weight:500;
   font-size:32px;
@@ -305,17 +355,15 @@
   color:#000;
 }
 .bp-faq-sub{
-  position:absolute;
-  left:243px; top:5491px;
-  width:345px; height:108px;
+  margin-top:30px;
+  width:345px;
   font-size:18px;
   line-height:32px;
   color:#4d4d4d;
 }
 
 .bp-faqs{
-  position:absolute;
-  left:603px; top:5344px;
+  flex:none;
   width:627px;
   display:flex; flex-direction:column; gap:18px;
 }
@@ -378,10 +426,20 @@
 }
 
 /* ===================== RELATED BLOGS ===================== */
+.bp-related{
+  margin:100px 0 0 241px;
+  width:1439px;
+}
+.bp-related-head{
+  margin-left:3px;      /* the heading sits on the 244 text column */
+  width:1436px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.bp-related-cards{
+  margin-top:44px;
+  display:flex; gap:24px;
+}
 .bp-related-title{
-  position:absolute;
-  left:244px; top:6273px;
-  width:1007px; height:44px;
   font-family:var(--display);
   font-weight:500;
   font-size:36px;
@@ -389,10 +447,9 @@
   color:#000;
 }
 .bp-related-all{
-  position:absolute;
-  left:1496px; top:6281px;
-  width:184px; height:29px;
-  display:flex; align-items:center; justify-content:center; gap:7px;
+  flex:none;
+  height:29px;
+  display:flex; align-items:center; gap:7px;
   font-family:var(--ui);
   font-size:24px;
   line-height:normal;
@@ -406,7 +463,8 @@
 
 /* the related cards are the blog listing's post card, verbatim */
 .post-card{
-  position:absolute;
+  position:relative;
+  flex:none;
   width:463px; height:433.5157px;
   background:var(--peach);
   border-radius:7.336px;
@@ -470,25 +528,44 @@
 }
 
 /* ===================== CTA ===================== */
+/* a centred column, so a CTA line that wraps grows the card instead of
+   colliding with the button — the single-line case lands on the design's
+   96 / 215 coordinates exactly */
+.cta{
+  position:relative;
+  left:auto; top:auto;
+  margin:116px 0 0 243px;
+  width:1437px; min-height:393px; height:auto;
+  padding:24px 138px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:51px;
+}
 .cta-glow{
   position:absolute;
-  left:479px; top:6912px;
+  left:236px; top:1px;        /* 479-243 · 6912-6911 */
   width:963px; height:963px;
   pointer-events:none;
 }
-.cta{
-  left:243px; top:6911px;
-  width:1437px; height:393px;
+.cta-bg{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover;
 }
-.cta-bg{ width:1437px; height:393px; }
 .cta-text{
-  left:137px; top:96px;
-  width:1161px; height:68px;
+  position:relative;
+  left:auto; top:auto;
+  width:100%; max-width:1161px; height:auto;
 }
 .cta-btn{
-  left:603px; top:215.2383px;
+  position:relative;
+  left:auto; top:auto;
+  flex:none;
   width:228.6363px; height:81.7851px;
 }
 
 /* ===================== FOOTER ===================== */
-.footer{ top:7435px; }
+.footer{
+  position:relative;
+  left:auto; top:auto;
+  margin-top:131px;
+}

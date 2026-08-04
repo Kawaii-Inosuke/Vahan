@@ -71,7 +71,7 @@
   </header>
 
   <!-- ============ HERO ============ -->
-  <h1 class="contact-title">Your Blue-Collar Workforce <br>Is One Conversation Away.</h1>
+  <h1 class="contact-title">Your Blue-Collar Workforce <br>Is One Conversation Away</h1>
 
   <p class="contact-sub">Send us your high-volume hiring needs. Our AI recruiter and team take it from there.</p>
 
@@ -96,9 +96,17 @@
       <label class="form-field">
         <input type="tel" name="contact" placeholder="Contact No.">
       </label>
-      <label class="form-field">
-        <input type="text" name="workforce" placeholder="Size of Workforce">
-      </label>
+      <div class="form-field form-field-number">
+        <input type="number" name="workforce" placeholder="Size of Workforce" min="0" step="1" inputmode="numeric">
+        <span class="num-stepper">
+          <button type="button" class="num-step num-step-up" data-step="1" aria-label="Increase size of workforce">
+            <img src="assets/contact%20us/dropdown-chevron.svg" alt="">
+          </button>
+          <button type="button" class="num-step num-step-down" data-step="-1" aria-label="Decrease size of workforce">
+            <img src="assets/contact%20us/dropdown-chevron.svg" alt="">
+          </button>
+        </span>
+      </div>
       <div class="form-field form-field-select custom-dropdown" id="industryDropdown">
         <input type="hidden" name="industry" value="">
         <div class="dropdown-header">
@@ -128,7 +136,7 @@
   </form>
 
   <!-- ============ EMPLOYER LOGOS ============ -->
-  <h2 class="employers-title">India’s Top Employers Hire With Vahan.</h2>
+  <h2 class="employers-title">India’s Top Employers Hire With Vahan</h2>
 
   <div class="logo-card" style="left:420px;top:1024px">
     <img src="assets/contact%20us/zomato%20logo.svg" alt="zomato" style="left:44px;top:29px;width:157px;height:47.1737px">
@@ -285,15 +293,48 @@
           item.addEventListener('click', (e) => {
             items.forEach(i => i.classList.remove('selected'));
             item.classList.add('selected');
-            
+
             const value = item.getAttribute('data-value');
             input.value = value;
-            
+
             selectedSpan.textContent = item.textContent;
             header.classList.add('has-value');
           });
         });
       }
+
+      /* number fields (Size of Workforce): +/- stepper, with hold-to-repeat */
+      document.querySelectorAll('.form-field-number').forEach(field => {
+        const input = field.querySelector('input');
+        if (!input) return;
+
+        const bump = (step) => {
+          const min = input.min === '' ? -Infinity : Number(input.min);
+          const next = (Number(input.value) || 0) + step;
+          input.value = Math.max(min, next);
+          input.dispatchEvent(new Event('input', { bubbles: true }));
+        };
+
+        field.querySelectorAll('.num-step').forEach(btn => {
+          const step = Number(btn.getAttribute('data-step'));
+          let holdTimer, repeatTimer;
+
+          const stopHold = () => {
+            clearTimeout(holdTimer);
+            clearInterval(repeatTimer);
+          };
+
+          btn.addEventListener('pointerdown', () => {
+            bump(step);
+            holdTimer = setTimeout(() => {
+              repeatTimer = setInterval(() => bump(step), 70);
+            }, 400);
+          });
+          ['pointerup', 'pointerleave', 'pointercancel'].forEach(evt =>
+            btn.addEventListener(evt, stopHold)
+          );
+        });
+      });
     });
   </script>
 <script src="js/site.js"></script>

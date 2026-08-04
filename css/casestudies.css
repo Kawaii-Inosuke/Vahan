@@ -137,16 +137,20 @@
   object-fit:cover;
   transition:transform .55s cubic-bezier(.16,1,.3,1);
 }
+/* Figma frames each photo individually rather than centring it */
+.cs-card-img.cs-crop-top   img{ object-position:center top; }
+.cs-card-img.cs-crop-upper img{ object-position:center 26%; }
 .cs-card:hover .cs-card-img img{ transform:scale(1.045); }
 
 .cs-card-body{
   width:465px; height:224px;
   display:flex; flex-direction:column; justify-content:center; gap:16px;
 }
+/* Figma sizes each logo to the full 123 px width and centres it in the 46 px
+   frame — the 7.285 px padding it carries never becomes the constraint. */
 .cs-logo-wrap{
   width:123px; height:46px;
   flex:none;
-  padding:7.285px 0;
   display:flex; align-items:center;
 }
 .cs-logo{ width:100%; height:100%; object-fit:contain; object-position:left center; }
@@ -180,8 +184,10 @@
   border-radius:10px;
   font-family:var(--ui);
   font-weight:500;
-  font-size:10.61px;
-  letter-spacing:-.2016px;
+  /* Figma's dev panel reports 10.61px, but the frame renders the label filling
+     the 192.36 px button — match what the design actually draws. */
+  font-size:14.87px;
+  letter-spacing:-.2825px;
   filter:drop-shadow(0 0 .7278px rgba(128,115,115,.23));
   background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 192.36 42.251' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -8.0182 13.188 0 96.182 51.374)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
 }
@@ -232,7 +238,9 @@
 
 /* ===================== CTA ===================== */
 .cta{ left:240px; top:2823px; width:1440px; height:384px; }
-.cta-bg{ width:1440px; height:384px; }
+/* the export is 1440 × 448, so let it cover the shorter band instead of
+   letterboxing itself inside it */
+.cta-bg{ width:1440px; height:384px; object-fit:cover; }
 .cta-text{
   left:204px; top:74px;
   width:1032px; height:136px;

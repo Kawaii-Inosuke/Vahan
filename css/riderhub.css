@@ -31,6 +31,8 @@
 .hero-title{
   left:349px; top:220px;
   width:1223px; height:99px;
+  /* Figma sets these headings to Title Case rather than editing the copy */
+  text-transform:capitalize;
 }
 
 .rh-sub{
@@ -405,6 +407,8 @@
   font-weight:500;
   font-size:56px;
   line-height:70px;
+  /* Figma sets these headings to Title Case rather than editing the copy */
+  text-transform:capitalize;
   color:var(--brown);
 }
 .rh-alert-sub{

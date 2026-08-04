@@ -1,6 +1,6 @@
 /* =========================================================================
    Vahan — Recruitment Leaders
-   Figma: JmFGyR5BxquecSttAjGEsh  ·  node 1981:9977  ·  1920 × 7129
+   Figma: JmFGyR5BxquecSttAjGEsh  ·  node 2232:12163  ·  1920 × 7129
 
    Loads on top of styles.css: nav, buttons, hero form, logo strip, stats band,
    CTA card and footer are the shared site pieces; everything below re-positions
@@ -11,19 +11,123 @@
 .page{ height:7129px; }
 
 /* ===================== HERO ===================== */
-/* Figma sets this headline at 76px on 99px leading — the shared hero is 86px */
+/* the hero is a two-column split: copy and the sign-up field on the left, a
+   collage of partner cards and riders on the right */
+.header-bg{ top:-177px; }
+
+/* Figma sets this headline at 68px on 87px leading — the shared hero is 86px */
 .hero-title{
-  left:395px; top:259px;
-  width:1131px; height:198px;
-  font-size:76px;
-  line-height:99px;
+  left:240px; top:195px;
+  width:700px; height:261px;
+  font-size:68px;
+  line-height:87px;
+  text-align:left;
+  text-transform:capitalize;
 }
 .hero-sub{
-  left:462px; top:497px;
-  width:997px; height:36px;
+  left:240px; top:482px;
+  width:790px; height:72px;
+  text-align:left;
 }
-/* .hero-field / .hero-cta / .hero-note already sit at the design's
-   728 / 1029 / 553 coordinates in styles.css */
+.hero-field{ left:240px; top:578px; }
+.hero-cta{
+  left:541px; top:578px;
+  width:162.6364px;
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 162.64 58' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -11.007 11.15 0 81.32 70.523)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
+}
+.hero-note{
+  left:240px; top:660px;
+  width:397px;
+  text-align:left;
+}
+
+/* ---- hero collage ---- */
+.rl-collage img,
+.rl-collage .rl-tile,
+.rl-collage .rl-chip{ position:absolute; }
+
+.rl-tile{
+  border-radius:8px;
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 43 43' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -8.1602 2.948 0 21.5 52.284)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
+  background-size:100% 100%;
+}
+.rl-tile-sm { left:1268px; top:186px; width:31px;  height:31px; }
+.rl-tile-mid{ left:1225px; top:649px; width:43px;  height:43px; }
+.rl-tile-far{ left:1646px; top:496px; width:43px;  height:43px; }
+
+.rl-photo{ object-fit:cover; }
+.rl-photo-orange{ left:1261px; top:303px; width:214px; height:268px; }
+.rl-photo-yellow{ left:1430px; top:207px; width:191px; height:152px; }
+.rl-photo-dark  { left:1065px; top:488px; width:177px; height:179px; }
+
+/* the two "delivery around …" job chips */
+.rl-chip{
+  background:#fff;
+  display:flex; flex-direction:column; align-items:flex-start;
+  font-family:var(--ui);
+}
+.rl-chip-logo{
+  position:relative;
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden;
+  flex:none;
+}
+.rl-chip-logo img{ position:relative; object-fit:contain; }
+.rl-chip-where{ color:#4f646f; font-weight:600; }
+.rl-chip-meta{
+  display:flex; align-items:center;
+  color:#878787; font-weight:500;
+}
+
+.rl-chip-zomato{
+  left:1129px; top:200px;
+  width:156.5984px;
+  padding:17.4px;
+  border-radius:12px;
+  filter:drop-shadow(3.48px 3.48px 24.36px rgba(0,0,0,.1));
+}
+.rl-chip-zomato .rl-chip-logo{
+  width:48.719px; height:48.719px;
+  border-radius:10.44px;
+  background:#e23744;
+}
+.rl-chip-zomato .rl-chip-logo img{ width:31.32px; height:31.32px; }
+.rl-chip-zomato .rl-chip-where{
+  margin-top:10.44px;
+  width:121.799px;
+  font-size:13.92px; line-height:19.14px;
+}
+.rl-chip-zomato .rl-chip-meta{
+  margin-top:3.48px;
+  gap:6.96px;
+  font-size:10.44px; line-height:13.92px;
+}
+.rl-chip-zomato .rl-chip-meta img{ position:relative; width:13.92px; height:13.92px; }
+
+.rl-chip-flipkart{
+  left:1494px; top:509px;
+  width:180px;
+  padding:20px;
+  border-radius:24px;
+  filter:drop-shadow(4px 4px 28px rgba(0,0,0,.1));
+}
+.rl-chip-flipkart .rl-chip-logo{
+  width:56px; height:56px;
+  border-radius:12px;
+  background:#2874f0;
+}
+.rl-chip-flipkart .rl-chip-logo img{ width:36px; height:36px; }
+.rl-chip-flipkart .rl-chip-where{
+  margin-top:12px;
+  width:140px;
+  font-size:16px; line-height:22px;
+}
+.rl-chip-flipkart .rl-chip-meta{
+  margin-top:4px;
+  gap:8px;
+  font-size:12px; line-height:16px;
+}
+.rl-chip-flipkart .rl-chip-meta img{ position:relative; width:16px; height:16px; }
 
 .logo-strip{ top:783px; }
 
@@ -42,6 +146,7 @@
   font-size:56px;
   line-height:70px;
   text-align:center;
+  text-transform:capitalize;
   color:var(--brown);
 }
 .plat-sub{
@@ -166,6 +271,7 @@
   font-size:56px;
   line-height:70px;
   text-align:center;
+  text-transform:capitalize;
   color:var(--brown);
 }
 
@@ -251,6 +357,7 @@
   font-size:56px;
   line-height:70px;
   text-align:center;
+  text-transform:capitalize;
   color:var(--brown);
 }
 
@@ -357,6 +464,7 @@
   font-size:56px;
   line-height:70px;
   text-align:center;
+  text-transform:capitalize;
   color:var(--brown);
 }
 
@@ -436,10 +544,11 @@
   width:841px; height:136px;
   font-size:56px;
   line-height:68px;
+  text-transform:capitalize;
 }
 .cta-btn{
-  left:610.5px; top:301px;
-  width:221.6363px; height:73px;
+  left:518.5px; top:301px;
+  width:405.6364px; height:73px;
 }
 
 /* ===================== FOOTER ===================== */

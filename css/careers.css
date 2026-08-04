@@ -1,24 +1,41 @@
 /* =========================================================================
    Vahan — Careers Page
-   Figma: JmFGyR5BxquecSttAjGEsh  ·  node 2115:8088  ·  1920 × 8885
+   Figma: JmFGyR5BxquecSttAjGEsh  ·  node 2232:10097  ·  1920 × 9026
 
    Loads on top of styles.css: nav, buttons, glows, header art, CTA card and
    footer are the shared site pieces; everything below re-positions them at
    their careers-page coordinates or adds the sections unique to this page.
    ========================================================================= */
 
-.page{ height:8885px; }
+.page{ height:9026px; }
 
 /* ===================== HERO ===================== */
-.hero-title{ top:305px; }
+/* the hero is a two-column split: copy on the left, the India reach map on
+   the right, so the shared centred hero type is re-flowed left */
+.header-bg{ top:-135px; }
+
+.hero-title{
+  left:243px; top:263px;
+  width:700px;
+  text-align:left;
+  text-transform:capitalize;
+}
 .hero-sub{
-  left:607px; top:543px;
+  left:243px; top:490px;
   width:706px;
+  text-align:left;
+}
+.hero-art{
+  position:absolute;
+  left:999px; top:118px;
+  width:744px; height:743px;
+  object-fit:cover;
+  pointer-events:none;
 }
 
 /* Button — Figma gradient geometry for the 236.64 × 58 instance */
 .roles-cta{
-  left:842px; top:651px;
+  left:243px; top:606px;
   width:236.6364px; height:58px;
   gap:8.909px;
   padding:13.3636px 26.7273px;
@@ -41,6 +58,7 @@
   font-size:56px;
   line-height:70px;
   text-align:center;
+  text-transform:capitalize;
   color:var(--brown);
 }
 .careers-sub{
@@ -55,12 +73,12 @@
 }
 
 /* ===================== OPEN ROLES ===================== */
-.roles-title{ left:504px; top:972px; width:913px; }
+.roles-title{ left:504px; top:3837.0740px; width:913px; }
 
 /* --- filter dropdowns (Department / Role Type / Location) --- */
 .role-filters{
   position:absolute;
-  left:537px; top:1111px;
+  left:537px; top:3955.0740px;
   height:54.5547px;
   display:flex; align-items:center; gap:40px;
 }
@@ -111,7 +129,7 @@
 
 .role-empty{
   position:absolute;
-  left:242px; top:1235px;
+  left:242px; top:4057.6287px;
   width:1438px;
   font-size:20px;
   line-height:1.5;
@@ -123,7 +141,7 @@
 /* --- role groups --- */
 .jobs{
   position:absolute;
-  left:242px; top:1235px;
+  left:242px; top:4057.6287px;
   width:1438px;
   display:flex; flex-direction:column; gap:36px;
 }
@@ -189,11 +207,11 @@
 .job-apply:hover{ background:#e2620d; transform:translateY(-2px); }
 
 /* ===================== A PLACE TO LEARN, GROW ===================== */
-.learn-title{ top:3283px; }
+.learn-title{ top:1006px; }
 
 .learn-card{
   position:absolute;
-  top:3449.3101px;
+  top:1124px;
   height:539.3802px;
   background:#fff;
   border-radius:12px;
@@ -243,14 +261,14 @@
 }
 
 /* ===================== LIFE AT VAHAN ===================== */
-.life-title{ top:4102px; }
-.life-sub  { top:4200px; }
+.life-title{ top:2884.3801px; }
+.life-sub  { top:2982.3801px; }
 
 /* Three panels on a 1438 stage: the centre one is larger;
    the flankers are clipped by .life-carousel's overflow:hidden. */
 .life-carousel{
   position:absolute;
-  left:242px; top:4241px;
+  left:242px; top:3023.3801px;
   width:1438px; height:628px;
   overflow:hidden;
 }
@@ -302,7 +320,7 @@
 
 .life-dots{
   position:absolute;
-  left:902px; top:4894px;
+  left:902px; top:3676.3801px;
   height:10.69px;
   display:flex; align-items:center; gap:12px;
 }
@@ -318,8 +336,8 @@
 .life-dot.active{ width:88.22px; opacity:1; }
 
 /* ===================== OUR VALUES ===================== */
-.values-title{ top:5041px; }
-.values-sub{ top:5139px; }
+.values-title{ top:1813.3801px; }
+.values-sub{ top:1911.3801px; }
 
 /* no hover animation here, by design */
 .value-card{
@@ -362,17 +380,17 @@
 /* ===================== BACKED BY THE BEST ===================== */
 .backers-band{
   position:absolute;
-  left:0; top:6104px;
+  left:0; top:6142.7305px;
   width:1920px; height:560px;
   background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 1920 560' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)' opacity='0.52'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -138.15 171.11 0 960 969.73)'><stop stop-color='rgb(255,164,97)' offset='0'/><stop stop-color='rgb(255,187,136)' offset='0.25'/><stop stop-color='rgb(255,210,176)' offset='0.5'/><stop stop-color='rgb(255,232,215)' offset='0.75'/><stop stop-color='rgb(255,255,255)' offset='1'/></radialGradient></defs></svg>");
   background-size:100% 100%;
 }
-.backers-title{ top:6196px; }
+.backers-title{ top:6234.7305px; }
 .backer{ position:absolute; }
 
 /* ===================== PERKS & BENEFITS ===================== */
-.perks-title{ top:6765px; }
-.perks-sub{ left:471px; top:6863px; }
+.perks-title{ top:6852.7305px; }
+.perks-sub{ left:471px; top:6950.7305px; }
 
 .perk-card{
   position:absolute;
@@ -416,11 +434,12 @@
 }
 
 /* ===================== CTA ===================== */
-.cta{ top:7736px; }
+.cta{ top:7827.7305px; }
 .cta-text{
   left:74.5px; top:84px;
   width:1291px;
   font-size:56px;
+  text-transform:capitalize;
 }
 .cta-sub{
   position:absolute;
@@ -436,4 +455,4 @@
 .cta-btn-alt{ left:753.1364px; width:292.6364px; }
 
 /* ===================== FOOTER ===================== */
-.footer{ top:8285px; }
+.footer{ top:8425.7305px; }

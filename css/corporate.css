@@ -10,30 +10,100 @@
 
 .page{ height:6911px; }
 
-/* ===================== HERO ===================== */
+/* ===================== HERO =====================
+   The hero is left-aligned on this page: the copy sits on the 242 px
+   content edge and the photo collage fills the right half. */
 .hero-title{
-  left:524px; top:227px;
+  left:242px; top:227px;
   width:873px; height:188px;
   font-size:78px;
   line-height:94px;
+  text-align:left;
 }
-.hero-sub{ top:438px; }
+.hero-sub{
+  left:242px; top:438px;
+  /* Figma's box is 815px, but the copy here reads "onboards / retains"
+     where the design says "onboard / retain" — 821px of text. At 815 the
+     first line wrapped to a third line and ran into the phone field. */
+  width:880px;
+  text-align:left;
+}
 
-.hero-field{ top:534px; }
-.hero-cta { top:534px; }
+.hero-field{ left:242px; top:534px; }
+.hero-cta { left:543px; top:534px; }
 
 .hero-note{
-  left:677px; top:616px;
+  left:242px; top:616px;
   width:567px;
+  text-align:left;
 }
 
 .logo-strip{ top:783px; }
 
+/* ---------- hero photo collage ---------- */
+.hero-art{
+  position:absolute;
+  left:0; top:0;
+  width:1920px; height:900px;
+  pointer-events:none;
+}
+
+.hero-photo{
+  position:absolute;
+  border-radius:12px;
+  overflow:hidden;
+}
+.hero-photo img{
+  position:absolute;
+  max-width:none;
+  object-fit:cover;
+}
+
+.hero-photo-1{
+  left:1199px; top:160px;
+  width:262.346px; height:335.8481px;
+  background:rgba(249,118,25,.21);
+}
+.hero-photo-1 img{ left:-30px; top:-10px; width:349px; height:436px; }
+
+.hero-photo-2{
+  left:1490.7461px; top:317.1815px;
+  width:244.2532px; height:271.3924px;
+  background:#ffbf92;
+}
+.hero-photo-2 img{ left:-81.7461px; top:-1.1815px; width:407px; height:325px; }
+
+.hero-photo-3{
+  left:1298px; top:528px;
+  width:163.3455px; height:184.2386px;
+  background:rgba(249,118,25,.31);
+}
+.hero-photo-3 img{ left:-17px; top:-.2551px; width:203px; height:254px; }
+
+/* small gradient squares tucked around the photo cards */
+.hero-chip{
+  position:absolute;
+  border-radius:8px;
+  background-size:100% 100%;
+}
+.hero-chip-1,
+.hero-chip-2{
+  width:32px; height:34px;
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 34' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -6.4523 2.1938 0 16 41.341)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
+}
+.hero-chip-1{ left:1445px; top:143px; }
+.hero-chip-2{ left:1719px; top:300px; }
+.hero-chip-3{
+  left:1262px; top:676px;
+  width:57px; height:57px;
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 57 57' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -10.817 3.9078 0 28.5 69.307)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
+}
+
 /* ===================== THREE THINGS ===================== */
 .three-title{
   position:absolute;
-  left:530px; top:1590px;
-  width:861px; height:140px;
+  left:495px; top:1581px;
+  width:931px; height:140px;
   font-family:var(--display);
   font-weight:500;
   font-size:56px;
@@ -281,7 +351,7 @@
 
 .explore-btn{
   position:relative;
-  width:291px; height:55px;
+  height:55px;
   gap:7.799px;
   padding:11.698px 23.396px;
   font-size:19.5px;
@@ -291,11 +361,17 @@
 .explore-btn .arrow{ width:19.496px; height:19.496px; }
 .explore-btn .arrow img{ width:12.185px; height:12.185px; }
 
-.grad-291{ background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 291 55' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -10.438 19.95 0 145.5 66.875)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>"); }
+.explore-btn-partners{ width:303.0862px; }
+.explore-btn-jobs    { width:241px; }
+
+.grad-303{ background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 303.09 55' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -10.438 20.779 0 151.54 66.875)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>"); }
+.grad-241{ background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 241 55' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -10.438 16.522 0 120.5 66.875)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>"); }
 
 /* ===================== CTA ===================== */
 .cta{ left:243px; top:5752px; }
-.cta-btn{ left:614px; }
+/* The button instance is scaled 1.659x in Figma (73px tall), so its 10px
+   corner radius scales with it — the shared 10px was too square here. */
+.cta-btn{ left:527px; width:395.6363px; border-radius:16.59px; }
 
 /* ===================== FOOTER ===================== */
 .footer{ top:6311px; }

@@ -1113,6 +1113,12 @@ body {
   }
 
   /* ---------- CORPORATE -------------------------------------------------- */
+  /* The hero collage is placed against the 1920 canvas and is purely
+     decorative; the mobile frame runs the hero copy centred with no art. */
+  .p-corporate .page>.hero-art {
+    display: none;
+  }
+
   .p-corporate .page>.three-title {
     order: 30;
     margin-top: clamp(38px, 11vw, 60px);
@@ -1308,30 +1314,34 @@ body {
   }
 
   /* ---------- CAREERS ---------------------------------------------------- */
-  .p-careers .page>.roles-title {
+  /* the desktop canvas runs Learn → Values → Life → Open Roles; the stack
+     follows the same sequence */
+  .p-careers .page>.hero-art {
+    order: 13;
+    margin: 20px auto 0;
+    max-width: min(100%, 460px);
+  }
+
+  .p-careers .page>.learn-title {
     order: 30;
     margin-top: clamp(38px, 11vw, 60px);
   }
 
-  .p-careers .page>.role-filters {
+  .p-careers .page>.learn-card {
     order: 31;
   }
 
-  .p-careers .page>.role-empty {
-    order: 32;
-  }
-
-  .p-careers .page>.jobs {
-    order: 33;
-  }
-
-  .p-careers .page>.learn-title {
+  .p-careers .page>.values-title {
     order: 40;
     margin-top: clamp(38px, 11vw, 60px);
   }
 
-  .p-careers .page>.learn-card {
+  .p-careers .page>.values-sub {
     order: 41;
+  }
+
+  .p-careers .page>.value-card {
+    order: 42;
   }
 
   .p-careers .page>.life-title {
@@ -1351,17 +1361,21 @@ body {
     order: 48;
   }
 
-  .p-careers .page>.values-title {
+  .p-careers .page>.roles-title {
     order: 50;
     margin-top: clamp(38px, 11vw, 60px);
   }
 
-  .p-careers .page>.values-sub {
+  .p-careers .page>.role-filters {
     order: 51;
   }
 
-  .p-careers .page>.value-card {
+  .p-careers .page>.role-empty {
     order: 52;
+  }
+
+  .p-careers .page>.jobs {
+    order: 53;
   }
 
   .p-careers .page>.msec-backers {
@@ -1386,7 +1400,8 @@ body {
     margin: 22px auto 0;
   }
 
-  .page>.role-filters {
+  .page>.role-filters,
+  .page>.js-filters {
     margin: 20px auto 0;
     width: calc(100% - var(--pad) * 2) !important;
     max-width: var(--mw);
@@ -1395,7 +1410,8 @@ body {
     justify-content: center;
   }
 
-  .role-select {
+  .role-select,
+  .js-select {
     width: auto !important;
     flex: 1 1 30%;
     min-width: 0;
@@ -1404,19 +1420,22 @@ body {
     border-radius: 9px;
   }
 
-  .role-select select {
+  .role-select select,
+  .js-select select {
     padding-right: 18px !important;
     font-size: 13px !important;
     line-height: 1.5 !important;
   }
 
-  .role-select-caret {
+  .role-select-caret,
+  .js-select-caret {
     right: 12px !important;
     width: 10px !important;
     height: 6px !important;
   }
 
-  .page>.role-empty {
+  .page>.role-empty,
+  .page>.job-empty {
     margin: 16px auto 0;
     padding: 0 var(--pad);
     max-width: var(--mw);
@@ -2355,6 +2374,21 @@ body {
     right: 12px !important;
   }
 
+  .form-card .num-stepper {
+    width: 24px !important;
+    height: 30px !important;
+    right: 10px !important;
+  }
+
+  .form-card .num-step img {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  .form-card .form-field-number input {
+    padding-right: 34px !important;
+  }
+
   .form-card .form-foot {
     position: relative !important;
     left: auto !important;
@@ -2446,6 +2480,17 @@ body {
   }
 
   /* ---------- JOB SEEKERS ------------------------------------------------ */
+  /* the orange plinth only reads against the desktop split hero */
+  .p-jobseekers .page>.js-hero-block {
+    display: none !important;
+  }
+
+  .p-jobseekers .page>.js-hero-photo {
+    order: 15;
+    margin: 18px auto 0;
+    max-width: min(100%, 320px);
+  }
+
   .p-jobseekers .page>.js-salary {
     order: 11;
   }
@@ -2471,25 +2516,34 @@ body {
     margin-top: clamp(38px, 11vw, 60px);
   }
 
-  .p-jobseekers .page>.job-card {
+  .p-jobseekers .page>.js-filters {
     order: 31;
   }
 
-  .p-jobseekers .page>.js-refer {
+  .p-jobseekers .page>.job-empty {
     order: 32;
   }
 
-  .p-jobseekers .page>.msec-alert {
-    order: 40;
+  .p-jobseekers .page>.job-card {
+    order: 33;
   }
 
+  .p-jobseekers .page>.js-refer {
+    order: 34;
+  }
+
+  /* the desktop canvas runs Why Riders before Alert Me */
   .p-jobseekers .page>.js-why-title {
-    order: 50;
+    order: 40;
     margin-top: clamp(38px, 11vw, 60px);
   }
 
   .p-jobseekers .page>.why-card {
-    order: 51;
+    order: 41;
+  }
+
+  .p-jobseekers .page>.msec-alert {
+    order: 50;
   }
 
   .p-jobseekers .page>.msec-riders {
@@ -2680,6 +2734,7 @@ body {
 
   .page>.js-salary,
   .page>.brands-title,
+  .msec-brands .brands-title,
   .page>.js-jobs-title,
   .page>.js-why-title,
   .page>.js-faq-title,
@@ -2698,6 +2753,7 @@ body {
   }
 
   .page>.brands-title,
+  .msec-brands .brands-title,
   .page>.js-jobs-title,
   .page>.js-why-title,
   .page>.js-faq-title,
@@ -3082,6 +3138,13 @@ body {
   }
 
   /* ---------- RECRUITMENT LEADERS ---------------------------------------- */
+  /* the hero collage is a free-floating cluster measured against the 1920
+     canvas — it has no stacked equivalent, so it drops out */
+  .p-leaders .rl-collage,
+  .p-leaders .page>.rl-collage {
+    display: none !important;
+  }
+
   .p-leaders .page>.plat-title {
     order: 30;
     margin-top: clamp(38px, 11vw, 60px);
@@ -4442,7 +4505,97 @@ body {
   /* ---------- BLOG POST (individual article) ----------------------------- */
   /* the article is already in reading order in the source, so the default
    order:20 carries it; only the rail pieces need re-placing */
-  .p-blogpost .page>.bp-title {
+
+  /* the rail is one absolute column on desktop; here its three cards rejoin
+   the page's flex flow. `display:contents` drops the wrapper's box but not
+   its children's default `order`, so they need the page default restated or
+   they sort ahead of the title. */
+  .p-blogpost .bp-rail {
+    display: contents;
+  }
+
+  .p-blogpost .bp-summarize,
+  .p-blogpost .bp-toc {
+    order: 20;
+  }
+
+  /* the desktop article is one 986 px column of in-flow blocks — on mobile the
+   wrappers collapse to the page gutter and their children stack */
+  .p-blogpost .bp-article,
+  .p-blogpost .bp-faq-sec,
+  .p-blogpost .bp-related {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: calc(100% - var(--pad) * 2) !important;
+    max-width: var(--mw);
+  }
+
+  .p-blogpost .bp-article {
+    margin-top: clamp(22px, 6vw, 32px) !important;
+  }
+
+  .p-blogpost .bp-article > * + * {
+    margin-top: 14px !important;
+  }
+
+  .p-blogpost .bp-article > .bp-h2 {
+    margin-top: clamp(26px, 8vw, 40px) !important;
+  }
+
+  .p-blogpost .bp-article > .bp-h3 {
+    margin-top: clamp(20px, 6vw, 28px) !important;
+  }
+
+  .p-blogpost .bp-faq-sec {
+    margin-top: clamp(30px, 9vw, 48px) !important;
+    display: block;
+  }
+
+  .p-blogpost .bp-faq-side,
+  .p-blogpost .bp-faqs,
+  .p-blogpost .bp-faq-title,
+  .p-blogpost .bp-faq-sub,
+  .p-blogpost .bp-related-head,
+  .p-blogpost .bp-related-cards {
+    width: 100% !important;
+    padding-right: 0 !important;
+  }
+
+  .p-blogpost .bp-related {
+    margin-top: clamp(34px, 10vw, 56px) !important;
+  }
+
+  .p-blogpost .bp-related-head {
+    margin-left: 0 !important;
+    display: block;
+    text-align: center;
+  }
+
+  .p-blogpost .bp-related-cards {
+    margin-top: 4px !important;
+    display: block;
+  }
+
+  .p-blogpost .bp-related-cards .post-card {
+    margin: 14px auto 0;
+    width: 100% !important;
+    max-width: var(--mw);
+    height: auto !important;
+    padding: 16px !important;
+    border-radius: var(--r);
+  }
+
+  /* the CTA and footer are in flow here, not on a baked coordinate */
+  .p-blogpost .page > .cta {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .p-blogpost .page > .footer {
+    margin-top: 0 !important;
+  }
+
+  .p-blogpost .bp-title {
     order: 10;
     margin: clamp(30px, 9vw, 52px) auto 0;
     max-width: var(--mw);
@@ -4452,7 +4605,7 @@ body {
     text-align: center;
   }
 
-  .p-blogpost .page>.bp-hero-img {
+  .p-blogpost .bp-hero-img {
     order: 11;
     margin: clamp(20px, 6vw, 32px) auto 0;
     width: calc(100% - var(--pad) * 2) !important;
@@ -4461,25 +4614,25 @@ body {
     border-radius: var(--r);
   }
 
-  .p-blogpost .page>.bp-byline,
-  .p-blogpost .page>.bp-summarize,
-  .p-blogpost .page>.bp-toc,
-  .p-blogpost .page>.bp-takeaways,
-  .p-blogpost .page>.bp-p,
-  .p-blogpost .page>.bp-ul,
-  .p-blogpost .page>.bp-h2,
-  .p-blogpost .page>.bp-table-wrap,
-  .p-blogpost .page>.bp-faq-title,
-  .p-blogpost .page>.bp-faq-sub,
-  .p-blogpost .page>.bp-faqs,
-  .p-blogpost .page>.bp-related-title {
+  .p-blogpost .bp-byline,
+  .p-blogpost .bp-summarize,
+  .p-blogpost .bp-toc,
+  .p-blogpost .bp-takeaways,
+  .p-blogpost .bp-p,
+  .p-blogpost .bp-ul,
+  .p-blogpost .bp-h2,
+  .p-blogpost .bp-table-wrap,
+  .p-blogpost .bp-faq-title,
+  .p-blogpost .bp-faq-sub,
+  .p-blogpost .bp-faqs,
+  .p-blogpost .bp-related-title {
     margin-left: auto;
     margin-right: auto;
     width: calc(100% - var(--pad) * 2) !important;
     max-width: var(--mw);
   }
 
-  .p-blogpost .page>.bp-byline {
+  .p-blogpost .bp-byline {
     margin-top: clamp(18px, 5vw, 26px);
     gap: 12px;
   }
@@ -4499,7 +4652,7 @@ body {
     white-space: normal !important;
   }
 
-  .p-blogpost .page>.bp-summarize {
+  .p-blogpost .bp-summarize {
     margin-top: 16px;
     height: 56px !important;
     gap: 14px;
@@ -4509,7 +4662,7 @@ body {
     font-size: 15px !important;
   }
 
-  .p-blogpost .page>.bp-toc {
+  .p-blogpost .bp-toc {
     margin-top: 16px;
   }
 
@@ -4530,7 +4683,7 @@ body {
   }
 
   .p-blogpost .bp-toc.is-closed .bp-toc-body {
-    height: 0 !important;
+    max-height: 0 !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
   }
@@ -4540,7 +4693,7 @@ body {
   }
 
   /* the rail's promo card follows the article instead of floating beside it */
-  .p-blogpost .page>.bp-side {
+  .p-blogpost .bp-side {
     order: 700;
     margin: clamp(30px, 9vw, 48px) auto 0;
     width: calc(100% - var(--pad) * 2) !important;
@@ -4573,7 +4726,7 @@ body {
     font-size: 16px !important;
   }
 
-  .p-blogpost .page>.bp-takeaways {
+  .p-blogpost .bp-takeaways {
     margin-top: clamp(22px, 6vw, 32px);
     height: auto !important;
     padding: 22px 20px !important;
@@ -4604,7 +4757,7 @@ body {
     margin-top: 12px !important;
   }
 
-  .p-blogpost .page>.bp-h2 {
+  .p-blogpost .bp-h2 {
     margin-top: clamp(26px, 8vw, 40px);
     height: auto !important;
     font-size: clamp(19px, 5.2vw, 26px) !important;
@@ -4612,13 +4765,13 @@ body {
     scroll-margin-top: calc(var(--nav-h) + 12px);
   }
 
-  .p-blogpost .page>.bp-p,
-  .p-blogpost .page>.bp-ul {
+  .p-blogpost .bp-p,
+  .p-blogpost .bp-ul {
     margin-top: 14px;
     font-size: 14px !important;
   }
 
-  .p-blogpost .page>.bp-p {
+  .p-blogpost .bp-p {
     line-height: 1.7 !important;
   }
 
@@ -4629,7 +4782,7 @@ body {
   }
 
   /* the 987 px grid cannot shrink and stay legible — it scrolls sideways */
-  .p-blogpost .page>.bp-table-wrap {
+  .p-blogpost .bp-table-wrap {
     margin-top: 18px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -4659,21 +4812,21 @@ body {
     width: auto !important;
   }
 
-  .p-blogpost .page>.bp-faq-title {
+  .p-blogpost .bp-faq-title {
     margin-top: clamp(30px, 9vw, 48px);
     height: auto !important;
     font-size: clamp(21px, 5.6vw, 28px) !important;
     line-height: 1.25 !important;
   }
 
-  .p-blogpost .page>.bp-faq-sub {
+  .p-blogpost .bp-faq-sub {
     margin-top: 12px;
     height: auto !important;
     font-size: 14px !important;
     line-height: 1.6 !important;
   }
 
-  .p-blogpost .page>.bp-faqs {
+  .p-blogpost .bp-faqs {
     margin-top: 18px;
     gap: 12px;
   }
@@ -4707,21 +4860,26 @@ body {
     line-height: 1.6 !important;
   }
 
-  .p-blogpost .page>.bp-related-title {
+  .p-blogpost .bp-related-title {
     margin-top: clamp(34px, 10vw, 56px);
     height: auto !important;
     font-size: clamp(21px, 5.6vw, 28px) !important;
     line-height: 1.25 !important;
   }
 
-  .p-blogpost .page>.bp-related-all {
+  .p-blogpost .bp-related-all {
     margin: 10px auto 0;
     width: auto !important;
     height: auto !important;
+    justify-content: center;
     font-size: 15px !important;
   }
 
-  .p-blogpost .page>.bp-related-all img {
+  .p-blogpost .cta > .cta-glow {
+    display: none !important;
+  }
+
+  .p-blogpost .bp-related-all img {
     width: 16px !important;
     height: 16px !important;
   }

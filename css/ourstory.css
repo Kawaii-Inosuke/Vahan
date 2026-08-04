@@ -1,6 +1,6 @@
 /* =========================================================================
    Vahan — Our Story
-   Figma: JmFGyR5BxquecSttAjGEsh  ·  node 2161:6547  ·  1920 × 6861
+   Figma: JmFGyR5BxquecSttAjGEsh  ·  node 2232:12728  ·  1920 × 6861
 
    Loads on top of styles.css: nav, buttons, glows, header art, hero form,
    logo strip, stat cards, CTA card and footer are the shared site pieces;
@@ -15,12 +15,13 @@
   left:394.5px; top:259px;
   width:1131px; height:198px;
   font-size:76px;
+  text-transform:capitalize;
 }
 .hero-sub{ left:550.5px; top:497px; width:819px; }
 .hero-note{ left:552.5px; top:699px; width:815px; }
 
 /* the strip sits higher on this page than on the homepage */
-.logo-strip{ top:786px; }
+.logo-strip{ top:783px; }
 
 /* ===================== STATS ===================== */
 .stats-band{ left:0; top:1005px; }
@@ -37,6 +38,7 @@
   font-size:56px;
   line-height:70px;
   text-align:center;
+  text-transform:capitalize;
   color:var(--brown);
 }
 
@@ -239,10 +241,11 @@
 .cta-text{
   left:299.5px; top:90px;
   width:841px;
+  text-transform:capitalize;
 }
 .cta-btn{
-  left:605.5px; top:214px;
-  width:229px;
+  left:607px; top:214px;
+  width:228.6364px;
 }
 
 /* ===================== FOOTER ===================== */

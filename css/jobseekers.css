@@ -1,45 +1,73 @@
 /* =========================================================================
    Vahan — Job Seekers
-   Figma: JmFGyR5BxquecSttAjGEsh  ·  node 1933:630  ·  1920 × 6812
+   Figma: JmFGyR5BxquecSttAjGEsh  ·  node 2232:10925  ·  1920 × 6767
 
    Loads on top of styles.css: nav, buttons, hero form, CTA card and footer are
    the shared site pieces; everything below re-positions them at their
    job-seekers coordinates or adds the sections unique to this page.
    ========================================================================= */
 
-.page{ height:6812px; }
+.page{ height:6767px; }
 
 /* ===================== HERO ===================== */
+/* the hero splits: copy and the apply form on the left, the three-step strip
+   and the delivery-partner cut-out on the right */
+.header-bg{ top:-252px; }
+
 /* Figma sets this headline at 76px on 99px leading — the shared hero is 86px */
 .hero-title{
-  left:509px; top:189px;
-  width:903px; height:198px;
+  left:240px; top:225px;
+  width:578px; height:297px;
   font-size:76px;
   line-height:99px;
+  text-align:left;
+  text-transform:capitalize;
 }
 .js-salary{
   position:absolute;
-  left:730px; top:427px;
+  left:240px; top:555px;
   width:460px; height:42px;
   font-weight:600;
   font-size:24px;
   line-height:42px;
   letter-spacing:-.264px;
-  text-align:center;
   color:var(--brown);
+}
+
+/* ---- the cut-out rider, on a rounded orange plinth ---- */
+.js-hero-block{
+  position:absolute;
+  left:1445px; top:432px;
+  width:366px; height:546px;
+  border-radius:36px 36px 0 0;
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 366 546' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -103.62 25.092 0 183 663.89)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
+  background-size:100% 100%;
+  pointer-events:none;
+}
+.js-hero-photo{
+  position:absolute;
+  left:1265px; top:216px;
+  width:610px; height:762px;
+  object-fit:contain;
+  pointer-events:none;
 }
 
 /* ---- three-step strip ---- */
 .js-step{
   position:absolute;
-  top:533px;
+  left:1007px;
   width:391px; height:108px;
   border-radius:12px;
   background:rgba(249,118,25,.2);
 }
+.js-step-1{ top:273px; }
+.js-step-2{ top:417px; }
+.js-step-3{ top:560px; }
+
+/* the badge straddles the card's left edge */
 .js-step-num{
   position:absolute;
-  left:36px; top:30px;
+  left:-24px; top:30px;
   width:48px; height:48px;
   border-radius:99px;
   display:flex; align-items:center; justify-content:center;
@@ -53,21 +81,21 @@
 }
 .js-step-text{
   position:absolute;
-  left:100px; top:26px;
+  left:47px; top:26px;
   display:flex; flex-direction:column;
   color:#000;
 }
 .js-step-text b{ font-weight:400; font-size:22px; line-height:1.5; }
 .js-step-text span{ font-size:16px; line-height:1.5; }
 
-/* the hero field / CTA and note already sit at 676 / 977 / 553 once nudged */
-.hero-field{ left:676px; top:714px; }
+/* apply form and note, flush with the headline's left edge */
+.hero-field{ left:240px; top:647px; }
 .hero-cta{
-  left:977px; top:714px;
+  left:541px; top:647px;
   width:266.6364px;
   background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 266.64 58' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -11.007 18.28 0 133.32 70.523)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
 }
-.hero-note{ top:808px; }
+.hero-note{ left:240px; top:736px; width:341px; text-align:left; }
 
 /* ===================== TOP COMPANIES ===================== */
 .brands-band{
@@ -86,6 +114,7 @@
   font-size:56px;
   line-height:70px;
   text-align:center;
+  text-transform:capitalize;
   color:var(--brown);
 }
 .brand-row{
@@ -112,13 +141,76 @@
   font-size:56px;
   line-height:70px;
   text-align:center;
+  text-transform:capitalize;
   color:var(--brown);
 }
 
+/* --- City / Neighbourhood / Company filters --- */
+.js-filters{
+  position:absolute;
+  left:552px; top:1606px;
+  height:54.5547px;
+  display:flex; align-items:center; gap:40px;
+}
+.js-select{
+  position:relative;
+  height:54.5547px;
+  display:flex; align-items:center; justify-content:center;
+  padding:6.777px 23.721px;
+  border:1.084px solid #ffd1b2;
+  border-radius:12px;
+  background:#fff6ef;
+  cursor:pointer;
+  transition:border-color .2s ease;
+}
+.js-select-city{ width:272px; }
+.js-select-hood{ width:240px; }
+.js-select-firm{ width:224px; }
+.js-select:hover,
+.js-select:focus-within{ border-color:var(--orange); }
+
+.js-select select{
+  width:100%;
+  border:0;
+  outline:none;
+  background:transparent;
+  padding-right:28.94px;      /* 16.943 gap + 12 caret */
+  font-family:var(--body);
+  font-weight:400;
+  font-size:19.519px;
+  line-height:40.664px;
+  color:#000;
+  text-align:center;
+  text-align-last:center;
+  cursor:pointer;
+  appearance:none;
+  -webkit-appearance:none;
+}
+.js-select select.is-set{ font-weight:600; color:var(--orange); }
+.js-select-caret{
+  position:absolute;
+  right:23.721px;
+  width:12px; height:6.84px;
+  pointer-events:none;
+  transition:transform .2s ease;
+}
+.js-select:hover .js-select-caret{ transform:translateY(1px); }
+
+.job-empty{
+  position:absolute;
+  left:240px; top:1708.5547px;
+  width:1440px;
+  font-size:20px;
+  line-height:1.5;
+  text-align:center;
+  color:rgba(43,24,10,.6);
+}
+.job-empty[hidden]{ display:none; }
+
 .job-card{
   position:absolute;
-  top:1622px;
-  width:461px; height:306px;
+  top:1708.5547px;
+  width:463px; height:306px;
   padding:24px;
   border-radius:12px;
   background:#fff;
@@ -127,6 +219,7 @@
   transition:transform .3s cubic-bezier(.16,1,.3,1);
 }
 .job-card:hover{ transform:translateY(-4px); }
+.job-card.is-hidden{ display:none; }
 
 .job-head{
   width:100%;
@@ -225,7 +318,7 @@
 /* ===================== REFERRAL BANNER ===================== */
 .js-refer{
   position:absolute;
-  left:240px; top:2020px;
+  left:240px; top:2122px;
   width:1440px; height:267px;
   border-radius:18px;
   overflow:hidden;
@@ -249,6 +342,7 @@
   font-weight:500;
   font-size:44px;
   line-height:68px;
+  text-transform:capitalize;
   color:#fff;
 }
 .js-refer-sub{
@@ -277,27 +371,21 @@
 .js-refer-btn:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,0,0,.16); }
 
 /* ===================== ALERT ME FOR A JOB ===================== */
-.js-alert-band{
-  position:absolute;
-  left:0; top:2394px;
-  width:1920px; height:594px;
-  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 1920 594' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)' opacity='0.4'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -146.53 171.11 0 960 1028.6)'><stop stop-color='rgb(255,164,97)' offset='0'/><stop stop-color='rgb(255,187,136)' offset='0.25'/><stop stop-color='rgb(255,210,176)' offset='0.5'/><stop stop-color='rgb(255,232,215)' offset='0.75'/><stop stop-color='rgb(255,255,255)' offset='1'/></radialGradient></defs></svg>");
-  background-size:100% 100%;
-}
 .js-alert-title{
   position:absolute;
-  left:244px; top:2556px;
+  left:244px; top:3215px;
   width:745px; height:70px;
   display:flex; flex-direction:column; justify-content:center;
   font-family:var(--display);
   font-weight:500;
   font-size:56px;
   line-height:70px;
+  text-transform:capitalize;
   color:var(--brown);
 }
 .js-alert-sub{
   position:absolute;
-  left:240px; top:2654px;
+  left:240px; top:3313px;
   width:511px; height:36px;
   font-size:24px;
   line-height:1.5;
@@ -307,7 +395,7 @@
 
 .js-field{
   position:absolute;
-  top:2742px;
+  top:3401px;
   height:68.8096px;
   background:#fff;
   border-radius:14.236px;
@@ -334,7 +422,7 @@
 .js-field input::placeholder{ color:#b8b8b8; }
 
 .js-submit{
-  left:727px; top:2742px;
+  left:727px; top:3401px;
   width:144px; height:69px;
   gap:10.5697px;
   padding:15.854px 20px;
@@ -347,7 +435,7 @@
 
 .js-map{
   position:absolute;
-  left:1085px; top:2449px;
+  left:1087px; top:3108px;
   width:595px; height:484px;
   border-radius:36px;
   object-fit:cover;
@@ -357,19 +445,20 @@
 /* ===================== WHY RIDERS CHOOSE US ===================== */
 .js-why-title{
   position:absolute;
-  left:504px; top:3076px;
+  left:504px; top:2498px;
   width:913px; height:70px;
   font-family:var(--display);
   font-weight:500;
   font-size:56px;
   line-height:70px;
   text-align:center;
+  text-transform:capitalize;
   color:var(--brown);
 }
 
 .why-card{
   position:absolute;
-  top:3194px;
+  top:2616px;
   width:347px; height:365px;
   padding:36px;
   border-radius:24px;
@@ -416,20 +505,21 @@
 /* ===================== TESTIMONIALS ===================== */
 .riders-band{
   position:absolute;
-  left:0; top:3648px;
+  left:0; top:3731px;
   width:1920px; height:844px;
   background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 1920 844' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)' opacity='0.52'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -208.21 171.11 0 960 1461.5)'><stop stop-color='rgb(255,164,97)' offset='0'/><stop stop-color='rgb(255,187,136)' offset='0.25'/><stop stop-color='rgb(255,210,176)' offset='0.5'/><stop stop-color='rgb(255,232,215)' offset='0.75'/><stop stop-color='rgb(255,255,255)' offset='1'/></radialGradient></defs></svg>");
   background-size:100% 100%;
 }
 .js-riders-title{
   position:absolute;
-  left:504px; top:3763px;
+  left:504px; top:3846px;
   width:913px; height:70px;
   font-family:var(--display);
   font-weight:500;
   font-size:56px;
   line-height:70px;
   text-align:center;
+  text-transform:capitalize;
   color:var(--brown);
 }
 
@@ -437,7 +527,7 @@
    quotes. The card grows instead; the dots sit 48 px below it. */
 .rider-card{
   position:absolute;
-  top:3881px;
+  top:3964px;
   width:456px; min-height:417px;
   padding:51px 42px;
   border-radius:24px;
@@ -500,39 +590,40 @@
 
 .rider-dots{
   position:absolute;
-  left:893px; top:4346px;
+  left:893px; top:4429px;
   height:10.69px;
   display:flex; align-items:center; gap:12px;
 }
+/* white dots — they sit on the orange testimonial band */
 .rider-dot{
   width:10.69px; height:10.69px;
   border:0;
   border-radius:132px;
-  background:var(--orange);
-  opacity:.35;
+  background:rgba(255,255,255,.5);
   cursor:pointer;
   padding:0;
-  transition:width .35s ease, opacity .35s ease;
+  transition:width .35s ease, background .35s ease;
 }
-.rider-dot:hover{ opacity:.6; }
-.rider-dot.active{ width:88.22px; opacity:1; }
+.rider-dot:hover{ background:rgba(255,255,255,.75); }
+.rider-dot.active{ width:88.22px; background:#fff; }
 
 /* ===================== FAQ ===================== */
 .js-faq-title{
   position:absolute;
-  left:615px; top:4625px;
-  width:690px; height:69px;
+  left:612px; top:4663px;
+  width:697px; height:69px;
   font-family:var(--display);
   font-weight:500;
   font-size:56px;
   line-height:69px;
   text-align:center;
+  text-transform:capitalize;
   color:var(--brown);
 }
 
 .faq{
   position:absolute;
-  left:393px; top:4757px;
+  left:393px; top:4795px;
   width:1104px;
   display:flex; flex-direction:column; gap:26px;
 }
@@ -602,13 +693,14 @@
 }
 
 /* ===================== CTA ===================== */
-.cta{ left:240px; top:5631px; width:1440px; height:384px; }
+.cta{ left:240px; top:5669px; width:1440px; height:384px; }
 .cta-bg{ width:1440px; height:384px; }
 .cta-text{
   left:267px; top:111px;
   width:907px; height:68px;
   font-size:54px;
   line-height:68px;
+  text-transform:capitalize;
 }
 .cta-form{
   position:absolute;
@@ -638,4 +730,4 @@
 .cta-form-btn .arrow img{ width:13.92px; height:13.92px; }
 
 /* ===================== FOOTER ===================== */
-.footer{ top:6212px; }
+.footer{ top:6167px; }

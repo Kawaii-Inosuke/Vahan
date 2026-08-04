@@ -87,34 +87,39 @@
   <img class="header-bg" src="assets/careers/header%20bg.svg" alt="">
 
   <!-- ============ HERO ============ -->
-  <h1 class="hero-title">Your Next Job Is a <br>WhatsApp Message Away.</h1>
+  <h1 class="hero-title">Your Next Job Is a WhatsApp Message Away</h1>
 
   <p class="js-salary">₹25,000+ guaranteed monthly salary</p>
 
   <!-- ============ HOW IT WORKS (3 steps) ============ -->
   <div class="js-steps m-wrap">
-    <div class="js-step" style="left:332px">
+    <div class="js-step js-step-1">
       <span class="js-step-num">01</span>
-      <p class="js-step-text" style="width:257px">
+      <p class="js-step-text" style="width:302px">
         <b>Tap ‘Apply on WhatsApp’</b>
         <span>No forms, no fees.</span>
       </p>
     </div>
-    <div class="js-step" style="left:765px">
+    <div class="js-step js-step-2">
       <span class="js-step-num">02</span>
-      <p class="js-step-text" style="width:277px">
+      <p class="js-step-text" style="width:313px">
         <b>Answer 2 simple questions</b>
         <span>Takes 2 minutes.</span>
       </p>
     </div>
-    <div class="js-step" style="left:1198px">
+    <div class="js-step js-step-3">
       <span class="js-step-num">03</span>
-      <p class="js-step-text" style="width:226px">
+      <p class="js-step-text" style="width:313px">
         <b>Your job is confirmed!</b>
         <span>Start the same week.</span>
       </p>
     </div>
   </div>
+
+  <!-- the cut-out rider standing on an orange plinth -->
+  <div class="js-hero-block"></div>
+  <img class="js-hero-photo" src="assets/job%20seekers/hero/delivery-partner.png"
+       alt="Vahan delivery partner holding a phone and a parcel">
 
   <!-- ============ HERO FORM ============ -->
   <div class="hero-form m-wrap">
@@ -135,7 +140,7 @@
   <div class="msec msec-brands m-wrap">
     <div class="brands-band"></div>
 
-    <h2 class="brands-title">Work with India’s top companies.</h2>
+    <h2 class="brands-title">Work with India’s Top Companies</h2>
 
     <div class="brand-row">
       <img class="brand-tile" src="assets/job%20seekers/Button.svg" alt="Blinkit">
@@ -152,7 +157,39 @@
   </div><!-- /.msec-brands -->
 
   <!-- ============ VERIFIED JOBS ============ -->
-  <h2 class="js-jobs-title">9,200+ verified jobs across India.</h2>
+  <h2 class="js-jobs-title">9,200+ Verified Jobs Across India</h2>
+
+  <div class="js-filters">
+    <label class="js-select js-select-city">
+      <select data-filter="city" aria-label="Filter by city">
+        <option value="all">City</option>
+        <option value="mumbai">Mumbai</option>
+      </select>
+      <img class="js-select-caret" src="assets/careers/select-caret.svg" alt="">
+    </label>
+
+    <label class="js-select js-select-hood">
+      <select data-filter="hood" aria-label="Filter by neighbourhood">
+        <option value="all">Neighbourhood</option>
+        <option value="tenament gate">Tenament Gate</option>
+        <option value="modi institute">A.D. Modi Institute</option>
+        <option value="ansari chowk">A.H. Ansari Chowk</option>
+      </select>
+      <img class="js-select-caret" src="assets/careers/select-caret.svg" alt="">
+    </label>
+
+    <label class="js-select js-select-firm">
+      <select data-filter="company" aria-label="Filter by company">
+        <option value="all">Company</option>
+        <option value="zomato">Zomato</option>
+        <option value="swiggy">Swiggy</option>
+        <option value="zepto">Zepto</option>
+      </select>
+      <img class="js-select-caret" src="assets/careers/select-caret.svg" alt="">
+    </label>
+  </div>
+
+  <p class="job-empty" hidden>No jobs match those filters yet — try widening your search.</p>
 
   <div class="job-card" style="left:240px">
     <div class="job-head">
@@ -186,7 +223,7 @@
     </div>
   </div>
 
-  <div class="job-card" style="left:727px">
+  <div class="job-card" style="left:729px;width:462px">
     <div class="job-head">
       <div class="job-head-text">
         <p class="job-title">Swiggy Delivery Partner</p>
@@ -218,7 +255,7 @@
     </div>
   </div>
 
-  <div class="job-card" style="left:1214px">
+  <div class="job-card" style="left:1217px">
     <div class="job-head">
       <div class="job-head-text">
         <p class="job-title">Zepto Delivery Partner</p>
@@ -253,35 +290,13 @@
   <!-- ============ REFERRAL BANNER ============ -->
   <div class="js-refer">
     <img class="js-refer-img" src="assets/job%20seekers/magnific__background__90723%201.svg" alt="">
-    <p class="js-refer-title">Refer karo, ₹3,000 tak Kamao!</p>
+    <p class="js-refer-title">Refer karo, ₹3000 tak Kamao!</p>
     <p class="js-refer-sub">Know someone who needs a job? Refer your friend and earn.</p>
     <a class="js-refer-btn" href="contact.html">Refer Now!</a>
   </div>
 
-  <!-- ============ ALERT ME FOR A JOB ============ -->
-  <div class="msec msec-alert m-wrap">
-    <div class="js-alert-band"></div>
-
-    <h2 class="js-alert-title">Alert Me for a Job in My Area</h2>
-    <p class="js-alert-sub">Get notified when new jobs match your area.</p>
-
-    <div class="js-field js-field-area">
-      <input type="text" id="js-area" name="area" placeholder="Area Name" autocomplete="address-level2">
-    </div>
-
-    <div class="js-field js-field-phone">
-      <input type="tel" id="js-phone" name="phone" placeholder="(+91) WhatsApp Number" autocomplete="tel">
-    </div>
-
-    <button type="button" class="btn btn-grad js-submit">
-      <span>Submit</span>
-    </button>
-
-    <img class="js-map" src="assets/job%20seekers/ChatGPT%20Image%20Jul%2016,%202026,%2005_57_26%20PM%201.svg" alt="">
-  </div><!-- /.msec-alert -->
-
   <!-- ============ WHY RIDERS CHOOSE US ============ -->
-  <h2 class="js-why-title">Why Riders Choose Us.</h2>
+  <h2 class="js-why-title">Why Riders Choose Us</h2>
 
   <div class="why-card" style="left:240px">
     <span class="why-icon"><img src="assets/job%20seekers/fi_722320.svg" alt=""></span>
@@ -315,11 +330,31 @@
     </div>
   </div>
 
+  <!-- ============ ALERT ME FOR A JOB ============ -->
+  <div class="msec msec-alert m-wrap">
+    <h2 class="js-alert-title">Alert Me for a Job in My Area</h2>
+    <p class="js-alert-sub">Get notified when new jobs match your area.</p>
+
+    <div class="js-field js-field-area">
+      <input type="text" id="js-area" name="area" placeholder="Area Name" autocomplete="address-level2">
+    </div>
+
+    <div class="js-field js-field-phone">
+      <input type="tel" id="js-phone" name="phone" placeholder="(+91) WhatsApp Number" autocomplete="tel">
+    </div>
+
+    <button type="button" class="btn btn-grad js-submit">
+      <span>Submit</span>
+    </button>
+
+    <img class="js-map" src="assets/job%20seekers/ChatGPT%20Image%20Jul%2016,%202026,%2005_57_26%20PM%201.svg" alt="">
+  </div><!-- /.msec-alert -->
+
   <!-- ============ TESTIMONIALS ============ -->
   <div class="msec msec-riders m-wrap">
     <div class="riders-band"></div>
 
-    <h2 class="js-riders-title">Hear from riders like you.</h2>
+    <h2 class="js-riders-title">Hear From Job Seekers Like You</h2>
 
     <figure class="rider-card rider-slot-1">
       <img class="rider-quote" src="assets/job%20seekers/quote-icon.svg" alt="">
@@ -406,7 +441,7 @@
   </div><!-- /.msec-riders -->
 
   <!-- ============ FAQ ============ -->
-  <h2 class="js-faq-title">Frequently asked questions.</h2>
+  <h2 class="js-faq-title">Frequently Asked Questions</h2>
 
   <div class="faq">
     <div class="faq-item faq-open">
@@ -466,7 +501,7 @@
   <!-- ============ CTA ============ -->
   <div class="cta">
     <img class="cta-bg" src="assets/case%20study%20listing%20page/7%207.svg" alt="">
-    <p class="cta-text">Get Your Next Delivery Job Today.</p>
+    <p class="cta-text">Get Your Next Delivery Job Today</p>
 
     <div class="cta-form">
       <div class="hero-field">
@@ -626,6 +661,33 @@
           }, 1800);
         });
       }
+
+      /* ---------- verified jobs: city / neighbourhood / company ---------- */
+      const jobSelects = [...document.querySelectorAll('.js-select select')];
+      const jobCards   = [...document.querySelectorAll('.job-card')];
+      const jobEmpty   = document.querySelector('.job-empty');
+
+      function applyJobFilters() {
+        let shown = 0;
+
+        jobCards.forEach(card => {
+          const where   = card.querySelector('.job-row span').textContent.toLowerCase();
+          const company = card.querySelector('.job-company').textContent.toLowerCase();
+
+          const matches = jobSelects.every(s =>
+            s.value === 'all' ||
+            (s.dataset.filter === 'company' ? company.includes(s.value) : where.includes(s.value)));
+
+          card.classList.toggle('is-hidden', !matches);
+          if (matches) shown++;
+        });
+
+        jobEmpty.hidden = shown > 0;
+        jobSelects.forEach(s => s.classList.toggle('is-set', s.value !== 'all'));
+      }
+
+      jobSelects.forEach(s => s.addEventListener('change', applyJobFilters));
+      applyJobFilters();
 
       /* ---------- testimonials: three at a time, dots page through ---------- */
       const cards = [...document.querySelectorAll('.rider-card')];

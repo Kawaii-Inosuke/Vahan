@@ -79,13 +79,15 @@
 /* ===================== shared section heading ===================== */
 .nr-h2{
   position:absolute;
-  left:485px;
-  width:950px; height:70px;
+  left:486.4917px;
+  width:950.0167px; height:70px;
   font-family:var(--display);
   font-weight:500;
   font-size:56px;
   line-height:70px;
   text-align:center;
+  /* Figma sets these headings to Title Case rather than editing the copy */
+  text-transform:capitalize;
   color:var(--brown);
 }
 
@@ -167,7 +169,7 @@
 .nr-release{
   position:absolute;
   left:243px;
-  width:1437px; height:291px;
+  width:1462px; height:291px;
   background:rgba(249,118,25,.08);
   border-radius:24px;
   padding:24px 72px;
