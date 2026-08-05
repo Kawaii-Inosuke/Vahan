@@ -307,8 +307,8 @@
   line-height:68px;
 }
 .cta-btn{
-  left:564.5px; top:201px;
-  width:313.6364px; height:73px;
+  left:518.5px; top:201px;          /* centred on the 1440 card */
+  width:403px; height:73px;
 }
 
 /* ===================== FOOTER ===================== */

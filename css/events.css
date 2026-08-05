@@ -110,7 +110,8 @@
   padding:6.777px 23.721px;
   border:1.084px solid #ffd1b2;
   border-radius:12px;
-  background:#fff6ef;
+  /* unselected chips carry the border only — the page ground shows through */
+  background:transparent;
   display:flex; align-items:center; justify-content:center;
   font-size:19.519px;
   line-height:40.664px;
