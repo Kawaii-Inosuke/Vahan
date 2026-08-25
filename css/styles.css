@@ -33,6 +33,13 @@
 }
 @font-face{
   font-family:"Season Mix";
+  src:url("../assets/season-font-family/SeasonMix-TRIAL-Bold.otf") format("opentype");
+  font-weight:700;
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:"Season Mix";
   src:url("../assets/season-font-family/SeasonMix-TRIAL-RegularItalic.otf") format("opentype");
   font-weight:400;
   font-style:italic;

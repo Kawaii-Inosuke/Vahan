@@ -72,16 +72,17 @@
   <img class="header-bg" src="assets/case%20study%20listing%20page/header%20bg.svg" alt="">
 
   <!-- ============ HERO ============ -->
-  <p class="cs-eyebrow">Customer Story</p>
-  <h1 class="cs-title" data-cs="title">How Zomato scaled its delivery workforce in times of need.</h1>
+  <!-- the cover photo bleeds off the right edge and dissolves into the page -->
+  <div class="cs-hero-photo" aria-hidden="true"><img data-cs="hero-image" src="" alt=""></div>
+
+  <p class="cs-eyebrow">C L I E N T  S U C C E S S  S T O R Y   -   <b data-cs="brand"></b></p>
+  <h1 class="cs-title" data-cs="hero-title"></h1>
 
   <a class="btn cs-cta" href="contact.html">
     <span>Contact Us</span>
     <span class="arrow"><img src="assets/homepage/icons/arrow-right.svg" alt=""></span>
   </a>
   <a class="cs-download" href="#">Download Case Study</a>
-
-  <div class="cs-hero-img"><img data-cs="image" src="assets/case%20study%20listing%20page/zomato%20image.svg" alt=""></div>
 
   <!-- ============ STATS BAND ============ -->
   <div class="stats-band"></div>
@@ -100,12 +101,12 @@
     <p class="stat-label">cities</p>
   </div>
   <div class="stat-body stat-body-3">
-    <p class="stat-num">5 Crore+</p>
-    <p class="stat-label">workers in our network</p>
+    <p class="stat-num" data-cs="stat-num"></p>
+    <p class="stat-label" data-cs="stat-label"></p>
   </div>
   <div class="stat-body stat-body-4">
-    <p class="stat-num">25%</p>
-    <p class="stat-label">higher recruitment efficiency</p>
+    <p class="stat-num">5 Crore+</p>
+    <p class="stat-label">workers in our network</p>
   </div>
 
   <!-- ============ OVERVIEW ============ -->
@@ -120,68 +121,58 @@
         <p class="cs-overview-p" data-cs="dek"></p>
       </div>
       <div class="cs-facts">
-        <span class="cs-fact"><span>Industry: <span data-cs="industry"></span></span></span>
-        <span class="cs-fact"><span>Regions: <span data-cs="regions"></span></span></span>
-        <span class="cs-fact"><span>Use Case: <span data-cs="roles"></span></span></span>
+        <p class="cs-fact"><b>Industry:</b> <span data-cs="industry"></span></p>
+        <p class="cs-fact"><b>Use Case:</b> <span data-cs="usecase"></span></p>
       </div>
     </div>
-    <div class="cs-overview-img"><img data-cs="image" src="assets/case%20study%20listing%20page/zomato%20image.svg" alt=""></div>
+
+    <nav class="cs-rail" aria-label="Jump to section">
+      <a href="#challenge" class="is-active">The Challenge</a>
+      <a href="#solution">The Solution</a>
+      <a href="#impact">The Impact</a>
+    </nav>
   </div>
 
   <!-- ============ ARTICLE ============ -->
-  <h2 class="cs-h2" id="challenge" style="top:2024px">The Challenge</h2>
-  <p class="cs-p" data-cs="challenge" style="top:2092px"></p>
+  <article class="cs-article">
+    <h2 class="cs-h2" id="challenge">The Challenge</h2>
+    <div class="cs-body" data-cs="challenge"></div>
 
-  <nav class="cs-rail" aria-label="Jump to section">
-    <a href="#challenge" class="is-active">The Challenge</a>
-    <a href="#solution">The Solution</a>
-    <a href="#impact">The Impact</a>
-  </nav>
+    <h2 class="cs-h2" id="solution">The Vahan.ai Solution</h2>
+    <div class="cs-body" data-cs="solution"></div>
 
-  <h2 class="cs-h2" id="solution" style="top:2402px">The Solution</h2>
-  <p class="cs-p" data-cs="solution" style="top:2470px"></p>
+    <h2 class="cs-h2" id="impact">The Impact</h2>
+    <div class="cs-body" data-cs="impact"></div>
+  </article>
 
-  <div class="cs-shot" style="top:2790px;width:955px;height:506px">
-    <img data-cs="image" src="assets/case%20study%20listing%20page/zomato%20image.svg" alt="">
+  <!-- ============ BROWSE CASE STUDIES ============ -->
+  <div class="cs-cards">
+    <a class="cs-card" data-cs-more="0" href="case-studies.html">
+      <div class="cs-card-img"><img src="" alt=""></div>
+      <div class="cs-card-body">
+        <div class="cs-card-logo"><img src="" alt=""></div>
+        <p class="cs-card-title"></p>
+        <p class="cs-card-meta"></p>
+        <span class="btn cs-card-btn">
+          <span>Read the case study</span>
+          <span class="arrow"><img src="assets/homepage/icons/arrow-right.svg" alt=""></span>
+        </span>
+      </div>
+    </a>
+
+    <a class="cs-card" data-cs-more="1" href="case-studies.html">
+      <div class="cs-card-img"><img src="" alt=""></div>
+      <div class="cs-card-body">
+        <div class="cs-card-logo"><img src="" alt=""></div>
+        <p class="cs-card-title"></p>
+        <p class="cs-card-meta"></p>
+        <span class="btn cs-card-btn">
+          <span>Read the case study</span>
+          <span class="arrow"><img src="assets/homepage/icons/arrow-right.svg" alt=""></span>
+        </span>
+      </div>
+    </a>
   </div>
-
-  <h2 class="cs-h2" id="impact" style="top:3374px">The Impact</h2>
-  <p class="cs-p" data-cs="impact" style="top:3442px"></p>
-
-  <div class="cs-shot" style="top:3755px;width:955px;height:253px">
-    <img data-cs="image" src="assets/case%20study%20listing%20page/zomato%20image.svg" alt="">
-  </div>
-
-  <p class="cs-p" data-cs="quote" style="top:4075px"></p>
-
-  <!-- ============ BROWSE ALL CASE STUDIES ============ -->
-  <h2 class="cs-browse-title">Browse All Case Studies</h2>
-
-  <a class="cs-card cs-card-1" data-cs-more="0" href="case-studies.html">
-    <div class="cs-card-img"><img src="" alt=""></div>
-    <div class="cs-card-body">
-      <div class="cs-card-logo"><img src="" alt=""></div>
-      <p class="cs-card-title"></p>
-      <p class="cs-card-meta"></p>
-      <span class="btn cs-card-btn">
-        <span>Read the case study</span>
-        <span class="arrow"><img src="assets/homepage/icons/arrow-right.svg" alt=""></span>
-      </span>
-    </div>
-  </a>
-
-  <a class="cs-card cs-card-2" data-cs-more="1" href="case-studies.html">
-    <div class="cs-card-img"><img src="" alt=""></div>
-    <div class="cs-card-body">
-      <div class="cs-card-logo"><img src="" alt=""></div>
-      <p class="cs-card-title"></p>
-      <p class="cs-card-meta"></p>
-      <span class="btn cs-card-btn">
-        <span>Read the case study</span>
-        <span class="arrow"><img src="assets/homepage/icons/arrow-right.svg" alt=""></span>
-      </span>
-    </div>
-  </a>
 
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
@@ -267,32 +258,74 @@
     const set = (name, value) => {
       document.querySelectorAll(`[data-cs="${name}"]`).forEach(el => { el.textContent = value; });
     };
+    /* every study renders through the same template, so anything the design
+       only spells out for Zomato falls back to the fields older entries have */
+    const asParas = v => Array.isArray(v) ? v : [v];
 
     document.title = `${study.title} — Vahan Case Study`;
 
-    set('title',    study.title);
+    /* ---------- hero ---------- */
+    document.documentElement.style.setProperty('--cs-brand', study.brandColor || '#f97619');
+    set('brand',      study.company.toUpperCase());
+    set('hero-title', study.heroTitle || study.title);
+
+    const heroImg = document.querySelector('[data-cs="hero-image"]');
+    heroImg.src = study.heroImage || study.image;
+    heroImg.alt = `${study.company} — ${study.industry}`;
+
+    /* ---------- stats band ---------- */
+    const stat = study.heroStat || { n: '25%', l: 'higher recruitment efficiency' };
+    set('stat-num',   stat.n);
+    set('stat-label', stat.l);
+
+    /* ---------- overview ---------- */
     set('industry', study.industry);
-    set('regions',  study.regions);
-    set('roles',    study.roles);
+    set('usecase',  study.useCase || study.roles);
     set('dek',      study.dek);
-    set('overview',
+    set('overview', study.overview ||
       `${study.company} runs in ${study.industry.toLowerCase()}, hiring ${study.roles.toLowerCase()} ` +
       `across ${study.regions}. This is how that hiring engine was rebuilt with Vahan.`);
-    set('challenge', study.challenge);
-    set('solution',  study.solution.join(' '));
-    set('impact',    study.results.join(' '));
-    set('quote',     `“${study.quote.text}” — ${study.quote.name}, ${study.quote.role}`);
 
-    document.querySelectorAll('[data-cs="image"]').forEach(img => {
-      img.src = study.image;
-      img.alt = `${study.company} — ${study.industry}`;
-    });
+    /* ---------- article ---------- */
+    const para = (text, cls) => {
+      const p = document.createElement('p');
+      if (cls) p.className = cls;
+      p.textContent = text;
+      return p;
+    };
+    const fill = (name, nodes) => {
+      const host = document.querySelector(`[data-cs="${name}"]`);
+      host.replaceChildren(...nodes);
+    };
 
-    /* the two cards below the article walk on from this study */
+    fill('challenge', asParas(study.challenge).map(t => para(t)));
+
+    const solution = [];
+    if (study.solutionIntro) solution.push(para(study.solutionIntro));
+    if (study.solutionPoints) {
+      const list = document.createElement('div');
+      list.className = 'cs-points';
+      study.solutionPoints.forEach(pt => {
+        const p = para('', 'cs-point');
+        const b = document.createElement('b');
+        b.textContent = `• ${pt.label}:`;
+        p.append(b, ` ${pt.text}`);
+        list.append(p);
+      });
+      solution.push(list);
+      if (study.solutionClose) solution.push(para(study.solutionClose));
+    } else {
+      asParas(study.solution).forEach(t => solution.push(para(t)));
+    }
+    fill('solution', solution);
+
+    fill('impact', asParas(study.impact || study.results).map(t => para(t)));
+
+    /* ---------- the two studies that follow this one ---------- */
     const start = ORDER.indexOf(key);
     document.querySelectorAll('[data-cs-more]').forEach(card => {
-      const s = STUDIES[ORDER[(start + 1 + Number(card.dataset.csMore)) % ORDER.length]];
       const slug = ORDER[(start + 1 + Number(card.dataset.csMore)) % ORDER.length];
+      const s = STUDIES[slug];
       card.href = `case-study.html?id=${slug}`;
       card.querySelector('.cs-card-img img').src = s.image;
       card.querySelector('.cs-card-img img').alt = s.company;
@@ -302,10 +335,10 @@
       card.querySelector('.cs-card-meta').textContent = `${s.company} · ${s.industry}`;
     });
 
-    /* The design sets the headline at 86 px in a fixed 838 x 198 box, which
-       fits its two-word placeholder. Real study titles run longer, so step
-       the size down until it lands inside that box rather than colliding
-       with the buttons beneath it. */
+    /* The design sets the headline at 86 px in a fixed 644 x 198 box, which
+       fits its four-word placeholder. Longer study titles step the size down
+       until they land inside that box rather than colliding with the buttons
+       beneath it. */
     const title = document.querySelector('.cs-title');
     const fitTitle = () => {
       title.style.fontSize = '';
@@ -315,9 +348,30 @@
         title.style.lineHeight = Math.round(size * 1.151) + 'px';
       }
     };
+
+    /* The article is the only block whose height depends on the copy, so the
+       browse cards, the footer and the page itself hang off its measured
+       bottom. The design's gaps: 124 px article → cards, 124 px cards →
+       footer, and a 600 px footer. */
+    const ARTICLE_TOP = 2028, GAP = 124, CARDS_H = 605, FOOTER_H = 600;
+    const article = document.querySelector('.cs-article');
+    const cards   = document.querySelector('.cs-cards');
+    const footer  = document.querySelector('.footer');
+    const page    = document.querySelector('.page');
+    const layout = () => {
+      if (!window.matchMedia('(min-width:1024px)').matches) return;  /* mobile stack */
+      const cardsTop  = ARTICLE_TOP + article.offsetHeight + GAP;
+      const footerTop = cardsTop + CARDS_H + GAP;
+      cards.style.top  = cardsTop + 'px';
+      footer.style.top = footerTop + 'px';
+      page.style.height = (footerTop + FOOTER_H) + 'px';
+    };
+
+    const measure = () => { fitTitle(); layout(); };
     /* measure once the display face is actually applied, not against the fallback */
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitTitle);
-    else fitTitle();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+    else measure();
+    window.addEventListener('resize', measure);
 
     /* the rail marks whichever section is currently in view */
     const links = [...document.querySelectorAll('.cs-rail a')];

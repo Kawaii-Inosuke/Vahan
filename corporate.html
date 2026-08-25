@@ -69,25 +69,42 @@
   <img class="header-bg" src="assets/homepage/header%20bg%20image.svg" alt="">
 
   <!-- ============ HERO ART ============ -->
-  <!-- Paint order matches Figma: the two small chips sit behind the photo
-       cards, the large one in front of the bottom card. -->
+  <!-- Paint order matches Figma: orange slab → the worker chip that tucks
+       behind her hair → the recruiter cut-out → the two chips that sit in
+       front of her → the two glass stat cards. -->
   <div class="hero-art" aria-hidden="true">
-    <span class="hero-chip hero-chip-2"></span>
-    <span class="hero-chip hero-chip-1"></span>
+    <span class="hero-slab"></span>
 
-    <div class="hero-photo hero-photo-1"><img src="assets/Corporate/hero/hero-worker-1.png" alt=""></div>
-    <div class="hero-photo hero-photo-2"><img src="assets/Corporate/hero/hero-worker-2.png" alt=""></div>
-    <div class="hero-photo hero-photo-3"><img src="assets/Corporate/hero/hero-worker-3.png" alt=""></div>
+    <img class="hero-avatar hero-avatar-1" src="assets/Corporate/hero/hero-avatar-1.jpg" alt="">
+    <img class="hero-person" src="assets/Corporate/hero/hero-person.webp" alt="" width="508" height="556">
+    <img class="hero-avatar hero-avatar-2" src="assets/Corporate/hero/hero-avatar-2.jpg" alt="">
+    <img class="hero-avatar hero-avatar-3" src="assets/Corporate/hero/hero-avatar-3.jpg" alt="">
 
-    <span class="hero-chip hero-chip-3"></span>
+    <div class="hero-card hero-card-roles">
+      <p class="hero-card-label">Your Open Roles</p>
+      <div class="hero-roles-stats">
+        <p class="hero-roles-count"><b>87</b><span> / 100 filled</span></p>
+        <span class="hero-pill">6 Days</span>
+      </div>
+      <div class="hero-progress"><span></span></div>
+    </div>
+
+    <div class="hero-card hero-card-hire">
+      <p class="hero-card-label hero-card-label-sm">Latest Hire &bull; Verified</p>
+      <div class="hero-hire">
+        <img class="hero-hire-avatar" src="assets/Corporate/hero/hero-hire-avatar.svg" alt="">
+        <p class="hero-hire-name">Ramesh Yadav</p>
+      </div>
+      <p class="hero-hire-meta">ID &bull; Skills &bull; Background Checked</p>
+    </div>
   </div>
 
   <!-- ============ HERO ============ -->
-  <h1 class="hero-title">Blue-Collar Hiring That <br>Scales With You</h1>
+  <h1 class="hero-title">Blue-Collar Hiring <br>That Scales With You.</h1>
 
   <p class="hero-sub">
-    Our AI recruiter calls, screens, verifies, onboards, and retains workers for the <br>
-    corporates you serve across 900+ cities.
+    Our AI recruiter calls, screens, verifies, onboards, and retains workers <br>
+    for the corporates you serve across 900+ cities.
   </p>
 
   <div class="hero-form m-wrap">
@@ -158,7 +175,7 @@
   <h2 class="three-title">Hiring Comes Down To Three Things. <br>We Deliver All Three.</h2>
 
   <div class="feat" style="left:245px">
-    <img class="feat-img" src="assets/Corporate/scale%20image.png" alt="">
+    <img class="feat-img" src="assets/Corporate/features/scale.jpg" alt="">
     <div class="feat-body">
       <p class="feat-title">Scale</p>
       <p class="feat-desc" style="width:331px">India's largest blue-collar network, built to deliver at any scale, backed by a 5 crore+ worker network</p>
@@ -166,7 +183,7 @@
   </div>
 
   <div class="feat" style="left:730px">
-    <img class="feat-img" src="assets/Corporate/reliability%20image.png" alt="">
+    <img class="feat-img" src="assets/Corporate/features/reliability.jpg" alt="">
     <div class="feat-body">
       <p class="feat-title">Reliability</p>
       <p class="feat-desc" style="width:363px">20 lakh+ workers placed across 900+ cities, delivered with enterprise rigour at startup speed</p>
@@ -174,7 +191,7 @@
   </div>
 
   <div class="feat" style="left:1217px">
-    <img class="feat-img" src="assets/Corporate/qualtiy%20image.svg" alt="">
+    <img class="feat-img" src="assets/Corporate/features/quality.jpg" alt="">
     <div class="feat-body">
       <p class="feat-title">Quality</p>
       <p class="feat-desc" style="width:329px">Workers who show up and stay, matched for fit, not just numbers on a sheet</p>
@@ -185,7 +202,7 @@
   <h2 class="agents-title">AI Agents Automating The <br>Entire Hiring Process</h2>
 
   <div class="agents-list">
-    <div class="agent-item agent-active" data-image="assets/Corporate/intelligent%20sourcing%20image.svg">
+    <div class="agent-item agent-active" data-image="assets/Corporate/agents/intelligent-sourcing.jpg">
       <div class="agent-head">
         <span class="agent-icon">
           <img class="icon-inactive" src="assets/Corporate/icons/dark%20color/intelligent%20dark%20icon.svg" alt="">
@@ -196,7 +213,7 @@
       <p class="agent-desc">Find high-intent candidates across every channel, drawn from India’s largest worker network</p>
     </div>
 
-    <div class="agent-item" data-image="assets/Corporate/Smart%20Screening%20image.svg">
+    <div class="agent-item" data-image="assets/Corporate/agents/smart-screening.jpg">
       <div class="agent-head">
         <span class="agent-icon">
           <img class="icon-inactive" src="assets/Corporate/icons/dark%20color/smart%20dark%20icon.svg" alt="">
@@ -207,7 +224,7 @@
       <p class="agent-desc">Voice AI calls and qualifies every candidate in their own language. English today, with Tamil, Kannada, and Telugu rolling out next.</p>
     </div>
 
-    <div class="agent-item" data-image="assets/Corporate/Best-fit%20Matching%20image.svg">
+    <div class="agent-item" data-image="assets/Corporate/agents/best-fit-matching.jpg">
       <div class="agent-head">
         <span class="agent-icon">
           <img class="icon-inactive" src="assets/Corporate/icons/dark%20color/best%20fit%20dark%20icon.svg" alt="">
@@ -218,7 +235,7 @@
       <p class="agent-desc">Matching built on India’s largest first-party blue-collar hiring dataset, so it sharpens with every hire.</p>
     </div>
 
-    <div class="agent-item" data-image="assets/Corporate/Retention%20Intelligence%20image.svg">
+    <div class="agent-item" data-image="assets/Corporate/agents/retention-intelligence.jpg">
       <div class="agent-head">
         <span class="agent-icon">
           <img class="icon-inactive" src="assets/Corporate/icons/dark%20color/retention%20dark%20icon.svg" alt="">
@@ -229,7 +246,7 @@
       <p class="agent-desc">Signals that predict who will stay, so you hire <br>workers who last.</p>
     </div>
 
-    <div class="agent-item" data-image="assets/Corporate/Engagement%20Automation%20image.svg">
+    <div class="agent-item" data-image="assets/Corporate/agents/engagement-automation.jpg">
       <div class="agent-head">
         <span class="agent-icon">
           <img class="icon-inactive" src="assets/Corporate/icons/dark%20color/engagement%20dark%20icon.svg" alt="">
@@ -242,7 +259,7 @@
   </div>
 
   <div class="agents-visual">
-    <img id="agents-visual-img" src="assets/Corporate/intelligent%20sourcing%20image.svg" alt="">
+    <img id="agents-visual-img" src="assets/Corporate/agents/intelligent-sourcing.jpg" alt="">
   </div>
 
   <!-- ============ CASE STUDIES ============ -->
@@ -341,7 +358,7 @@
   <h2 class="else-title">Looking For Something Else?</h2>
 
   <div class="explore" style="left:242.9590px">
-    <img class="explore-img" src="assets/Corporate/vahan%20partners%20image.svg" alt="">
+    <img class="explore-img" src="assets/Corporate/explore/vahan-partners.jpg" alt="">
     <div class="explore-body">
       <p class="explore-eyebrow">Vahan Partners</p>
       <div class="explore-copy">
@@ -359,7 +376,7 @@
   </div>
 
   <div class="explore" style="left:980.9590px">
-    <img class="explore-img" src="assets/Corporate/vahan%20jobs.svg" alt="">
+    <img class="explore-img" src="assets/Corporate/explore/vahan-jobs.jpg" alt="">
     <div class="explore-body">
       <p class="explore-eyebrow">Vahan Jobs</p>
       <div class="explore-copy">
@@ -367,7 +384,7 @@
         <p class="explore-desc">Find real jobs from India's top employers. Apply by chat or voice, in your language.</p>
       </div>
       <div class="explore-foot">
-        <p class="explore-stat"><b>20 Lakh+</b> workers placed</p>
+        <p class="explore-stat"><b>10 Lakh+</b> workers placed</p>
         <button class="btn btn-grad grad-241 explore-btn explore-btn-jobs">
           <span class="inter-medium">Find Jobs Near You</span>
           <span class="arrow"><img src="assets/homepage/icons/arrow-right.svg" alt=""></span>

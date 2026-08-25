@@ -1195,8 +1195,8 @@ body {
     margin: 20px auto 0;
     width: calc(100% - var(--pad) * 2) !important;
     max-width: var(--mw);
+    height: auto !important;
     border-radius: var(--r);
-    padding: 10px;
   }
 
   .agents-visual img {
@@ -1815,20 +1815,26 @@ body {
 
   .p-case-study .page>.cs-download {
     order: 12;
-    margin: 10px auto 0;
+    /* auto side margins would absorb the row's free space and shove the
+       gradient button against the left edge — keep the pair centred */
+    margin: 10px 0 0;
     width: auto !important;
     min-width: 200px;
     height: 44px !important;
     font-size: 15px !important;
   }
 
-  .p-case-study .page>.cs-hero-img {
+  /* the desktop cover bleeds off the right edge behind the copy; on mobile it
+     reads as a plain image below the buttons, with no gradient mask */
+  .p-case-study .page>.cs-hero-photo {
     order: 13;
     margin: clamp(22px, 6vw, 34px) auto 0;
     width: calc(100% - var(--pad) * 2) !important;
     max-width: var(--mw);
-    aspect-ratio: 587 / 522;
+    aspect-ratio: 1299 / 747;
     border-radius: var(--r);
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
   }
 
   /* the four stat cards become a 2 x 2 grid of labelled tiles */
@@ -1873,26 +1879,16 @@ body {
     padding: 20px;
     border-radius: var(--r);
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     gap: 18px;
   }
 
-  .p-case-study .cs-overview-col,
-  .p-case-study .cs-overview-img {
+  .p-case-study .cs-overview-col {
     position: relative !important;
     left: auto !important;
     top: auto !important;
     width: 100% !important;
-  }
-
-  .p-case-study .cs-overview-col {
     gap: 24px;
-  }
-
-  .p-case-study .cs-overview-img {
-    height: auto !important;
-    aspect-ratio: 16 / 10;
-    border-radius: 12px;
   }
 
   .p-case-study .cs-overview-block {
@@ -1913,69 +1909,72 @@ body {
 
   .p-case-study .cs-facts {
     width: 100% !important;
+    height: auto !important;
     flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px !important;
   }
 
   .p-case-study .cs-fact {
-    padding: 12px 14px !important;
     font-size: 14px !important;
-  }
-
-  .p-case-study .cs-fact + .cs-fact {
-    border-left: 0 !important;
-    border-top: 1.504px solid #cfcfeb;
+    white-space: normal !important;
   }
 
   /* the desktop rail is a jump list; on mobile the sections read in order */
-  .p-case-study .page>.cs-rail {
+  .p-case-study .cs-rail {
     display: none !important;
   }
 
-  .p-case-study .page>.cs-h2 {
+  .p-case-study .page>.cs-article {
     order: 40;
     margin: clamp(28px, 8vw, 42px) auto 0;
     width: calc(100% - var(--pad) * 2) !important;
     max-width: var(--mw);
+  }
+
+  .p-case-study .cs-h2 {
     height: auto !important;
     font-size: clamp(19px, 5.2vw, 26px) !important;
     line-height: 1.25 !important;
     scroll-margin-top: calc(var(--nav-h) + 12px);
   }
 
-  .p-case-study .page>.cs-p {
-    order: 40;
-    margin: 14px auto 0;
-    width: calc(100% - var(--pad) * 2) !important;
-    max-width: var(--mw);
+  .p-case-study .cs-body + .cs-h2 {
+    margin-top: clamp(28px, 8vw, 42px);
+  }
+
+  .p-case-study .cs-body {
+    margin-top: 14px;
+  }
+
+  .p-case-study .cs-body p {
+    width: 100% !important;
     font-size: 14px !important;
     line-height: 1.7 !important;
   }
 
-  .p-case-study .page>.cs-shot {
-    order: 40;
-    margin: clamp(20px, 6vw, 30px) auto 0;
-    width: calc(100% - var(--pad) * 2) !important;
-    max-width: var(--mw);
-    height: auto !important;
-    aspect-ratio: 16 / 9;
-    border-radius: var(--r);
+  .p-case-study .cs-body p + p {
+    margin-top: 16px;
   }
 
-  .p-case-study .page>.cs-browse-title {
-    order: 50;
+  .p-case-study .cs-body .cs-points,
+  .p-case-study .cs-body .cs-points + p {
+    margin-top: 20px;
+  }
+
+  .p-case-study .page>.cs-cards {
+    order: 51;
     margin: clamp(34px, 10vw, 56px) auto 0;
     width: calc(100% - var(--pad) * 2) !important;
     max-width: var(--mw);
     height: auto !important;
-    font-size: clamp(21px, 5.6vw, 28px) !important;
-    line-height: 1.25 !important;
+    flex-direction: column;
+    gap: 16px;
   }
 
-  .p-case-study .page>.cs-card {
-    order: 51;
-    margin: 16px auto 0;
-    width: calc(100% - var(--pad) * 2) !important;
-    max-width: var(--mw);
+  .p-case-study .cs-card {
+    width: 100% !important;
     height: auto !important;
     padding: 16px !important;
     border-radius: var(--r);

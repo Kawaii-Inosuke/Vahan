@@ -8,28 +8,59 @@ window.VAHAN_CASE_STUDIES = {
 
   'zomato-scale': {
     company: 'Zomato',
-    industry: 'Food Delivery',
+    brandColor: '#de1f18',
+    industry: 'Food Delivery & Quick Commerce',
+    useCase: 'Work and Employee Management',
     logo: 'assets/case%20study%20listing%20page/zomato%20logo.svg',
     image: 'assets/case%20study%20listing%20page/zomato%20image.svg',
+    heroImage: 'assets/casestudy/zomato-hero.webp',
     roles: 'Delivery partners',
     regions: '42 cities',
     title: 'How Zomato scaled its delivery workforce in times of need.',
-    dek: 'A festive-season demand spike needed thousands of delivery partners on the road in weeks, not quarters. Vahan’s AI recruiter sourced, screened and activated them city by city.',
+    heroTitle: 'Cutting Time-to-Hire in Half.',
+    heroStat: { n: '2X', l: 'faster rider onboarding' },
+    overview: 'One of India’s largest food and quick commerce platforms, relying on a constant, high-volume pipeline of last-mile delivery riders to keep operations running across its busiest tier-1 cities.',
+    dek: 'As demand for delivery riders surged, the client’s manual telecalling process struggled to keep pace. recruiters spent most of their time on repetitive screening instead of closing candidates.',
     stats: [
       { n: '3.2x', l: 'faster ramp-up' },
       { n: '18K', l: 'partners activated' },
       { n: '27%', l: 'lower cost per hire' },
       { n: '4 Days', l: 'average fulfilment' },
     ],
-    challenge: 'Zomato’s festive-season order volumes climb faster than any traditional hiring funnel can follow. Vendor-led sourcing was returning candidates who dropped off before their first shift, and city teams were spending their days chasing follow-ups instead of running operations.',
+    challenge: [
+      'The client relies on a constant, high-volume pipeline of last-mile delivery riders to keep operations running across its busiest tier-1 cities. As demand for delivery riders surged, the existing hiring process struggled to keep pace.',
+      'Sourcing and qualifying candidates depended heavily on manual telecalling. Recruiters were spending the bulk of their time on repetitive, low-value conversations, verifying basic eligibility, explaining the role, and screening for intent, before a candidate could even move to onboarding. This manual overload directly inflated time-to-hire in the client’s select tier-1 cities, the very markets where delivery capacity mattered most and where any hiring lag translated into missed fulfillment SLAs.',
+      'The client needed a way to qualify and activate riders faster, without simply adding more recruiters to the phones.',
+    ],
+    solutionIntro: 'Vahan deployed its end-to-end AI Recruiter, a combined voice and chat bot, to take over the candidate qualification and onboarding journey for last-mile delivery hiring in the client’s key tier-1 cities.',
+    solutionPoints: [
+      {
+        label: 'Automated first-line engagement',
+        text: 'every inbound and sourced candidate was greeted, screened, and qualified by the AI voice/chat bot instead of waiting in a manual telecalling queue.',
+      },
+      {
+        label: 'Consistent, always-on qualification',
+        text: 'the AI recruiter handled eligibility checks, role explanation, and intent screening at scale, any time of day, removing bottlenecks caused by recruiter bandwidth.',
+      },
+      {
+        label: 'Human effort redirected to high-value work',
+        text: 'by taking repetitive screening off recruiters’ plates, the client’s team could focus on edge cases and closing, rather than volume calling.',
+      },
+      {
+        label: 'End-to-end coverage',
+        text: 'the same AI layer carried qualified candidates through to onboarding, creating a seamless handoff from first contact to activation.',
+      },
+    ],
+    solutionClose: 'The result was a hiring engine that could absorb tier-1 city demand spikes without a proportional increase in manual recruiter effort.',
+    impact: [
+      'With Vahan’s AI Recruiter live across its priority tier-1 markets, the client saw a step-change in both hiring speed and recruiter efficiency: riders were onboarded and activated at 2X the speed of the prior manual process, directly reducing time-to-hire in the cities that mattered most to the client’s delivery capacity.',
+      'At the same time, calling productivity effectively doubled. The same recruiting effort now qualified twice as many candidates, since the AI recruiter absorbed the repetitive, high-volume screening work end to end. Qualification was handled 100% by AI, with zero manual telecalling load.',
+    ],
     solution: [
       'Vahan plugged its AI recruiter into Zomato’s existing onboarding flow. Candidates were sourced from the Vahan worker network, screened over a vernacular voice conversation, and handed off already qualified on documents, vehicle and city preference.',
-      'Every drop-off point was instrumented, so the funnel could be re-tuned weekly — a change to the screening script in one city rolled out to the rest within days.',
     ],
     results: [
       'Ramp-up to full festive capacity took five weeks instead of sixteen.',
-      'Cost per activated partner fell 27% against the vendor-led baseline.',
-      'First-shift show-up rate improved from 61% to 84%.',
     ],
     quote: {
       text: 'We stopped thinking about hiring as a bottleneck. Vahan gave us a supply line we could turn up or down with the demand curve.',
@@ -104,6 +135,7 @@ window.VAHAN_CASE_STUDIES = {
 
   'zomato-hubs': {
     company: 'Zomato',
+    brandColor: '#de1f18',
     industry: 'Logistics',
     logo: 'assets/case%20study%20listing%20page/zomato%20logo.svg',
     image: 'assets/case%20study%20listing%20page/zomato%20image.svg',
@@ -168,6 +200,7 @@ window.VAHAN_CASE_STUDIES = {
 
   'zomato-mobility': {
     company: 'Zomato',
+    brandColor: '#de1f18',
     industry: 'Mobility',
     logo: 'assets/case%20study%20listing%20page/zomato%20logo.svg',
     image: 'assets/case%20study%20listing%20page/zomato%20image.svg',
@@ -200,6 +233,7 @@ window.VAHAN_CASE_STUDIES = {
 
   'zomato-onboarding': {
     company: 'Zomato',
+    brandColor: '#de1f18',
     industry: 'Food Delivery',
     logo: 'assets/case%20study%20listing%20page/zomato%20logo.svg',
     image: 'assets/case%20study%20listing%20page/zomato%20image.svg',
@@ -328,6 +362,7 @@ window.VAHAN_CASE_STUDIES = {
 
   'zomato-warehouse': {
     company: 'Zomato',
+    brandColor: '#de1f18',
     industry: 'E-commerce',
     logo: 'assets/case%20study%20listing%20page/zomato%20logo.svg',
     image: 'assets/case%20study%20listing%20page/zomato%20image.svg',

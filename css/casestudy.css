@@ -1,32 +1,61 @@
 /* =========================================================================
    Vahan — Case Study Individual Page
-   Figma: JmFGyR5BxquecSttAjGEsh  ·  node 2115:8542  ·  1920 × 5855
+   Figma: JmFGyR5BxquecSttAjGEsh  ·  node 2323:430  ·  1920 × 5051
 
    Loads on top of styles.css: nav, buttons, stats band + stat cards and the
    footer are the shared site pieces; everything below re-positions them at
    their case-study coordinates or adds the sections unique to this page.
    The copy is filled at runtime from js/case-studies-data.js, keyed by the
    ?id= slug the listing page links with.
+
+   The article between the overview card and the browse cards runs as normal
+   flow rather than at fixed Figma coordinates — study copy varies in length,
+   so the page script measures the article and re-hangs the cards, the footer
+   and the page height beneath it. With the Zomato copy the design ships, the
+   measured result lands on the Figma coordinates exactly.
    ========================================================================= */
 
-.page{ height:5855px; }
+.page{ height:5051px; }
 
 /* ===================== background art ===================== */
 .glow{ top:-1669px; }
 
 /* ===================== HERO ===================== */
+/* The cover photo bleeds off the right edge and dissolves into the page.
+   Figma masks it with a horizontal gradient; the stops below are measured
+   off the design render — fully clear at x=840, fully opaque at x=1618. */
+.cs-hero-photo{
+  position:absolute;
+  left:621.098px; top:88px;
+  width:1298.902px; height:747px;
+  overflow:hidden;
+  pointer-events:none;
+  -webkit-mask-image:linear-gradient(to right, transparent 16.85%, #000 76.75%);
+          mask-image:linear-gradient(to right, transparent 16.85%, #000 76.75%);
+}
+.cs-hero-photo img{ width:100%; height:100%; object-fit:cover; }
+
 .cs-eyebrow{
   position:absolute;
-  left:240px; top:289px;
+  left:240px; top:309px;
   width:838px; height:28px;
-  font-size:18px;
-  line-height:28px;
-  color:rgba(43,24,10,.8);
+  font-family:var(--display);
+  font-weight:500;
+  font-size:23px;
+  line-height:normal;
+  color:var(--brown);
+  white-space:pre;
 }
+.cs-eyebrow b{
+  font-weight:700;
+  letter-spacing:1.28px;
+  color:var(--cs-brand,#de1f18);
+}
+
 .cs-title{
   position:absolute;
-  left:240px; top:335px;
-  width:838px; height:198px;
+  left:240px; top:355px;
+  width:644px; height:198px;
   font-family:var(--display);
   font-weight:500;
   font-size:86px;
@@ -34,8 +63,9 @@
   color:var(--brown);
   overflow:hidden;   /* the fit pass in the page script measures against this */
 }
+
 .cs-cta{
-  left:240px; top:584px;
+  left:240px; top:599px;
   width:193.3604px; height:48.2612px;
   gap:8px;
   padding:12px 24px;
@@ -49,7 +79,7 @@
 
 .cs-download{
   position:absolute;
-  left:451.9641px; top:584px;
+  left:451.9641px; top:599px;
   width:270.6486px; height:48.2612px;
   display:flex; align-items:center; justify-content:center;
   border-radius:10px;
@@ -65,16 +95,6 @@
   transition:transform .2s ease;
 }
 .cs-download:hover{ transform:translateY(-2px); }
-
-.cs-hero-img{
-  position:absolute;
-  left:1093px; top:240px;
-  width:587px; height:522px;
-  border-radius:24px;
-  overflow:hidden;
-  background:#fff;
-}
-.cs-hero-img img{ width:100%; height:100%; object-fit:cover; }
 
 /* ===================== STATS BAND ===================== */
 /* the homepage band and cards, re-hung at this page's coordinates */
@@ -93,14 +113,14 @@
 /* ===================== OVERVIEW CARD ===================== */
 .cs-overview{
   position:absolute;
-  left:240px; top:1384px;
-  width:1440px; height:562px;
+  left:242px; top:1381px;
+  width:1440px; height:476px;
   background:#fff;
   border-radius:24px;
 }
 .cs-overview-col{
   position:absolute;
-  left:27px; top:35.874px;
+  left:50px; top:28px;
   width:957px;
   display:flex; flex-direction:column; gap:48px;
 }
@@ -116,92 +136,50 @@
 }
 .cs-overview-p{
   width:889px;
-  font-family:var(--ui);
   font-size:18px;
   line-height:32px;
   color:#4d4d4d;
 }
 
 .cs-facts{
-  width:889px;
-  padding:1.504px;
+  width:872px; height:90px;
+  padding-left:27.071px;
   border:1.504px solid #f8c6a2;
   border-radius:13.535px;
   background:#fff;
-  display:flex; align-items:stretch;
+  display:flex; align-items:center; gap:53px;
 }
 .cs-fact{
-  flex:1;
-  padding:18.047px 24.063px 18.047px 22.559px;
-  display:flex; align-items:center;
   font-size:18.047px;
   line-height:normal;
   color:#646464;
+  white-space:nowrap;
 }
-.cs-fact + .cs-fact{ border-left:1.504px solid #cfcfeb; }
+.cs-fact b{ font-weight:600; }
 
-.cs-overview-img{
-  position:absolute;
-  left:968px; top:28px;
-  width:445px; height:506px;
-  border-radius:24px;
-  overflow:hidden;
-  background:#fff;
-}
-.cs-overview-img img{ width:100%; height:100%; object-fit:cover; }
-
-/* ===================== ARTICLE ===================== */
-.cs-h2{
-  position:absolute;
-  left:239px;
-  width:933.157px; height:25px;
-  display:flex; flex-direction:column; justify-content:center;
-  font-family:var(--display);
-  font-weight:500;
-  font-size:32px;
-  line-height:24px;
-  color:#000;
-  scroll-margin-top:120px;
-}
-.cs-p{
-  position:absolute;
-  left:239px;
-  width:926px;
-  font-family:var(--ui);
-  font-size:18px;
-  line-height:32px;
-  color:#4d4d4d;
-}
-
-.cs-shot{
-  position:absolute;
-  left:240px;
-  border-radius:24px;
-  overflow:hidden;
-  background:#fff;
-}
-.cs-shot img{ width:100%; height:100%; object-fit:cover; }
-
-/* ---------- section rail ---------- */
+/* ---------- section rail ----------
+   In this design the rail is a card parked inside the overview panel. */
 .cs-rail{
   position:absolute;
-  left:1470px; top:2047px;
-  width:166px; height:191px;
-  padding:18px;
-  border-radius:8px;
+  left:1078px; top:75.1898px;
+  width:283px; height:325.6205px;
+  padding:30.687px;
+  border-radius:13.639px;
   background:rgba(249,118,25,.12);
-  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:23.867px;
 }
 .cs-rail a{
-  width:130px; height:42px;
+  width:221.6265px; height:72.1704px;
+  flex:none;
   display:flex; align-items:center;
-  padding:8px 12px;
-  border-radius:8px;
+  padding:13.639px 20.458px;
+  border-radius:13.639px;
   background:rgba(249,118,25,.14);
-  font-weight:600;
-  font-size:14px;
-  line-height:16px;
-  letter-spacing:-.15px;
+  font-weight:500;
+  font-size:22.64px;
+  line-height:27.277px;
+  letter-spacing:-.2557px;
   color:var(--brown);
   text-decoration:none;
   white-space:nowrap;
@@ -213,23 +191,57 @@
   filter:drop-shadow(0 1px 1.5px rgba(0,0,0,.1)) drop-shadow(0 1px 1px rgba(0,0,0,.1));
 }
 
-/* ===================== BROWSE ALL CASE STUDIES ===================== */
-.cs-browse-title{
+/* ===================== ARTICLE ===================== */
+.cs-article{
   position:absolute;
-  left:507px; top:4442px;
-  width:906px; height:70px;
+  left:240px; top:2028px;
+  width:933px;
+}
+.cs-h2{
+  height:25px;
+  display:flex; flex-direction:column; justify-content:center;
   font-family:var(--display);
   font-weight:500;
-  font-size:56px;
-  line-height:70px;
-  text-align:center;
-  color:var(--brown);
+  font-size:32px;
+  line-height:24px;
+  color:#000;
+  scroll-margin-top:120px;
+}
+/* 96 px between an ending section and the next heading, 43 px from a heading
+   to its copy — both straight off the design. */
+.cs-body + .cs-h2{ margin-top:96px; }
+.cs-body{ margin-top:43px; }
+
+.cs-body p{
+  width:925px;
+  font-size:18px;
+  line-height:32px;
+  color:#4d4d4d;
+}
+/* paragraphs inside a block are separated by one blank line */
+.cs-body p + p{ margin-top:32px; }
+
+.cs-body .cs-points{ margin-top:43px; }
+.cs-body .cs-points + p{ margin-top:43px; }
+.cs-points p{ width:889px; }
+.cs-point b{
+  font-weight:600;
+  color:#f97619;
+}
+
+#challenge + .cs-body p{ width:901px; }
+
+/* ===================== BROWSE CASE STUDIES ===================== */
+.cs-cards{
+  position:absolute;
+  left:242px; top:3722px;
+  width:1440px; height:605px;
+  display:flex; gap:38px;
 }
 
 .cs-card{
-  position:absolute;
-  top:4580.8159px;
   width:701px; height:605px;
+  flex:none;
   padding:24px;
   border-radius:17.483px;
   background:var(--peach);
@@ -242,8 +254,6 @@
   transform:translateY(-6px);
   box-shadow:0 16px 36px rgba(249,118,25,.20), 0 4px 14px rgba(255,156,56,.14);
 }
-.cs-card-1{ left:240px; }
-.cs-card-2{ left:979px; }
 
 .cs-card-img{
   position:relative;
@@ -259,13 +269,6 @@
   transition:transform .4s cubic-bezier(.16,1,.3,1);
 }
 .cs-card:hover .cs-card-img img{ transform:scale(1.03); }
-/* the warm wash the design lays over each cover */
-.cs-card-img::after{
-  content:"";
-  position:absolute; inset:0;
-  background:linear-gradient(130.787deg, rgba(255,123,124,0) .667%, rgba(251,129,34,.54) 65.511%, rgb(252,136,40) 87.904%);
-  pointer-events:none;
-}
 
 .cs-card-body{
   width:653px; height:250px;
@@ -307,4 +310,4 @@
 .cs-card-btn .arrow img{ width:9.106px; height:9.106px; }
 
 /* ===================== FOOTER ===================== */
-.footer{ top:5255px; }
+.footer{ top:4451px; }

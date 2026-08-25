@@ -15,17 +15,17 @@
    content edge and the photo collage fills the right half. */
 .hero-title{
   left:242px; top:227px;
-  width:873px; height:188px;
+  width:752px; height:188px;
   font-size:78px;
   line-height:94px;
   text-align:left;
 }
 .hero-sub{
   left:242px; top:438px;
-  /* Figma's box is 815px, but the copy here reads "onboards / retains"
-     where the design says "onboard / retain" — 821px of text. At 815 the
-     first line wrapped to a third line and ran into the phone field. */
-  width:880px;
+  /* Figma's box is 723px, but the copy here reads "onboards / retains"
+     where the design says "onboard / retain" — a little wider than the
+     design box, so the first line is given the room it needs. */
+  width:760px;
   text-align:left;
 }
 
@@ -40,63 +40,122 @@
 
 .logo-strip{ top:783px; }
 
-/* ---------- hero photo collage ---------- */
+/* ---------- hero composition ----------
+   Figma paints, back to front: the orange slab, the worker chip that tucks
+   behind her hair, the recruiter cut-out, the two chips in front of her, and
+   finally the two translucent stat cards. DOM order below matches that. */
 .hero-art{
   position:absolute;
   left:0; top:0;
   width:1920px; height:900px;
   pointer-events:none;
+  font-family:var(--ui);
+  color:var(--brown);
 }
 
-.hero-photo{
+/* Rectangle 4458 — the orange block she stands against */
+.hero-slab{
   position:absolute;
-  border-radius:12px;
-  overflow:hidden;
+  left:1399px; top:361px;
+  width:258px; height:386px;
+  border-radius:20px 20px 0 0;
+  background:#fa7e20;
 }
-.hero-photo img{
+
+.hero-person{
   position:absolute;
-  max-width:none;
+  left:1357px; top:191px;
+  width:508px; height:556px;
+}
+
+/* the three grayscale worker chips */
+.hero-avatar{
+  position:absolute;
+  width:75.3278px; height:75.3278px;
+  border-radius:50%;
   object-fit:cover;
 }
+.hero-avatar-1{ left:1499px; top:245px; }
+.hero-avatar-2{ left:1728px; top:421px; }
+.hero-avatar-3{ left:1411px; top:601px; }
 
-.hero-photo-1{
-  left:1199px; top:160px;
-  width:262.346px; height:335.8481px;
-  background:rgba(249,118,25,.21);
-}
-.hero-photo-1 img{ left:-30px; top:-10px; width:349px; height:436px; }
-
-.hero-photo-2{
-  left:1490.7461px; top:317.1815px;
-  width:244.2532px; height:271.3924px;
-  background:#ffbf92;
-}
-.hero-photo-2 img{ left:-81.7461px; top:-1.1815px; width:407px; height:325px; }
-
-.hero-photo-3{
-  left:1298px; top:528px;
-  width:163.3455px; height:184.2386px;
-  background:rgba(249,118,25,.31);
-}
-.hero-photo-3 img{ left:-17px; top:-.2551px; width:203px; height:254px; }
-
-/* small gradient squares tucked around the photo cards */
-.hero-chip{
+/* ---------- hero stat cards ---------- */
+.hero-card{
   position:absolute;
-  border-radius:8px;
-  background-size:100% 100%;
+  display:flex; flex-direction:column; align-items:flex-start;
+  gap:6.962px;
+  padding:20.885px;
+  border-radius:11.934px;
+  background:rgba(255,255,255,.6);
 }
-.hero-chip-1,
-.hero-chip-2{
-  width:32px; height:34px;
-  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 32 34' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -6.4523 2.1938 0 16 41.341)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
+.hero-card-roles{ left:1105px; top:214px; width:343.6102px; }
+.hero-card-hire { left:1105px; top:388px; width:315px; }
+
+.hero-card-label{
+  width:100%;
+  font-size:18.896px;
+  line-height:normal;
 }
-.hero-chip-1{ left:1445px; top:143px; }
-.hero-chip-2{ left:1719px; top:300px; }
-.hero-chip-3{
-  left:1262px; top:676px;
-  width:57px; height:57px;
-  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 57 57' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -10.817 3.9078 0 28.5 69.307)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
+.hero-card-label-sm{ font-size:13.923px; }
+
+.hero-roles-stats{
+  width:100%;
+  display:flex; align-items:center; gap:80.059px;
+}
+.hero-roles-count{
+  font-size:18.896px;
+  line-height:normal;
+  white-space:nowrap;
+}
+.hero-roles-count b{
+  font-weight:600;
+  font-size:34.808px;
+  color:#f97619;
+}
+
+.hero-pill{
+  flex:none;
+  padding:4.973px 19.89px;
+  border-radius:49.229px;
+  background:#e8f7ee;
+  font-weight:600;
+  font-size:12.285px;
+  line-height:normal;
+  color:#06a610;
+  white-space:nowrap;
+}
+
+.hero-progress{
+  position:relative;
+  width:300.3464px; height:8.4535px;
+  border-radius:49.229px;
+  background:#f5e7d7;
+}
+.hero-progress span{
+  position:absolute;
+  left:0; top:0;
+  width:237.1937px; height:100%;
+  border-radius:49.229px;
+  background:linear-gradient(to right,#fa9e46,#f9771a);
+}
+
+.hero-hire{
+  display:flex; align-items:center; gap:6.962px;
+}
+.hero-hire-avatar{
+  width:52.2126px; height:52.2126px;
+  flex:none;
+}
+.hero-hire-name{
+  font-weight:600;
+  font-size:23.3707px;
+  line-height:normal;
+  white-space:nowrap;
+}
+.hero-hire-meta{
+  font-size:14.918px;
+  line-height:normal;
+  white-space:nowrap;
 }
 
 /* ===================== THREE THINGS ===================== */
@@ -119,6 +178,7 @@
   border-radius:12px;
   overflow:hidden;
   cursor:pointer;
+  filter:drop-shadow(0 0 4.5px rgba(255,156,56,.5));
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .feat:hover{
@@ -242,14 +302,15 @@
   position:absolute;
   left:1071px; top:2808px;
   width:607px; height:718px;
-  background:#fff;
   border-radius:24px;
+  overflow:hidden;
 }
 .agents-visual img{
   position:absolute;
-  left:25.5px; top:24px;
-  width:556px; height:670px;
-  border-radius:12px;
+  left:0; top:0;
+  width:607px; height:718px;
+  border-radius:inherit;
+  object-fit:cover;
   transition: opacity 0.3s ease;
 }
 .agents-visual img.fade-out {
@@ -283,19 +344,19 @@
 .explore{
   position:absolute;
   top:4764px;
-  width:699px; height:877px;
+  width:699px; height:905px;
   background:var(--peach);
   border-radius:24px;
 }
 .explore-img{
   position:absolute;
   left:35.0934px; top:35.0934px;
-  width:628.8132px; height:436.7181px;
+  width:628.8132px; height:456.7912px;
   border-radius:23.396px;
 }
 .explore-body{
   position:absolute;
-  left:92.6356px; top:513.8115px;
+  left:92.6356px; top:533.8846px;
   width:513.7287px;
   display:flex; flex-direction:column; align-items:flex-start;
 }
