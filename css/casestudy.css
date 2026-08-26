@@ -301,8 +301,11 @@
   border-radius:10px;
   font-family:var(--ui);
   font-weight:500;
-  font-size:10.61px;
-  letter-spacing:-.2016px;
+  /* Figma's dev panel reports 10.61px — that is the component's own size run
+     through the instance scale a second time. The frame draws the label at
+     14.569 px, filling the 192.36 px button. */
+  font-size:14.569px;
+  letter-spacing:-.2768px;
   filter:drop-shadow(0 0 .728px rgba(128,115,115,.23));
   background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 192.36 42.25' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -8.0182 13.188 0 96.182 51.374)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
 }
