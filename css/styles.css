@@ -556,18 +556,26 @@ ul{ list-style:none; }
 }
 .panel.panel-active{ display:block; }
 
+/* 667.54 = 485 x 629/457 — the card is cut to the artwork's own aspect ratio
+   so the corporate and job-seeker panels, which ship as finished 629 x 457
+   cards, are shown whole rather than cropped to fit a wider frame. */
 .panel .panel-card{
   position:absolute;
   left:240px; top:0;
-  width:725px; height:485px;
+  width:667.538px; height:485px;
   background:var(--peach);
   border-radius:24px;
+  overflow:hidden;
 }
 .panel .panel-card img{
   position:absolute;
-  left:24px; top:28.5px;
-  width:677px; height:428px;
+  inset:0;
+  width:100%; height:100%;
+  object-fit:contain;
 }
+/* those two fill the frame edge to edge; the recruitment artwork is
+   transparent, so it stays floating on the peach */
+.panel .panel-card-bleed{ background:none; }
 
 .panel .panel-text{
   position:absolute;

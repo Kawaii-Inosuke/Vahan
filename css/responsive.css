@@ -1019,10 +1019,17 @@ body {
 
   .panel .panel-card img {
     position: relative !important;
+    inset: auto !important;
     left: auto !important;
     top: auto !important;
     width: 100% !important;
     height: auto !important;
+    object-fit: contain !important;
+  }
+
+  /* self-contained artwork needs no peach frame around it */
+  .panel .panel-card-bleed {
+    padding: 0;
   }
 
   .panel .panel-text {
