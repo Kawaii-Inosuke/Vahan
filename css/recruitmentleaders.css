@@ -42,92 +42,14 @@
 }
 
 /* ---- hero collage ---- */
-.rl-collage img,
-.rl-collage .rl-tile,
-.rl-collage .rl-chip{ position:absolute; }
-
-.rl-tile{
-  border-radius:8px;
-  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 43 43' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -8.1602 2.948 0 21.5 52.284)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
-  background-size:100% 100%;
+/* the collage ships from Figma as one flattened artwork (photo + the AI hot
+   leads card + the speech bubble), so it is a single positioned image here */
+.rl-hero-art{
+  position:absolute;
+  left:1054px; top:172px;
+  width:686px; height:600px;
+  object-fit:contain;
 }
-.rl-tile-sm { left:1268px; top:186px; width:31px;  height:31px; }
-.rl-tile-mid{ left:1225px; top:649px; width:43px;  height:43px; }
-.rl-tile-far{ left:1646px; top:496px; width:43px;  height:43px; }
-
-.rl-photo{ object-fit:cover; }
-.rl-photo-orange{ left:1261px; top:303px; width:214px; height:268px; }
-.rl-photo-yellow{ left:1430px; top:207px; width:191px; height:152px; }
-.rl-photo-dark  { left:1065px; top:488px; width:177px; height:179px; }
-
-/* the two "delivery around …" job chips */
-.rl-chip{
-  background:#fff;
-  display:flex; flex-direction:column; align-items:flex-start;
-  font-family:var(--ui);
-}
-.rl-chip-logo{
-  position:relative;
-  display:flex; align-items:center; justify-content:center;
-  overflow:hidden;
-  flex:none;
-}
-.rl-chip-logo img{ position:relative; object-fit:contain; }
-.rl-chip-where{ color:#4f646f; font-weight:600; }
-.rl-chip-meta{
-  display:flex; align-items:center;
-  color:#878787; font-weight:500;
-}
-
-.rl-chip-zomato{
-  left:1129px; top:200px;
-  width:156.5984px;
-  padding:17.4px;
-  border-radius:12px;
-  filter:drop-shadow(3.48px 3.48px 24.36px rgba(0,0,0,.1));
-}
-.rl-chip-zomato .rl-chip-logo{
-  width:48.719px; height:48.719px;
-  border-radius:10.44px;
-  background:#e23744;
-}
-.rl-chip-zomato .rl-chip-logo img{ width:31.32px; height:31.32px; }
-.rl-chip-zomato .rl-chip-where{
-  margin-top:10.44px;
-  width:121.799px;
-  font-size:13.92px; line-height:19.14px;
-}
-.rl-chip-zomato .rl-chip-meta{
-  margin-top:3.48px;
-  gap:6.96px;
-  font-size:10.44px; line-height:13.92px;
-}
-.rl-chip-zomato .rl-chip-meta img{ position:relative; width:13.92px; height:13.92px; }
-
-.rl-chip-flipkart{
-  left:1494px; top:509px;
-  width:180px;
-  padding:20px;
-  border-radius:24px;
-  filter:drop-shadow(4px 4px 28px rgba(0,0,0,.1));
-}
-.rl-chip-flipkart .rl-chip-logo{
-  width:56px; height:56px;
-  border-radius:12px;
-  background:#2874f0;
-}
-.rl-chip-flipkart .rl-chip-logo img{ width:36px; height:36px; }
-.rl-chip-flipkart .rl-chip-where{
-  margin-top:12px;
-  width:140px;
-  font-size:16px; line-height:22px;
-}
-.rl-chip-flipkart .rl-chip-meta{
-  margin-top:4px;
-  gap:8px;
-  font-size:12px; line-height:16px;
-}
-.rl-chip-flipkart .rl-chip-meta img{ position:relative; width:16px; height:16px; }
 
 .logo-strip{ top:783px; }
 
@@ -238,15 +160,15 @@
   position:absolute;
   left:1071px; top:1816px;
   width:607px; height:818px;
-  background:#fff;
   border-radius:24px;
+  overflow:hidden;
 }
 .plat-visual img{
   position:absolute;
-  left:29.5px; top:67px;
-  width:548px; height:684px;
-  border-radius:12px;
-  object-fit:contain;
+  left:0; top:0;
+  width:607px; height:818px;
+  border-radius:24px;
+  object-fit:cover;
   transition:opacity .3s ease;
 }
 .plat-visual img.fade-out{ opacity:0; }
@@ -485,8 +407,8 @@
 }
 .explore-img{
   position:absolute;
-  left:35.0934px; top:34.1409px;
-  width:628.8132px; height:436.7181px;
+  left:35.0934px; top:24.1044px;
+  width:628.8132px; height:456.7912px;
   border-radius:23.396px;
   object-fit:cover;
 }

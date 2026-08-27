@@ -8,12 +8,15 @@ window.VAHAN_CASE_STUDIES = {
 
   'zomato-scale': {
     company: 'Zomato',
-    brandColor: '#de1f18',
+    brandColor: '#f61a49',
     industry: 'Food Delivery & Quick Commerce',
     useCase: 'Work and Employee Management',
     logo: 'assets/case%20study%20listing%20page/zomato%20logo.svg',
     image: 'assets/case%20study%20listing%20page/zomato%20image.svg',
     heroImage: 'assets/casestudy/zomato-hero.webp',
+    /* the photo that closes "The Challenge"; the poster falls back to the
+       shared placeholder until a real still and video URL land */
+    storyImage: 'assets/casestudy/zomato-story.jpg',
     roles: 'Delivery partners',
     regions: '42 cities',
     title: 'How Zomato scaled its delivery workforce in times of need.',
@@ -135,7 +138,7 @@ window.VAHAN_CASE_STUDIES = {
 
   'zomato-hubs': {
     company: 'Zomato',
-    brandColor: '#de1f18',
+    brandColor: '#f61a49',
     industry: 'Logistics',
     logo: 'assets/case%20study%20listing%20page/zomato%20logo.svg',
     image: 'assets/case%20study%20listing%20page/zomato%20image.svg',
@@ -200,7 +203,7 @@ window.VAHAN_CASE_STUDIES = {
 
   'zomato-mobility': {
     company: 'Zomato',
-    brandColor: '#de1f18',
+    brandColor: '#f61a49',
     industry: 'Mobility',
     logo: 'assets/case%20study%20listing%20page/zomato%20logo.svg',
     image: 'assets/case%20study%20listing%20page/zomato%20image.svg',
@@ -233,7 +236,7 @@ window.VAHAN_CASE_STUDIES = {
 
   'zomato-onboarding': {
     company: 'Zomato',
-    brandColor: '#de1f18',
+    brandColor: '#f61a49',
     industry: 'Food Delivery',
     logo: 'assets/case%20study%20listing%20page/zomato%20logo.svg',
     image: 'assets/case%20study%20listing%20page/zomato%20image.svg',
@@ -362,7 +365,7 @@ window.VAHAN_CASE_STUDIES = {
 
   'zomato-warehouse': {
     company: 'Zomato',
-    brandColor: '#de1f18',
+    brandColor: '#f61a49',
     industry: 'E-commerce',
     logo: 'assets/case%20study%20listing%20page/zomato%20logo.svg',
     image: 'assets/case%20study%20listing%20page/zomato%20image.svg',

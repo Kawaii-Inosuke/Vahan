@@ -15,7 +15,7 @@
    measured result lands on the Figma coordinates exactly.
    ========================================================================= */
 
-.page{ height:5051px; }
+.page{ height:6179px; }
 
 /* ===================== background art ===================== */
 .glow{ top:-1669px; }
@@ -110,11 +110,36 @@
 .stat-body-3{ left:1022.2539px; }
 .stat-body-4{ left:1387.1234px; }
 
+/* ===================== STORY VIDEO ===================== */
+/* a white 13 px frame around the poster, with the play badge dead centre */
+.cs-video{
+  position:absolute;
+  left:442px; top:1389px;
+  width:1036.4445px; height:583px;
+  border:13px solid #fff;
+  background:#fff;
+  border-radius:24px;
+  overflow:hidden;
+  display:block;
+}
+.cs-video[href]{ cursor:pointer; }
+.cs-video-thumb{ width:100%; height:100%; object-fit:cover; }
+.cs-video-play{
+  position:absolute;
+  left:50%; top:50%;
+  transform:translate(-50%,-50%);
+  width:134.19px; height:134.19px;
+  filter:drop-shadow(0 6px 18px rgba(0,0,0,.25));
+  transition:transform .25s cubic-bezier(.16,1,.3,1);
+}
+.cs-video-play img{ width:100%; height:100%; }
+.cs-video[href]:hover .cs-video-play{ transform:translate(-50%,-50%) scale(1.08); }
+
 /* ===================== OVERVIEW CARD ===================== */
 .cs-overview{
   position:absolute;
-  left:242px; top:1381px;
-  width:1440px; height:476px;
+  left:242px; top:2072px;
+  width:1440px; height:526px;
   background:#fff;
   border-radius:24px;
 }
@@ -157,44 +182,28 @@
 }
 .cs-fact b{ font-weight:600; }
 
-/* ---------- section rail ----------
-   In this design the rail is a card parked inside the overview panel. */
-.cs-rail{
+/* ---------- client brand tile ----------
+   The panel's right-hand slot is the client's mark on a tile in their own
+   colour; the wordmarks ship dark, so they are knocked out to white here. */
+.cs-logo-tile{
   position:absolute;
-  left:1078px; top:75.1898px;
-  width:283px; height:325.6205px;
-  padding:30.687px;
-  border-radius:13.639px;
-  background:rgba(249,118,25,.12);
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-  gap:23.867px;
+  left:1014px; top:93.5px;
+  width:339px; height:339px;
+  border-radius:39px;
+  background:var(--cs-brand, #f97619);
 }
-.cs-rail a{
-  width:221.6265px; height:72.1704px;
-  flex:none;
-  display:flex; align-items:center;
-  padding:13.639px 20.458px;
-  border-radius:13.639px;
-  background:rgba(249,118,25,.14);
-  font-weight:500;
-  font-size:22.64px;
-  line-height:27.277px;
-  letter-spacing:-.2557px;
-  color:var(--brown);
-  text-decoration:none;
-  white-space:nowrap;
-  transition:background .2s ease, filter .2s ease;
-}
-.cs-rail a.is-active,
-.cs-rail a:hover{
-  background:#fff;
-  filter:drop-shadow(0 1px 1.5px rgba(0,0,0,.1)) drop-shadow(0 1px 1px rgba(0,0,0,.1));
+.cs-logo-tile img{
+  position:absolute;
+  left:41px; top:146px;
+  width:258px; height:48px;
+  object-fit:contain;
+  filter:brightness(0) invert(1);
 }
 
 /* ===================== ARTICLE ===================== */
 .cs-article{
   position:absolute;
-  left:240px; top:2028px;
+  left:240px; top:2670px;
   width:933px;
 }
 .cs-h2{
@@ -209,8 +218,32 @@
 }
 /* 96 px between an ending section and the next heading, 43 px from a heading
    to its copy — both straight off the design. */
-.cs-body + .cs-h2{ margin-top:96px; }
+.cs-body + .cs-h2{ margin-top:72px; }
 .cs-body{ margin-top:43px; }
+
+/* The story photo breaks out of the 933 px reading column to the full 1440 px
+   content width, with an orange plate showing 10 px below it. */
+.cs-figure{
+  position:relative;
+  width:1440px; height:584px;
+  margin:64px 0 62px;
+}
+.cs-figure::before{
+  content:"";
+  position:absolute;
+  left:0; top:10px;
+  width:1440px; height:574px;
+  border-radius:24px;
+  background:#f97619;
+}
+.cs-figure img{
+  position:relative;
+  display:block;
+  width:1440px; height:574px;
+  border-radius:24px;
+  object-fit:cover;
+}
+.cs-figure + .cs-h2{ margin-top:0; }
 
 .cs-body p{
   width:925px;
@@ -234,7 +267,7 @@
 /* ===================== BROWSE CASE STUDIES ===================== */
 .cs-cards{
   position:absolute;
-  left:242px; top:3722px;
+  left:242px; top:4902px;
   width:1440px; height:605px;
   display:flex; gap:38px;
 }
@@ -313,4 +346,4 @@
 .cs-card-btn .arrow img{ width:9.106px; height:9.106px; }
 
 /* ===================== FOOTER ===================== */
-.footer{ top:4451px; }
+.footer{ top:5579px; }

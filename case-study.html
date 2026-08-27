@@ -109,6 +109,12 @@
     <p class="stat-label">workers in our network</p>
   </div>
 
+  <!-- ============ STORY VIDEO ============ -->
+  <a class="cs-video" data-cs="video">
+    <img class="cs-video-thumb" data-cs="video-thumb" src="" alt="">
+    <span class="cs-video-play"><img src="assets/casestudy/play.svg" alt="Play"></span>
+  </a>
+
   <!-- ============ OVERVIEW ============ -->
   <div class="cs-overview">
     <div class="cs-overview-col">
@@ -126,17 +132,15 @@
       </div>
     </div>
 
-    <nav class="cs-rail" aria-label="Jump to section">
-      <a href="#challenge" class="is-active">The Challenge</a>
-      <a href="#solution">The Solution</a>
-      <a href="#impact">The Impact</a>
-    </nav>
+    <div class="cs-logo-tile"><img data-cs="logo-mark" src="" alt=""></div>
   </div>
 
   <!-- ============ ARTICLE ============ -->
   <article class="cs-article">
     <h2 class="cs-h2" id="challenge">The Challenge</h2>
     <div class="cs-body" data-cs="challenge"></div>
+
+    <figure class="cs-figure"><img data-cs="story-image" src="" alt=""></figure>
 
     <h2 class="cs-h2" id="solution">The Vahan.ai Solution</h2>
     <div class="cs-body" data-cs="solution"></div>
@@ -273,12 +277,29 @@
     heroImg.src = study.heroImage || study.image;
     heroImg.alt = `${study.company} — ${study.industry}`;
 
+    /* ---------- story video ---------- */
+    const video     = document.querySelector('[data-cs="video"]');
+    const videoImg  = document.querySelector('[data-cs="video-thumb"]');
+    videoImg.src = study.videoThumb || 'assets/casestudy/video-placeholder.jpg';
+    videoImg.alt = `${study.company} — story video`;
+    /* an <a> with no href stays inert, so the poster reads as artwork until a
+       study actually has a film to link to */
+    if (study.videoUrl) {
+      video.href   = study.videoUrl;
+      video.target = '_blank';
+      video.rel    = 'noopener noreferrer';
+    }
+
     /* ---------- stats band ---------- */
     const stat = study.heroStat || { n: '25%', l: 'higher recruitment efficiency' };
     set('stat-num',   stat.n);
     set('stat-label', stat.l);
 
     /* ---------- overview ---------- */
+    const mark = document.querySelector('[data-cs="logo-mark"]');
+    mark.src = study.logo;
+    mark.alt = study.company;
+
     set('industry', study.industry);
     set('usecase',  study.useCase || study.roles);
     set('dek',      study.dek);
@@ -299,6 +320,10 @@
     };
 
     fill('challenge', asParas(study.challenge).map(t => para(t)));
+
+    const storyImg = document.querySelector('[data-cs="story-image"]');
+    storyImg.src = study.storyImage || study.heroImage || study.image;
+    storyImg.alt = `${study.company} — ${study.industry}`;
 
     const solution = [];
     if (study.solutionIntro) solution.push(para(study.solutionIntro));
@@ -351,9 +376,9 @@
 
     /* The article is the only block whose height depends on the copy, so the
        browse cards, the footer and the page itself hang off its measured
-       bottom. The design's gaps: 124 px article → cards, 124 px cards →
+       bottom. The design's gaps: 72 px article → cards, 72 px cards →
        footer, and a 600 px footer. */
-    const ARTICLE_TOP = 2028, GAP = 124, CARDS_H = 605, FOOTER_H = 600;
+    const ARTICLE_TOP = 2670, GAP = 72, CARDS_H = 605, FOOTER_H = 600;
     const article = document.querySelector('.cs-article');
     const cards   = document.querySelector('.cs-cards');
     const footer  = document.querySelector('.footer');
@@ -372,18 +397,6 @@
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
     else measure();
     window.addEventListener('resize', measure);
-
-    /* the rail marks whichever section is currently in view */
-    const links = [...document.querySelectorAll('.cs-rail a')];
-    const marks = links.map(a => document.querySelector(a.getAttribute('href')));
-    const syncRail = () => {
-      const y = window.scrollY + window.innerHeight * .4;
-      let current = 0;
-      marks.forEach((el, i) => { if (el && el.getBoundingClientRect().top + window.scrollY <= y) current = i; });
-      links.forEach((a, i) => a.classList.toggle('is-active', i === current));
-    };
-    window.addEventListener('scroll', syncRail, { passive: true });
-    syncRail();
   });
 </script>
 <script src="js/site.js"></script>

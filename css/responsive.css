@@ -1871,6 +1871,25 @@ body {
     line-height: 1.4 !important;
   }
 
+  .p-case-study .page>.cs-video {
+    order: 25;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    margin: clamp(26px, 8vw, 42px) auto 0;
+    width: calc(100% - var(--pad) * 2) !important;
+    max-width: var(--mw);
+    height: auto !important;
+    aspect-ratio: 1036 / 583;
+    border-width: 6px;
+    border-radius: var(--r);
+  }
+
+  .p-case-study .cs-video-play {
+    width: clamp(48px, 15vw, 72px) !important;
+    height: clamp(48px, 15vw, 72px) !important;
+  }
+
   .p-case-study .page>.cs-overview {
     order: 30;
     margin: clamp(30px, 9vw, 48px) auto 0;
@@ -1921,9 +1940,22 @@ body {
     white-space: normal !important;
   }
 
-  /* the desktop rail is a jump list; on mobile the sections read in order */
-  .p-case-study .cs-rail {
-    display: none !important;
+  /* the brand tile drops below the copy at a size that still reads */
+  .p-case-study .cs-logo-tile {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    align-self: flex-start;
+    width: 132px !important;
+    height: 132px !important;
+    border-radius: 18px;
+  }
+
+  .p-case-study .cs-logo-tile img {
+    left: 16px !important;
+    top: 57px !important;
+    width: 100px !important;
+    height: 19px !important;
   }
 
   .p-case-study .page>.cs-article {
@@ -1956,6 +1988,26 @@ body {
 
   .p-case-study .cs-body p + p {
     margin-top: 16px;
+  }
+
+  .p-case-study .cs-figure {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1440 / 584;
+    margin: clamp(22px, 7vw, 34px) 0;
+  }
+
+  .p-case-study .cs-figure::before {
+    top: 6px;
+    width: 100%;
+    height: calc(100% - 6px);
+    border-radius: 12px;
+  }
+
+  .p-case-study .cs-figure img {
+    width: 100% !important;
+    height: calc(100% - 6px) !important;
+    border-radius: 12px;
   }
 
   .p-case-study .cs-body .cs-points,
@@ -3137,11 +3189,17 @@ body {
   }
 
   /* ---------- RECRUITMENT LEADERS ---------------------------------------- */
-  /* the hero collage is a free-floating cluster measured against the 1920
-     canvas — it has no stacked equivalent, so it drops out */
-  .p-leaders .rl-collage,
-  .p-leaders .page>.rl-collage {
-    display: none !important;
+  /* the collage arrives from Figma as one flattened artwork, so unlike the old
+     free-floating cluster it stacks into the mobile flow as-is */
+  .p-leaders .page>.rl-hero-art {
+    order: 14;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    margin: clamp(22px, 7vw, 36px) auto 0;
+    width: calc(100% - var(--pad) * 2) !important;
+    max-width: min(var(--mw), 430px);
+    height: auto !important;
   }
 
   .p-leaders .page>.plat-title {
@@ -3229,10 +3287,10 @@ body {
 
   .plat-visual img {
     position: absolute !important;
-    inset: 5% 5% !important;
-    width: 90% !important;
-    height: 90% !important;
-    border-radius: 10px;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: var(--r);
   }
 
   .page>.plat-list {
@@ -3404,7 +3462,7 @@ body {
     top: auto !important;
     width: 100% !important;
     height: auto !important;
-    aspect-ratio: 629 / 437;
+    aspect-ratio: 629 / 457;
     border-radius: 10px;
   }
 
