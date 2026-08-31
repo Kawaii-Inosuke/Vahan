@@ -422,8 +422,53 @@
 .explore-btn .arrow{ width:19.496px; height:19.496px; }
 .explore-btn .arrow img{ width:12.185px; height:12.185px; }
 
-.explore-btn-partners{ width:303.0862px; }
-.explore-btn-jobs    { width:241px; }
+/* the labels grew with the rename, so the pills size to their text */
+.explore-btn-partners{ width:auto; }
+.explore-btn-jobs    { width:auto; }
+
+/* the illustration ships without its baked-in caption and CTA pill so both can
+   carry the renamed labels in the page font */
+.explore-img-cap{
+  position:absolute;
+  left:97.2985px; top:244.7444px;
+  width:318.596px; height:21px;
+  display:flex; align-items:center;
+  font-size:15px;
+  line-height:21px;
+  color:var(--brown);
+  white-space:nowrap;
+  pointer-events:none;
+}
+.explore-img-cta{
+  position:absolute;
+  display:inline-flex; align-items:center; gap:9.06px;
+  padding:0 19.92px;
+  border-radius:999px;
+  font-size:16px;
+  line-height:1;
+  color:#fff;
+  white-space:nowrap;
+  pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 269 41' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='1' gradientTransform='translate(134.5 49.6) rotate(-90) scale(77.37 184.26)'><stop stop-color='rgb(255,156,56)'/><stop offset='1' stop-color='rgb(249,118,25)'/></radialGradient></defs></svg>");
+  background-size:100% 100%;
+}
+.explore-img-cta img{ width:18.874px; height:18.874px; }
+.explore-img-cta-partners{ left:97.2985px; top:371.3214px; height:40.768px; }
+.explore-img-cta-jobs    { left:352.0934px; top:375.0934px; height:41px; }
+
+/* the phone mock's chat header, re-set so it follows the rename */
+.explore-img-app{
+  position:absolute;
+  left:156.0934px; top:114.0934px;
+  height:16px;
+  display:flex; align-items:center;
+  font-weight:600;
+  font-size:10.5px;
+  letter-spacing:-.1px;
+  color:#fff;
+  white-space:nowrap;
+  pointer-events:none;
+}
 
 .grad-303{ background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 303.09 55' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -10.438 20.779 0 151.54 66.875)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>"); }
 .grad-241{ background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 241 55' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -10.438 16.522 0 120.5 66.875)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>"); }

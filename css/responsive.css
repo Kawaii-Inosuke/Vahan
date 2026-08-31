@@ -1320,6 +1320,14 @@ body {
     height: auto !important;
   }
 
+  /* both are hung off the desktop illustration's exact pixel coordinates and
+     have no meaning once it is re-scaled */
+  .explore .explore-img-cta,
+  .explore .explore-img-cap,
+  .explore .explore-img-app {
+    display: none;
+  }
+
   /* ---------- CAREERS ---------------------------------------------------- */
   /* the desktop canvas runs Learn → Values → Life → Open Roles; the stack
      follows the same sequence */

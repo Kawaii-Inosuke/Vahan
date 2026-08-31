@@ -305,7 +305,7 @@
   background-size:100% 100%;
 }
 .need-banner-text{
-  width:678px;
+  width:900px;
   font-size:24px;
   line-height:1.5;
   letter-spacing:-.456px;
@@ -515,7 +515,44 @@
   font-size:23px;
   letter-spacing:-.437px;
 }
-.explore-btn-wide{ width:262px; }
+.explore-btn-wide{ width:auto; }
+.explore-btn{ width:auto; }
+
+/* the illustration ships without its baked-in CTA pill so it can carry the
+   renamed label in the page font */
+.explore-img-cta{
+  position:absolute;
+  left:352.0934px; top:364.1044px;
+  height:41px;
+  display:inline-flex; align-items:center; gap:9.06px;
+  padding:0 19.92px;
+  border-radius:999px;
+  font-size:16px;
+  line-height:1;
+  color:#fff;
+  white-space:nowrap;
+  pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 242 41' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='1' gradientTransform='translate(121 49.6) rotate(-90) scale(77.37 184.26)'><stop stop-color='rgb(255,156,56)'/><stop offset='1' stop-color='rgb(249,118,25)'/></radialGradient></defs></svg>");
+  background-size:100% 100%;
+}
+.explore-img-cta img{ width:18.874px; height:18.874px; }
+
+/* the phone mock's chat header, re-set so it follows the rename */
+.explore-img-app{
+  position:absolute;
+  left:156.0934px; top:103.1044px;
+  height:16px;
+  display:flex; align-items:center;
+  font-weight:600;
+  font-size:10.5px;
+  letter-spacing:-.1px;
+  color:#fff;
+  white-space:nowrap;
+  pointer-events:none;
+}
+
+/* the stories heading carries four more words after the rename */
+.stories-title{ left:240px; width:1440px; }
 
 /* ===================== CTA ===================== */
 .cta{ left:240px; top:6203px; width:1440px; height:448px; }
