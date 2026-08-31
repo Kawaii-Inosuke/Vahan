@@ -1,6 +1,6 @@
 /* =========================================================================
    Vahan — Recruitment Leaders
-   Figma: JmFGyR5BxquecSttAjGEsh  ·  node 2232:12163  ·  1920 × 7129
+   Figma: JmFGyR5BxquecSttAjGEsh  ·  node 1788:2587  ·  1920 × 7335
 
    Loads on top of styles.css: nav, buttons, hero form, logo strip, stats band,
    CTA card and footer are the shared site pieces; everything below re-positions
@@ -8,7 +8,7 @@
    this page.
    ========================================================================= */
 
-.page{ height:7129px; }
+.page{ height:7335px; }
 
 /* ===================== HERO ===================== */
 /* the hero is a two-column split: copy and the sign-up field on the left, a
@@ -186,7 +186,7 @@
 /* ===================== EVERYTHING YOU NEED ===================== */
 .need-title{
   position:absolute;
-  left:436px; top:2859px;
+  left:436px; top:2862px;
   width:1048px; height:140px;
   font-family:var(--display);
   font-weight:500;
@@ -235,9 +235,68 @@
   opacity:.7;
 }
 
+/* the orange payout promise slab that leads the pair of banners */
+.need-banner-paid{
+  position:absolute;
+  left:240px; top:3768px;
+  width:1440px; height:189px;
+  border-radius:16px;
+  overflow:hidden;
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 1440 189' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -35.867 98.723 0 720 229.81)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
+  background-size:100% 100%;
+}
+.need-banner-paid-inner{
+  position:absolute;
+  left:39px; top:25px;
+  width:1362px; height:139px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.need-banner-paid-copy{
+  width:1138px;
+  display:flex; flex-direction:column; gap:21px;
+  color:#fff;
+}
+.need-banner-paid-title{
+  width:678px; height:55px;
+  font-weight:600;
+  font-size:46px;
+  line-height:1.5;
+  letter-spacing:-.874px;
+}
+.need-banner-paid-sub{
+  width:678px; height:34px;
+  font-size:24px;
+  line-height:1.5;
+  letter-spacing:-.456px;
+}
+.need-banner-paid-badge{
+  flex:none;
+  width:163px; height:139px;
+  border-radius:10px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center;
+  filter:drop-shadow(0 0 1px rgba(128,115,115,.23));
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 163 139' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -42.964 18.201 0 81.5 415.42)'><stop stop-color='rgb(255,164,97)' offset='0'/><stop stop-color='rgb(255,187,136)' offset='0.25'/><stop stop-color='rgb(255,210,176)' offset='0.5'/><stop stop-color='rgb(255,232,215)' offset='0.75'/><stop stop-color='rgb(255,255,255)' offset='1'/></radialGradient></defs></svg>");
+  background-size:100% 100%;
+}
+.need-banner-paid-badge b{
+  font-weight:600;
+  font-size:58px;
+  line-height:normal;
+  letter-spacing:-.437px;
+  color:var(--orange);
+}
+.need-banner-paid-badge span{
+  font-weight:600;
+  font-size:23px;
+  line-height:normal;
+  letter-spacing:-.437px;
+  color:var(--brown);
+}
+
 .need-banner{
   position:absolute;
-  left:240px; top:3765px;
+  left:240px; top:4005px;
   width:1440px; height:122px;
   border-radius:16px;
   display:flex; align-items:center; justify-content:space-between;
@@ -265,14 +324,14 @@
 /* ===================== PARTNER STORIES ===================== */
 .stories-band{
   position:absolute;
-  left:0; top:3994px;
+  left:0; top:4200px;
   width:1920px; height:840px;
   background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 1920 840' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)' opacity='0.52'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -207.23 171.11 0 960 1454.4)'><stop stop-color='rgb(255,164,97)' offset='0'/><stop stop-color='rgb(255,187,136)' offset='0.25'/><stop stop-color='rgb(255,210,176)' offset='0.5'/><stop stop-color='rgb(255,232,215)' offset='0.75'/><stop stop-color='rgb(255,255,255)' offset='1'/></radialGradient></defs></svg>");
   background-size:100% 100%;
 }
 .stories-title{
   position:absolute;
-  left:494px; top:4096px;
+  left:494px; top:4302px;
   width:932px; height:140px;
   font-family:var(--display);
   font-weight:500;
@@ -285,7 +344,7 @@
 
 .story-card{
   position:absolute;
-  top:4284px;
+  top:4490px;
   width:463px; height:343px;
   background:var(--peach);
   border-radius:7.336px;
@@ -367,7 +426,7 @@
 }
 
 .stories-btn{
-  left:815px; top:4675px;
+  left:815px; top:4881px;
   width:291px; height:58px;
   gap:8px;
   padding:12px 24px;
@@ -379,7 +438,7 @@
 /* ===================== LOOKING FOR SOMETHING ELSE ===================== */
 .else-title{
   position:absolute;
-  left:482px; top:4918px;
+  left:482px; top:5124px;
   width:952px; height:70px;
   font-family:var(--display);
   font-weight:500;
@@ -392,7 +451,7 @@
 
 .explore{
   position:absolute;
-  top:5036px;
+  top:5242px;
   width:699px; height:877px;
   background:var(--peach);
   border-radius:24px;
@@ -459,7 +518,7 @@
 .explore-btn-wide{ width:262px; }
 
 /* ===================== CTA ===================== */
-.cta{ left:240px; top:5997px; width:1440px; height:448px; }
+.cta{ left:240px; top:6203px; width:1440px; height:448px; }
 .cta-bg{ width:1440px; height:448px; }
 .cta-text{
   left:300px; top:104px;
@@ -474,4 +533,4 @@
 }
 
 /* ===================== FOOTER ===================== */
-.footer{ top:6529px; }
+.footer{ top:6735px; }

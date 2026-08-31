@@ -1323,10 +1323,49 @@ body {
   /* ---------- CAREERS ---------------------------------------------------- */
   /* the desktop canvas runs Learn → Values → Life → Open Roles; the stack
      follows the same sequence */
+  /* the desktop collage is three absolutely-hung strips; on mobile they
+     become a plain row and the two glass pills drop underneath */
   .p-careers .page>.hero-art {
     order: 13;
+    position: static !important;
     margin: 20px auto 0;
+    width: calc(100% - var(--pad) * 2) !important;
     max-width: min(100%, 460px);
+    height: auto !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 2.4%;
+  }
+
+  .p-careers .hero-art .hero-strip {
+    position: static !important;
+    width: 31.7% !important;
+    height: auto !important;
+    border-radius: 8px;
+  }
+
+  .p-careers .hero-art .hero-pill {
+    position: static !important;
+    order: 5;
+    flex: 0 0 auto;
+    width: auto !important;
+    height: auto !important;
+    max-width: 100%;
+    margin: 10px auto 0;
+    padding: 6px 14px;
+    font-size: 13px !important;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .p-careers .hero-art .hero-pill-top {
+    order: 4;
+  }
+
+  /* the HR portrait cluster is decorative and has no room in the stack */
+  .p-careers .cta>.cta-faces {
+    display: none;
   }
 
   .p-careers .page>.learn-title {
@@ -1662,6 +1701,13 @@ body {
     white-space: nowrap;
   }
 
+  .p-careers .cta>.cta-text,
+  .p-careers .cta>.cta-sub {
+    display: block !important;
+    height: auto !important;
+    text-align: center !important;
+  }
+
   /* ---------- CASE STUDIES listing --------------------------------------- */
   .p-case-studies .page>.cs-hero-cta {
     order: 12;
@@ -1818,6 +1864,10 @@ body {
   .p-case-study .page>.cs-cta {
     order: 11;
     margin-top: 20px;
+    width: auto !important;
+    min-width: 160px;
+    height: 44px !important;
+    font-size: 15px !important;
   }
 
   .p-case-study .page>.cs-download {
@@ -3240,8 +3290,12 @@ body {
     order: 41;
   }
 
-  .p-leaders .page>.need-banner {
+  .p-leaders .page>.need-banner-paid {
     order: 42;
+  }
+
+  .p-leaders .page>.need-banner {
+    order: 43;
   }
 
   .p-leaders .page>.msec-stories {
@@ -3370,6 +3424,55 @@ body {
     width: 100% !important;
     font-size: 14px !important;
     line-height: 1.55 !important;
+  }
+
+  .page>.need-banner-paid {
+    position: static !important;
+    margin: clamp(20px, 6vw, 28px) auto 0;
+    width: calc(100% - var(--pad) * 2) !important;
+    max-width: var(--mw);
+    height: auto !important;
+    border-radius: var(--r);
+  }
+
+  .need-banner-paid .need-banner-paid-inner {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 20px !important;
+    gap: 16px;
+  }
+
+  .need-banner-paid .need-banner-paid-copy {
+    width: auto !important;
+    gap: 8px;
+  }
+
+  .need-banner-paid .need-banner-paid-title {
+    width: 100% !important;
+    height: auto !important;
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+  }
+
+  .need-banner-paid .need-banner-paid-sub {
+    width: 100% !important;
+    height: auto !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+
+  .need-banner-paid .need-banner-paid-badge {
+    width: 74px !important;
+    height: 74px !important;
+  }
+
+  .need-banner-paid .need-banner-paid-badge b {
+    font-size: 28px !important;
+  }
+
+  .need-banner-paid .need-banner-paid-badge span {
+    font-size: 12px !important;
   }
 
   .page>.need-banner {

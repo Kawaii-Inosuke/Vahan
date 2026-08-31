@@ -18,20 +18,52 @@
   left:243px; top:263px;
   width:700px;
   text-align:left;
-  text-transform:capitalize;
+  text-transform:none;
 }
 .hero-sub{
   left:243px; top:490px;
   width:706px;
   text-align:left;
 }
+/* the collage spans from the wide bottom pill (x 789) to the last strip
+   (x 1680); the strips sit on a 210px pitch inside it */
 .hero-art{
   position:absolute;
-  left:999px; top:118px;
-  width:744px; height:743px;
-  object-fit:cover;
+  left:789px; top:88px;
+  width:891px; height:798px;
   pointer-events:none;
 }
+.hero-strip{
+  position:absolute;
+  top:0;
+  width:189px; height:798px;
+  object-fit:cover;
+}
+.hero-strip:nth-of-type(1){ left:282px; }
+.hero-strip:nth-of-type(2){ left:492px; }
+.hero-strip:nth-of-type(3){ left:702px; }
+
+.hero-pill{
+  position:absolute;
+  display:flex; align-items:center; justify-content:center; gap:17.399px;
+  padding:3.316px 13.262px;
+  border-radius:83.162px;
+  font-size:23.726px;
+  line-height:normal;
+  color:var(--brown);
+  white-space:nowrap;
+  filter:drop-shadow(0 4.241px 2.651px #ffc9a2);
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 376 63' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -19.473 41.985 0 188 188.28)'><stop stop-color='rgb(255,164,97)' offset='0'/><stop stop-color='rgb(255,187,136)' offset='0.25'/><stop stop-color='rgb(255,210,176)' offset='0.5'/><stop stop-color='rgb(255,232,215)' offset='0.75'/><stop stop-color='rgb(255,255,255)' offset='1'/></radialGradient></defs></svg>");
+  background-size:100% 100%;
+}
+.hero-pill-dot{
+  flex:none;
+  width:9.543px; height:9.543px;
+  border-radius:50%;
+  background:#24af5c;
+}
+.hero-pill-top   { left:150px; top:26px;  width:376px; height:63px; }
+.hero-pill-bottom{ left:0;     top:693px; width:553px; height:63px; }
 
 /* Button — Figma gradient geometry for the 236.64 × 58 instance */
 .roles-cta{
@@ -61,6 +93,8 @@
   text-transform:capitalize;
   color:var(--brown);
 }
+.careers-h2-plain{ text-transform:none; }
+
 .careers-sub{
   position:absolute;
   left:479px;
@@ -434,25 +468,65 @@
 }
 
 /* ===================== CTA ===================== */
-.cta{ top:7827.7305px; }
+.cta{ top:7798px; height:551.2695px; }
+.cta-bg{ height:551.2695px; }
 .cta-text{
-  left:74.5px; top:84px;
-  width:1291px;
-  font-size:56px;
+  left:95px; top:95px;
+  width:691px; height:182px;
+  display:flex; flex-direction:column; justify-content:center;
+  font-size:60.856px;
+  line-height:73.897px;
+  text-align:left;
   text-transform:capitalize;
 }
 .cta-sub{
   position:absolute;
-  left:51px; top:162px;
-  width:1338px;
+  left:95px; top:260.2720px;
+  width:745px; height:83.6748px;
+  display:flex; flex-direction:column; justify-content:center;
   font-weight:500;
-  font-size:38px;
+  font-size:32px;
   line-height:68px;
-  text-align:center;
+  text-align:left;
   color:#fff;
 }
-.cta-btn{ left:395px; top:286px; width:297.6364px; }
-.cta-btn-alt{ left:753.1364px; width:292.6364px; }
+.cta-btn{ left:95px; top:365px; width:297.6364px; }
+.cta-btn-alt{ left:423.1362px; width:292.6364px; }
+
+/* the three HR portraits and their caption, hung off the card's right end */
+.cta-faces{
+  position:absolute;
+  left:931px; top:109px;
+  width:453px; height:324px;
+  pointer-events:none;
+}
+.cta-face{
+  position:absolute;
+  width:159.9034px; height:159.9034px;
+  border-radius:50%;
+  border:2.327px solid #fff;
+  object-fit:cover;
+  background:#ffe4d0;
+}
+.cta-face-1{ left:44px; top:0; }
+.cta-face-2{ left:0; top:169px; }
+.cta-face-3{ left:208px; top:98px; }
+.cta-faces-pill{
+  position:absolute;
+  left:193px; top:284px;
+  width:260px; height:39.5437px;
+  display:flex; align-items:center; justify-content:center; gap:10.875px;
+  padding:2.072px 8.289px;
+  border-radius:51.976px;
+  font-size:14.829px;
+  line-height:normal;
+  color:var(--brown);
+  white-space:nowrap;
+  filter:drop-shadow(0 2.651px 1.657px #ffc9a2);
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 260 39.544' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -12.223 29.032 0 130 118.18)'><stop stop-color='rgb(255,164,97)' offset='0'/><stop stop-color='rgb(255,187,136)' offset='0.25'/><stop stop-color='rgb(255,210,176)' offset='0.5'/><stop stop-color='rgb(255,232,215)' offset='0.75'/><stop stop-color='rgb(255,255,255)' offset='1'/></radialGradient></defs></svg>");
+  background-size:100% 100%;
+}
+.cta-faces-pill .hero-pill-dot{ width:5.964px; height:5.964px; }
 
 /* ===================== FOOTER ===================== */
 .footer{ top:8425.7305px; }
