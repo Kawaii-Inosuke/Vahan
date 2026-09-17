@@ -8,7 +8,7 @@
    the sections unique to this page.
    ========================================================================= */
 
-.page{ height:6861px; }
+.page{ height:6595px; }
 
 /* ===================== HERO ===================== */
 .hero-title{
@@ -24,12 +24,12 @@
 .hero-note{ left:553px; top:611px; width:815px; }
 
 /* the strip sits higher on this page than on the homepage */
-.logo-strip{ top:783px; }
+.logo-strip{ top:517px; }
 
 /* ===================== STATS ===================== */
-.stats-band{ left:0; top:1005px; }
-.stat-card{ top:1100px; }
-.stat-body{ top:1175px; }
+.stats-band{ left:0; top:739px; }
+.stat-card{ top:834px; }
+.stat-body{ top:909px; }
 
 /* ===================== shared section heading ===================== */
 .os-h2{
@@ -46,11 +46,11 @@
 }
 
 /* ===================== WHY WE EXIST ===================== */
-.os-why-title{ left:503.5px; top:1549px; width:913px; }
+.os-why-title{ left:503.5px; top:1283px; width:913px; }
 
 .os-why-text{
   position:absolute;
-  left:240px; top:1678px;
+  left:240px; top:1412px;
   width:776px;
   font-size:26px;
   line-height:1.5;
@@ -62,7 +62,7 @@
 
 .os-why-img{
   position:absolute;
-  left:1076px; top:1679px;
+  left:1076px; top:1413px;
   width:604px; height:701px;
   border-radius:19.989px;
   overflow:hidden;
@@ -71,7 +71,7 @@
 .os-why-img img{ width:100%; height:100%; object-fit:cover; }
 
 /* ===================== THE JOURNEY ===================== */
-.os-journey-title{ top:2512px; }
+.os-journey-title{ top:2246px; }
 
 /* One row = year · arrow · gradient band, laid out on the 240 → 1680 stage.
    Rows repeat every 162 px; the dotted connector hangs off each row except
@@ -122,12 +122,12 @@
 }
 
 /* ===================== THE PEOPLE BEHIND IT ===================== */
-.os-people-title{ top:3722px; width:932px; }
+.os-people-title{ top:3456px; width:932px; }
 
 /* --- founder, full-width card --- */
 .os-founder{
   position:absolute;
-  left:240px; top:3852px;
+  left:240px; top:3586px;
   width:1440px; height:525px;
   background:var(--peach);
   border-radius:24px;
@@ -162,7 +162,7 @@
 /* --- three leader cards --- */
 .os-person{
   position:absolute;
-  top:4422px;
+  top:4156px;
   width:450px; height:573px;
   background:var(--peach);
   border-radius:24px;
@@ -223,17 +223,17 @@
 /* ===================== BACKED BY THE BEST ===================== */
 .backers-band{
   position:absolute;
-  left:0; top:5103px;
+  left:0; top:4837px;
   width:1920px; height:560px;
   background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 1920 560' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)' opacity='0.52'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -138.15 171.11 0 960 969.73)'><stop stop-color='rgb(255,164,97)' offset='0'/><stop stop-color='rgb(255,187,136)' offset='0.25'/><stop stop-color='rgb(255,210,176)' offset='0.5'/><stop stop-color='rgb(255,232,215)' offset='0.75'/><stop stop-color='rgb(255,255,255)' offset='1'/></radialGradient></defs></svg>");
   background-size:100% 100%;
 }
-.backers-title{ top:5195px; }
+.backers-title{ top:4929px; }
 .backer{ position:absolute; }
 
 /* ===================== CTA ===================== */
 .cta{
-  left:240px; top:5773px;
+  left:240px; top:5507px;
   width:1440px; height:378px;
 }
 .cta-bg{
@@ -251,4 +251,4 @@
 }
 
 /* ===================== FOOTER ===================== */
-.footer{ top:6261px; }
+.footer{ top:5995px; }
