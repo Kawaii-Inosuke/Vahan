@@ -47,7 +47,7 @@
         <img class="chev" src="assets/homepage/icons/chevron-down.svg" alt="">
         <ul class="dropdown">
           <li><a href="blog.html">Blog</a></li>
-          <li><a href="events.html">Events</a></li>
+          <!-- EVENTS-HIDDEN: <li><a href="events.html">Events</a></li> -->
           <li><a href="partner-stories.html">Vahan Leader Stories</a></li>
           <li><a href="riderhub.html">Rider Hub</a></li>
         </ul>
@@ -93,20 +93,20 @@
   <div class="stat-card stat-card-4"></div>
 
   <div class="stat-body stat-body-1">
-    <p class="stat-num">20 Lakh+</p>
-    <p class="stat-label">workers placed</p>
+    <p class="stat-num" data-cs="stat-num-1"></p>
+    <p class="stat-label" data-cs="stat-label-1"></p>
   </div>
   <div class="stat-body stat-body-2">
-    <p class="stat-num">900+</p>
-    <p class="stat-label">cities</p>
+    <p class="stat-num" data-cs="stat-num-2"></p>
+    <p class="stat-label" data-cs="stat-label-2"></p>
   </div>
   <div class="stat-body stat-body-3">
-    <p class="stat-num" data-cs="stat-num"></p>
-    <p class="stat-label" data-cs="stat-label"></p>
+    <p class="stat-num" data-cs="stat-num-3"></p>
+    <p class="stat-label" data-cs="stat-label-3"></p>
   </div>
   <div class="stat-body stat-body-4">
-    <p class="stat-num">5 Crore+</p>
-    <p class="stat-label">workers in our network</p>
+    <p class="stat-num" data-cs="stat-num-4"></p>
+    <p class="stat-label" data-cs="stat-label-4"></p>
   </div>
 
   <!-- ============ STORY VIDEO ============ -->
@@ -137,16 +137,35 @@
 
   <!-- ============ ARTICLE ============ -->
   <article class="cs-article">
-    <h2 class="cs-h2" id="challenge">The Challenge</h2>
+    <h2 class="cs-h2" id="challenge" data-cs="h-challenge">The Challenge</h2>
     <div class="cs-body" data-cs="challenge"></div>
 
     <figure class="cs-figure"><img data-cs="story-image" src="" alt=""></figure>
 
-    <h2 class="cs-h2" id="solution">The Vahan.ai Solution</h2>
+    <h2 class="cs-h2" id="solution" data-cs="h-solution">The Vahan.ai Solution</h2>
     <div class="cs-body" data-cs="solution"></div>
 
-    <h2 class="cs-h2" id="impact">The Impact</h2>
+    <h2 class="cs-h2" id="impact" data-cs="h-impact">The Impact</h2>
     <div class="cs-body" data-cs="impact"></div>
+
+    <!-- the three-up outcomes rail, only on studies that ship one -->
+    <div class="cs-outcomes" data-cs="outcomes" hidden></div>
+
+    <!-- client testimonial card, likewise optional -->
+    <section class="cs-quote" data-cs="testimonial" hidden>
+      <div class="cs-quote-col">
+        <img class="cs-quote-logo" src="" alt="">
+        <p class="cs-quote-text"></p>
+        <div class="cs-quote-by">
+          <span class="cs-quote-avatar"><img src="" alt=""></span>
+          <span class="cs-quote-who">
+            <span class="cs-quote-name"></span>
+            <span class="cs-quote-role"></span>
+          </span>
+        </div>
+      </div>
+      <div class="cs-quote-photo"><img src="" alt=""></div>
+    </section>
   </article>
 
   <!-- ============ BROWSE CASE STUDIES ============ -->
@@ -207,7 +226,7 @@
         <p class="footer-col-title">Resources</p>
         <ul class="footer-list">
           <li><a href="blog.html">Blog</a></li>
-          <li><a href="events.html">Events</a></li>
+          <!-- EVENTS-HIDDEN: <li><a href="events.html">Events</a></li> -->
           <li><a href="partner-stories.html">Vahan Leader Stories</a></li>
           <li><a href="riderhub.html">Rider Hub</a></li>
           <li><a href="case-studies.html">Case Studies</a></li>
@@ -273,6 +292,10 @@
     set('brand',      study.company.toUpperCase());
     set('hero-title', study.heroTitle || study.title);
 
+    /* some frames run without the "CLIENT SUCCESS STORY" line; the headline
+       then starts where the eyebrow would have and gets a third line of room */
+    document.querySelector('.page').classList.toggle('cs-no-eyebrow', study.eyebrow === false);
+
     const heroImg = document.querySelector('[data-cs="hero-image"]');
     heroImg.src = study.heroImage || study.image;
     heroImg.alt = `${study.company} — ${study.industry}`;
@@ -290,15 +313,36 @@
       video.rel    = 'noopener noreferrer';
     }
 
-    /* ---------- stats band ---------- */
+    /* ---------- stats band ----------
+       Most studies only override the third tile; the newer frames ship their
+       own four, so a full `bandStats` array wins when a study has one. */
     const stat = study.heroStat || { n: '25%', l: 'higher recruitment efficiency' };
-    set('stat-num',   stat.n);
-    set('stat-label', stat.l);
+    const band = study.bandStats || [
+      { n: '20 Lakh+', l: 'workers placed' },
+      { n: '900+',     l: 'cities' },
+      stat,
+      { n: '5 Crore+', l: 'workers in our network' },
+    ];
+    band.forEach((s, i) => {
+      set(`stat-num-${i + 1}`,   s.n);
+      set(`stat-label-${i + 1}`, s.l);
+    });
 
     /* ---------- overview ---------- */
+    const tile = document.querySelector('.cs-logo-tile');
     const mark = document.querySelector('[data-cs="logo-mark"]');
-    mark.src = study.logo;
-    mark.alt = study.company;
+    /* the attribution frame drops the tile and narrows the card to 975 px */
+    if (study.logoTile === false) {
+      tile.hidden = true;
+      document.querySelector('.cs-overview').classList.add('cs-overview-solo');
+    } else {
+      mark.src = study.logo;
+      mark.alt = study.company;
+      if (study.logoTileBg) tile.style.background = study.logoTileBg;
+      /* dark wordmarks are knocked out to white on a brand-coloured tile;
+         a mark that ships in its own colours on a light tile is left alone */
+      tile.classList.toggle('cs-logo-tile-plain', study.logoTileKnockout === false);
+    }
 
     set('industry', study.industry);
     set('usecase',  study.useCase || study.roles);
@@ -308,6 +352,11 @@
       `across ${study.regions}. This is how that hiring engine was rebuilt with Vahan.`);
 
     /* ---------- article ---------- */
+    const headings = study.headings || {};
+    set('h-challenge', headings.challenge || 'The Challenge');
+    set('h-solution',  headings.solution  || 'The Vahan.ai Solution');
+    set('h-impact',    headings.impact    || 'The Impact');
+
     const para = (text, cls) => {
       const p = document.createElement('p');
       if (cls) p.className = cls;
@@ -346,10 +395,43 @@
 
     fill('impact', asParas(study.impact || study.results).map(t => para(t)));
 
+    /* ---------- outcomes rail ---------- */
+    const outcomes = document.querySelector('[data-cs="outcomes"]');
+    if (study.outcomes) {
+      outcomes.hidden = false;
+      outcomes.replaceChildren(...study.outcomes.map(o => {
+        const col = document.createElement('div');
+        col.className = 'cs-outcome';
+        col.append(para(o.n, 'cs-outcome-num'), para(o.t, 'cs-outcome-text'));
+        return col;
+      }));
+    }
+
+    /* ---------- testimonial ---------- */
+    const quote = document.querySelector('[data-cs="testimonial"]');
+    if (study.testimonial) {
+      const t = study.testimonial;
+      quote.hidden = false;
+      const logo = quote.querySelector('.cs-quote-logo');
+      logo.src = t.logo || study.logo;
+      logo.alt = study.company;
+      quote.querySelector('.cs-quote-text').textContent = t.text;
+      quote.querySelector('.cs-quote-name').textContent = t.name;
+      quote.querySelector('.cs-quote-role').textContent = t.role;
+      const face = quote.querySelector('.cs-quote-avatar img');
+      face.src = t.avatar || '';
+      face.alt = t.name;
+      const shot = quote.querySelector('.cs-quote-photo img');
+      shot.src = t.image || study.storyImage || study.image;
+      shot.alt = `${study.company} — ${study.industry}`;
+    }
+
     /* ---------- the two studies that follow this one ---------- */
     const start = ORDER.indexOf(key);
     document.querySelectorAll('[data-cs-more]').forEach(card => {
-      const slug = ORDER[(start + 1 + Number(card.dataset.csMore)) % ORDER.length];
+      const i = Number(card.dataset.csMore);
+      /* a study can name the two it wants; otherwise walk on from this one */
+      const slug = (study.more && study.more[i]) || ORDER[(start + 1 + i) % ORDER.length];
       const s = STUDIES[slug];
       card.href = `case-study.html?id=${slug}`;
       card.querySelector('.cs-card-img img').src = s.image;
@@ -360,10 +442,10 @@
       card.querySelector('.cs-card-meta').textContent = `${s.company} · ${s.industry}`;
     });
 
-    /* The design sets the headline at 86 px in a fixed 644 x 198 box, which
-       fits its four-word placeholder. Longer study titles step the size down
-       until they land inside that box rather than colliding with the buttons
-       beneath it. */
+    /* The design sets the headline at 86 px in a fixed 893 x 198 box (899 x 297
+       on the frames that drop the eyebrow). Longer study titles step the size
+       down until they land inside that box rather than colliding with the
+       buttons beneath it. */
     const title = document.querySelector('.cs-title');
     const fitTitle = () => {
       title.style.fontSize = '';

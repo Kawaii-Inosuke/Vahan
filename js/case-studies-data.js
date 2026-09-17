@@ -428,4 +428,140 @@ window.VAHAN_CASE_STUDIES = {
     },
   },
 
+  /* ---------------------------------------------------------------------
+     Figma node 2695:3131 — "From Attribution Chaos to a Clean Ledger."
+     No brand tile on this one, and its own four-up stat band.
+     --------------------------------------------------------------------- */
+  'zomato-attribution': {
+    company: 'Zomato',
+    brandColor: '#de1f18',
+    industry: 'Food Delivery & Quick Commerce',
+    useCase: 'Hiring Attribution & Payout Accuracy',
+    cat: 'food',
+    logo: 'assets/case%20study%20listing%20page/zomato%20logo.svg',
+    image: 'assets/casestudy/zomato-attribution-story.webp',
+    heroImage: 'assets/casestudy/zomato-attribution-hero.webp',
+    storyImage: 'assets/casestudy/zomato-attribution-story.webp',
+    videoThumb: 'assets/casestudy/story-video-poster.webp',
+    roles: 'Delivery riders',
+    regions: 'Pan-India',
+    title: 'How Zomato turned multi-channel hiring into one clean attribution ledger.',
+    heroTitle: 'From Attribution Chaos to a Clean Ledger.',
+    /* the design runs the overview card at 975 px with no client tile */
+    logoTile: false,
+    bandStats: [
+      { n: '20 Lakh+', l: 'workers placed' },
+      { n: '900+',     l: 'cities' },
+      { n: '98%',      l: 'referral-code adoption via Vahan' },
+      { n: '5 Crore+', l: 'workers in our network' },
+    ],
+    overview: 'A leading quick commerce platform in India, sourcing last-mile delivery riders at massive scale, lakhs of onboardings every month, through a mix of organic funnels, rider referrals, hiring agencies, and partner networks.',
+    dek: 'Without a reliable way to credit each hire to its source, the same rider could be claimed by multiple channels, leading to disputed hires, inflated claims, and payout reconciliation that drained time and trust.',
+    challenge: [
+      'One of India’s largest quick commerce platforms sources last-mile delivery riders through a complex mix of channels running in parallel, including organic and digital funnels, rider referrals, multiple hiring agencies, and partner networks. At the scale of lakhs of monthly onboardings, this multi-channel model created a costly measurement problem.',
+      'Without a deterministic way to credit each hire, the same rider could be claimed by more than one channel. Attribution was inferred after the fact rather than declared at source, leading to disputed hires, inflated claims, and payout reconciliation that consumed time and eroded trust. The client couldn’t cleanly answer the questions that mattered most to its unit economics: which hires were genuinely unique, which channel drove each activation, and whether each channel was paid accurately for the value it delivered.',
+    ],
+    solution: [
+      'To fix this, the client rolled out a referral-code (RC) based attribution system: a unique code captured at onboarding that hard-links every rider to a single source channel. But the system was only as good as its adoption. Across dispersed, high-volume, digitally less-fluent cohorts, the client’s largest supply channels struggled to make it stick. The client needed its partners to drive RC adoption to near-ceiling levels, fast, without sacrificing volume.',
+      'As the client’s largest external hiring channel, Vahan re-engineered its onboarding flow to make referral-code capture near-universal, while sustaining month-on-month volume growth:',
+    ],
+    impact: [
+      'With Vahan’s re-engineered flow live across the client’s network, the platform achieved a step-change in attribution quality: referral-code adoption climbed to 98% of onboardings via Vahan, giving the client a near-complete, deterministic dataset at one of its largest external agencies.',
+      'Duplicate and disputed hires were eliminated, letting the client settle payouts against a hard record rather than negotiated claims, all while placements grew month-on-month.',
+    ],
+    /* the design pins the rail to these two rather than the next two in order */
+    more: ['zomato-scale', 'dunzo-sourcing'],
+  },
+
+  /* ---------------------------------------------------------------------
+     Figma node 2676:453 — "From Hiring Bottlenecks to a More Predictable
+     Workforce." Runs without the eyebrow line, renames all three article
+     headings, and closes on an outcomes rail plus a testimonial card.
+     --------------------------------------------------------------------- */
+  'shahi-exports': {
+    company: 'Shahi Exports',
+    brandColor: '#6b2a86',
+    industry: 'Apparel Manufacturing & Export',
+    useCase: 'Workforce Recruitment & Hiring',
+    cat: 'manufacturing',
+    logo: 'assets/casestudy/shahi-logo.png',
+    /* the mark ships in full colour on a grey tile, not knocked out */
+    logoTileBg: '#eaeaea',
+    logoTileKnockout: false,
+    image: 'assets/casestudy/shahi-story.webp',
+    heroImage: 'assets/casestudy/shahi-hero.webp',
+    storyImage: 'assets/casestudy/shahi-story.webp',
+    videoThumb: 'assets/casestudy/story-video-poster.webp',
+    roles: 'Production and plant manpower',
+    regions: '52 plants',
+    title: 'How Shahi Exports built a faster, more predictable manpower engine.',
+    heroTitle: 'From Hiring Bottlenecks to a More Predictable Workforce.',
+    /* this frame drops the "CLIENT SUCCESS STORY" line above the headline */
+    eyebrow: false,
+    bandStats: [
+      { n: '40–50%', l: 'reduction in time-to-hire' },
+      { n: '50%',    l: 'reduction in vendor management costs' },
+      { n: '40%',    l: 'improvement in retention' },
+      { n: '2×',     l: 'organic referrals' },
+    ],
+    headings: {
+      challenge: 'Scaling Hiring with Speed and Consistency',
+      solution:  'A Structured, Technology-Enabled Hiring Approach',
+      impact:    'Measurable Workforce Outcomes',
+    },
+    overview: 'Shahi Exports is India’s largest apparel exporter, with 52 plants and a workforce of 125,000. At this scale, maintaining a consistent and efficient manpower pipeline is essential to smooth workforce operations.',
+    dek: 'Shahi Exports needed to strengthen manpower hiring while improving speed, vendor efficiency and workforce outcomes. Vahan partnered with Shahi to bring a more structured, technology-enabled approach to recruitment and workforce operations.',
+    challenge: [
+      'Shahi Exports required quality manpower within strict timelines. The challenge was to strengthen the hiring process while maintaining consistency across workforce operations.',
+      'Managing recruitment partners and vendors also added operational complexity. This made faster hiring, better vendor efficiency and stronger retention key priorities for the workforce operation.',
+      'Shahi needed a more efficient and predictable way to strengthen its manpower supply.',
+    ],
+    solutionIntro: 'Vahan partnered with Shahi Exports to strengthen its workforce hiring engine through technology-enabled recruitment, AI-supported tools and a structured manpower supply network.',
+    solutionPoints: [
+      {
+        label: 'Faster hiring',
+        text: 'Accelerated sourcing and onboarding helped bring quality manpower within stricter timelines.',
+      },
+      {
+        label: 'Structured vendor management',
+        text: 'Vahan’s Vendor Platform improved hiring predictability and reduced the operational burden of vendor management.',
+      },
+      {
+        label: 'Technology + recruitment supply',
+        text: 'Tech-enabled workflows were combined with a human-led recruitment network to support hiring at scale.',
+      },
+      {
+        label: 'Better workforce outcomes',
+        text: 'Smoother candidate journeys supported improved retention and stronger organic referrals.',
+      },
+    ],
+    impact: [
+      'The partnership delivered measurable improvements across the hiring and workforce lifecycle.',
+    ],
+    /* the three-up rail that closes "Measurable Workforce Outcomes" */
+    outcomes: [
+      {
+        n: '40–50% reduction in time-to-hire',
+        t: 'Faster hiring helped Shahi onboard quality manpower within strict timelines.',
+      },
+      {
+        n: '50% reduction in vendor management costs',
+        t: 'Improved hiring predictability reduced the operational burden of vendor management.',
+      },
+      {
+        n: '40% improvement in retention and 2× organic referrals',
+        t: 'Technology-enabled workflows created smoother candidate journeys, supporting stronger retention and referral-led hiring.',
+      },
+    ],
+    testimonial: {
+      logo: 'assets/casestudy/shahi-logo.png',
+      text: 'Vahan team is highly proactive and structured in their approach. With the support of their AI tools, we’ve been able to onboard quality manpower within strict timelines. Their partnership has brought efficiency and consistency to our workforce operations, helping our organisation run seamlessly.',
+      name: 'Asunda Bhima Reddy',
+      role: 'GM Operations, Shahi Exports',
+      avatar: 'assets/casestudy/shahi-quote-avatar.jpg',
+      image: 'assets/casestudy/shahi-quote.webp',
+    },
+    more: ['zomato-scale', 'dunzo-sourcing'],
+  },
+
 };

@@ -37,7 +37,7 @@
 
 .cs-eyebrow{
   position:absolute;
-  left:240px; top:309px;
+  left:240px; top:289px;
   width:838px; height:28px;
   font-family:var(--display);
   font-weight:500;
@@ -54,8 +54,8 @@
 
 .cs-title{
   position:absolute;
-  left:240px; top:355px;
-  width:644px; height:198px;
+  left:240px; top:335px;
+  width:893px; height:198px;
   font-family:var(--display);
   font-weight:500;
   font-size:86px;
@@ -65,7 +65,7 @@
 }
 
 .cs-cta{
-  left:240px; top:591.4724px;
+  left:240px; top:571.4724px;
   width:253.3648px; height:63.3164px;
   gap:8px;
   padding:12px 24px;
@@ -79,7 +79,7 @@
 
 .cs-download{
   position:absolute;
-  left:518.0867px; top:591.4724px;
+  left:518.0867px; top:571.4724px;
   width:355.0725px; height:63.3164px;
   display:flex; align-items:center; justify-content:center;
   border-radius:10px;
@@ -95,6 +95,13 @@
   transition:transform .2s ease;
 }
 .cs-download:hover{ transform:translateY(-2px); }
+
+/* Some frames drop the "CLIENT SUCCESS STORY" line. The headline then starts
+   where the eyebrow sat and takes a third line, pushing the buttons down. */
+.cs-no-eyebrow .cs-eyebrow{ display:none; }
+.cs-no-eyebrow .cs-title{ top:289px; width:899px; height:297px; }
+.cs-no-eyebrow .cs-cta,
+.cs-no-eyebrow .cs-download{ top:617.4724px; }
 
 /* ===================== STATS BAND ===================== */
 /* the homepage band and cards, re-hung at this page's coordinates */
@@ -182,6 +189,10 @@
 }
 .cs-fact b{ font-weight:600; }
 
+/* the attribution frame has no client tile, so the card stops at 975 px */
+.cs-overview-solo{ width:975px; }
+.cs-overview-solo .cs-overview-col{ width:872px; top:37px; }
+
 /* ---------- client brand tile ----------
    The panel's right-hand slot is the client's mark on a tile in their own
    colour; the wordmarks ship dark, so they are knocked out to white here. */
@@ -198,6 +209,13 @@
   width:258px; height:48px;
   object-fit:contain;
   filter:brightness(0) invert(1);
+}
+/* a mark that ships in its own colours sits on a light tile untouched, at the
+   larger size the Shahi frame draws it (node 2692:2445) */
+.cs-logo-tile-plain img{
+  left:46px; top:133.5px;
+  width:248px; height:72px;
+  filter:none;
 }
 
 /* ===================== ARTICLE ===================== */
@@ -344,6 +362,97 @@
 }
 .cs-card-btn .arrow{ width:14.569px; height:14.569px; }
 .cs-card-btn .arrow img{ width:9.106px; height:9.106px; }
+
+/* ===================== OUTCOMES RAIL =====================
+   Three measures under the closing heading, each behind a 4 px orange rule.
+   Breaks out of the 933 px reading column to the full 1440 px content width;
+   the column stops come straight off the design (rules at 0 / 452 / 975). */
+.cs-outcomes{
+  display:grid;
+  grid-template-columns:452px 523px 465px;
+  width:1440px;
+  margin-top:35px;
+}
+.cs-outcomes[hidden]{ display:none; }
+.cs-outcome{
+  min-height:180px;
+  padding:8px 0 0 44px;
+  border-left:4px solid #f97619;
+}
+.cs-outcome-num{
+  font-weight:700;
+  font-size:24px;
+  line-height:32px;
+  color:#4d4d4d;
+}
+.cs-outcome-text{
+  font-size:18px;
+  line-height:32px;
+  color:#4d4d4d;
+}
+.cs-outcome:nth-child(1) .cs-outcome-num,
+.cs-outcome:nth-child(1) .cs-outcome-text{ width:240px; }
+.cs-outcome:nth-child(2) .cs-outcome-num,
+.cs-outcome:nth-child(2) .cs-outcome-text{ width:295px; }
+.cs-outcome:nth-child(3) .cs-outcome-num,
+.cs-outcome:nth-child(3) .cs-outcome-text{ width:404px; }
+
+/* ===================== TESTIMONIAL ===================== */
+/* Also full content width. The trailing 20 px keeps the measured article tall
+   enough for the 92 px the design leaves before the browse cards. */
+.cs-quote{
+  display:flex; align-items:center; justify-content:space-between;
+  width:1440px; height:449px;
+  margin:110px 0 20px;
+  padding:32px 42px;
+  border-radius:24px;
+  background:var(--peach);
+}
+.cs-quote[hidden]{ display:none; }
+.cs-quote-col{
+  width:809px; height:385px;
+  display:flex; flex-direction:column; justify-content:center; gap:42px;
+}
+.cs-quote-logo{
+  width:178px; height:51px;
+  object-fit:contain; object-position:left center;
+}
+.cs-quote-text{
+  width:809px;
+  font-size:24px;
+  line-height:normal;
+  color:#000;
+}
+.cs-quote-by{ display:flex; align-items:center; gap:22px; }
+.cs-quote-avatar{
+  width:61px; height:61px;
+  flex:none;
+  border-radius:50%;
+  overflow:hidden;
+  background:#979797;
+}
+.cs-quote-avatar img{ width:100%; height:100%; object-fit:cover; }
+.cs-quote-who{ display:flex; flex-direction:column; width:229px; }
+.cs-quote-name{
+  font-weight:600;
+  font-size:18px;
+  line-height:1.5;
+  letter-spacing:-.198px;
+  color:rgba(0,0,0,.8);
+}
+.cs-quote-role{
+  font-size:16px;
+  line-height:31.247px;
+  color:#000;
+}
+.cs-quote-photo{
+  width:529px; height:385px;
+  flex:none;
+  border-radius:19.989px;
+  overflow:hidden;
+  background:#fff;
+}
+.cs-quote-photo img{ width:100%; height:100%; object-fit:cover; }
 
 /* ===================== FOOTER ===================== */
 .footer{ top:5579px; }

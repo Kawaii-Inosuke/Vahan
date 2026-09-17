@@ -7,7 +7,7 @@
    their careers-page coordinates or adds the sections unique to this page.
    ========================================================================= */
 
-.page{ height:9026px; }
+.page{ height:10784px; }
 
 /* ===================== HERO ===================== */
 /* the hero is a two-column split: copy on the left, the India reach map on
@@ -411,20 +411,155 @@
   color:rgba(43,24,10,.7);
 }
 
+/* ===================== JOIN A TEAM MAKING HEADLINES =====================
+   Two press cards on the 1438 content stage — Figma node 2709:453. */
+.news-title{ left:408px; top:6117px; width:1104px; }
+
+.news-card{
+  position:absolute;
+  top:6271px;
+  width:699px; height:748px;
+  padding:35.093px;
+  border-radius:24px;
+  background:var(--peach);
+  display:flex; flex-direction:column; align-items:center; gap:42px;
+  text-decoration:none;
+  color:inherit;
+  transition:transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s cubic-bezier(.16,1,.3,1);
+}
+.news-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px rgba(249,118,25,.20), 0 4px 14px rgba(0,0,0,.05);
+}
+
+.news-card-img{
+  width:628.813px; height:456.791px;
+  flex:none;
+  border-radius:24px;
+  overflow:hidden;
+  background:#fff;
+}
+.news-card-img img{
+  width:100%; height:100%;
+  object-fit:cover;
+  transition:transform .4s cubic-bezier(.16,1,.3,1);
+}
+.news-card:hover .news-card-img img{ transform:scale(1.03); }
+
+.news-card-body{
+  width:571px;
+  display:flex; flex-direction:column; gap:48px;
+}
+.news-card-title{
+  font-family:var(--display);
+  font-weight:400;
+  font-size:30px;
+  line-height:normal;
+  color:#000;
+}
+.news-card-btn{
+  position:relative;
+  align-self:flex-start;
+  height:60.454px;
+  gap:8.572px;
+  padding:12.858px 25.715px;
+  border-radius:10px;
+  font-size:23.55px;
+  letter-spacing:-.4474px;
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 193.43 60.45' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -11.472 13.261 0 96.716 73.506)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
+}
+.news-card-btn .arrow{ width:21.43px; height:21.43px; }
+.news-card-btn .arrow img{ width:13.4px; height:13.4px; }
+
+/* ===================== INSIGHTS FROM INDIA'S BLUE-COLLAR ECOSYSTEM =====
+   One wide card: copy on the left, the post's hero on the right. The design
+   overlaps the two by 86 px with a negative margin, so both are pinned to
+   their measured offsets rather than laid out with space-between. */
+.insights-title{ left:374px; top:8827px; width:1172px; }
+
+.insights-card{
+  position:absolute;
+  left:240px; top:8981px;
+  width:1440px; height:449px;
+  border-radius:24px;
+  background:var(--peach);
+}
+.insights-col{
+  position:absolute;
+  left:42px; top:72px;
+  width:696px; height:305px;
+  display:flex; flex-direction:column; justify-content:space-between;
+}
+.insights-head{ display:flex; flex-direction:column; gap:28px; }
+.insights-card-title{
+  font-family:var(--display);
+  font-weight:400;
+  font-size:32px;
+  line-height:normal;
+  color:#000;
+}
+.insights-by{ display:flex; align-items:center; gap:22px; }
+.insights-avatar{
+  width:61px; height:61px;
+  flex:none;
+  border-radius:50%;
+  overflow:hidden;
+  background:#979797;
+}
+.insights-avatar img{ width:100%; height:100%; object-fit:cover; }
+.insights-who{ display:flex; flex-direction:column; width:209px; }
+.insights-name{
+  font-weight:600;
+  font-size:18px;
+  line-height:1.5;
+  letter-spacing:-.198px;
+  color:rgba(0,0,0,.8);
+}
+.insights-role{
+  font-size:16px;
+  line-height:31.247px;
+  color:#000;
+}
+.insights-btn{
+  position:relative;
+  align-self:flex-start;
+  width:236.6364px; height:58px;
+  gap:8.909px;
+  padding:13.364px 26.727px;
+  border-radius:12px;
+  font-size:22.27px;
+  letter-spacing:-.4231px;
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 236.64 58' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -11.007 16.223 0 118.32 70.523)'><stop stop-color='rgb(255,156,56)' offset='0'/><stop stop-color='rgb(249,118,25)' offset='1'/></radialGradient></defs></svg>");
+  transition:transform .2s ease;
+}
+.insights-btn:hover{ transform:translateY(-2px); }
+.insights-btn .arrow{ width:22.273px; height:22.273px; }
+.insights-btn .arrow img{ width:13.92px; height:13.92px; }
+
+.insights-photo{
+  position:absolute;
+  left:652px; top:32px;
+  width:746px; height:385px;
+  border-radius:19.989px;
+  overflow:hidden;
+  background:#fff;
+}
+.insights-photo img{ width:100%; height:100%; object-fit:cover; }
+
 /* ===================== BACKED BY THE BEST ===================== */
 .backers-band{
   position:absolute;
-  left:0; top:6142.7305px;
+  left:0; top:7145px;
   width:1920px; height:560px;
   background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 1920 560' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)' opacity='0.52'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -138.15 171.11 0 960 969.73)'><stop stop-color='rgb(255,164,97)' offset='0'/><stop stop-color='rgb(255,187,136)' offset='0.25'/><stop stop-color='rgb(255,210,176)' offset='0.5'/><stop stop-color='rgb(255,232,215)' offset='0.75'/><stop stop-color='rgb(255,255,255)' offset='1'/></radialGradient></defs></svg>");
   background-size:100% 100%;
 }
-.backers-title{ top:6234.7305px; }
+.backers-title{ top:7237px; }
 .backer{ position:absolute; }
 
 /* ===================== PERKS & BENEFITS ===================== */
-.perks-title{ top:6852.7305px; }
-.perks-sub{ left:471px; top:6950.7305px; }
+.perks-title{ top:7831px; }
+.perks-sub{ left:471px; top:7929px; }
 
 .perk-card{
   position:absolute;
@@ -468,7 +603,7 @@
 }
 
 /* ===================== CTA ===================== */
-.cta{ top:7798px; height:551.2695px; }
+.cta{ top:9556px; height:551.2695px; }
 .cta-bg{ height:551.2695px; }
 .cta-text{
   left:95px; top:95px;
@@ -529,4 +664,4 @@
 .cta-faces-pill .hero-pill-dot{ width:5.964px; height:5.964px; }
 
 /* ===================== FOOTER ===================== */
-.footer{ top:8425.7305px; }
+.footer{ top:10183.7305px; }
