@@ -1437,35 +1437,35 @@ body {
     margin-top: clamp(38px, 11vw, 60px);
   }
 
+  /* the wide press card stacks: photo first, then the headline and button */
   .p-careers .page>.news-card {
     order: 56;
     margin: 16px auto 0;
     width: calc(100% - var(--pad) * 2) !important;
     max-width: var(--mw);
-    padding: 16px !important;
+    height: auto !important;
+    padding: 16px;
     border-radius: var(--r);
-    gap: 16px;
-    align-items: stretch;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 18px;
   }
 
-  .p-careers .news-card-img {
+  .p-careers .news-col {
+    position: static !important;
     width: 100% !important;
     height: auto !important;
-    aspect-ratio: 629 / 457;
-    border-radius: 12px;
-  }
-
-  .p-careers .news-card-body {
-    width: 100% !important;
-    gap: 16px;
+    gap: 18px;
   }
 
   .p-careers .news-card-title {
-    font-size: 17px !important;
+    width: 100% !important;
+    font-size: 18px !important;
     line-height: 1.35 !important;
   }
 
   .p-careers .news-card-btn {
+    width: auto !important;
     height: auto !important;
     min-height: 40px;
     padding: 10px 16px !important;
@@ -1480,6 +1480,14 @@ body {
   .p-careers .news-card-btn .arrow img {
     width: 9px !important;
     height: 9px !important;
+  }
+
+  .p-careers .news-photo {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 746 / 385;
+    border-radius: 12px;
   }
 
   .p-careers .page>.msec-backers {
@@ -1504,77 +1512,50 @@ body {
     margin-top: clamp(38px, 11vw, 60px);
   }
 
-  /* the wide card stacks: hero photo first, then the copy */
   .p-careers .page>.insights-card {
     order: 76;
     margin: 16px auto 0;
     width: calc(100% - var(--pad) * 2) !important;
     max-width: var(--mw);
-    padding: 16px;
+    height: auto !important;
+    padding: 16px !important;
     border-radius: var(--r);
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 18px;
+    gap: 16px;
+    align-items: stretch;
   }
 
-  .p-careers .insights-col {
-    position: static !important;
+  .p-careers .insights-card-img {
     width: 100% !important;
     height: auto !important;
-    gap: 18px;
+    aspect-ratio: 629 / 457;
+    border-radius: 12px;
   }
 
-  .p-careers .insights-head {
-    gap: 14px;
+  .p-careers .insights-card-body {
+    width: 100% !important;
+    gap: 16px;
   }
 
   .p-careers .insights-card-title {
-    font-size: 18px !important;
+    font-size: 17px !important;
     line-height: 1.35 !important;
   }
 
-  .p-careers .insights-avatar {
-    width: 44px;
-    height: 44px;
-  }
-
-  .p-careers .insights-who {
-    width: auto !important;
-  }
-
-  .p-careers .insights-name {
-    font-size: 15px !important;
-  }
-
-  .p-careers .insights-role {
-    font-size: 13px !important;
-    line-height: 1.5 !important;
-  }
-
-  .p-careers .insights-btn {
-    width: auto !important;
+  .p-careers .insights-card-btn {
     height: auto !important;
     min-height: 40px;
     padding: 10px 16px !important;
     font-size: 13px !important;
   }
 
-  .p-careers .insights-btn .arrow {
+  .p-careers .insights-card-btn .arrow {
     width: 14px !important;
     height: 14px !important;
   }
 
-  .p-careers .insights-btn .arrow img {
+  .p-careers .insights-card-btn .arrow img {
     width: 9px !important;
     height: 9px !important;
-  }
-
-  .p-careers .insights-photo {
-    position: static !important;
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 746 / 385;
-    border-radius: 12px;
   }
 
   .p-careers .page>.roles-cta {
@@ -2006,17 +1987,6 @@ body {
     font-size: 15px !important;
   }
 
-  .p-case-study .page>.cs-download {
-    order: 12;
-    /* auto side margins would absorb the row's free space and shove the
-       gradient button against the left edge — keep the pair centred */
-    margin: 10px 0 0;
-    width: auto !important;
-    min-width: 200px;
-    height: 44px !important;
-    font-size: 15px !important;
-  }
-
   /* the desktop cover bleeds off the right edge behind the copy; on mobile it
      reads as a plain image below the buttons, with no gradient mask */
   .p-case-study .page>.cs-hero-photo {
@@ -2024,7 +1994,7 @@ body {
     margin: clamp(22px, 6vw, 34px) auto 0;
     width: calc(100% - var(--pad) * 2) !important;
     max-width: var(--mw);
-    aspect-ratio: 1299 / 747;
+    aspect-ratio: 1299 / 764;
     border-radius: var(--r);
     -webkit-mask-image: none !important;
     mask-image: none !important;

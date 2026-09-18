@@ -70,6 +70,9 @@ window.VAHAN_CASE_STUDIES = {
       name: 'Head of Supply Operations',
       role: 'Zomato',
     },
+    /* the design closes on a Zomato card and a Dunzo card; this study is the
+       Zomato one the frame draws, so the rail takes the other Zomato story */
+    more: ['zomato-attribution', 'dunzo-sourcing'],
   },
 
   'dunzo-sourcing': {

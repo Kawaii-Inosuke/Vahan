@@ -26,8 +26,8 @@
    off the design render — fully clear at x=840, fully opaque at x=1618. */
 .cs-hero-photo{
   position:absolute;
-  left:621.098px; top:88px;
-  width:1298.902px; height:747px;
+  left:621.098px; top:71px;
+  width:1298.902px; height:764px;
   overflow:hidden;
   pointer-events:none;
   -webkit-mask-image:linear-gradient(to right, transparent 16.85%, #000 76.75%);
@@ -77,31 +77,11 @@
 .cs-cta .arrow{ width:20px; height:20px; }
 .cs-cta .arrow img{ width:13px; height:13px; }
 
-.cs-download{
-  position:absolute;
-  left:518.0867px; top:571.4724px;
-  width:355.0725px; height:63.3164px;
-  display:flex; align-items:center; justify-content:center;
-  border-radius:10px;
-  background:#fff;
-  filter:drop-shadow(0 0 1px rgba(128,115,115,.23));
-  font-weight:500;
-  font-size:28.78px;
-  line-height:normal;
-  letter-spacing:-.5468px;
-  color:#000;
-  text-decoration:none;
-  white-space:nowrap;
-  transition:transform .2s ease;
-}
-.cs-download:hover{ transform:translateY(-2px); }
-
 /* Some frames drop the "CLIENT SUCCESS STORY" line. The headline then starts
    where the eyebrow sat and takes a third line, pushing the buttons down. */
 .cs-no-eyebrow .cs-eyebrow{ display:none; }
 .cs-no-eyebrow .cs-title{ top:289px; width:899px; height:297px; }
-.cs-no-eyebrow .cs-cta,
-.cs-no-eyebrow .cs-download{ top:617.4724px; }
+.cs-no-eyebrow .cs-cta{ top:617.4724px; }
 
 /* ===================== STATS BAND ===================== */
 /* the homepage band and cards, re-hung at this page's coordinates */
