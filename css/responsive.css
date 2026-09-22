@@ -2043,12 +2043,14 @@ body {
     width: calc(100% - var(--pad) * 2) !important;
     max-width: var(--mw);
     height: auto !important;
-    aspect-ratio: 1036 / 583;
+    aspect-ratio: 1440 / 644;
     border-width: 6px;
     border-radius: var(--r);
   }
 
   .p-case-study .cs-video-play {
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
     width: clamp(48px, 15vw, 72px) !important;
     height: clamp(48px, 15vw, 72px) !important;
   }
@@ -2112,13 +2114,6 @@ body {
     width: 132px !important;
     height: 132px !important;
     border-radius: 18px;
-  }
-
-  .p-case-study .cs-logo-tile img {
-    left: 16px !important;
-    top: 57px !important;
-    width: 100px !important;
-    height: 19px !important;
   }
 
   .p-case-study .page>.cs-article {
@@ -4344,8 +4339,24 @@ body {
     border-radius: var(--r);
   }
 
+  /* the card keeps its 604 x 701 ratio here — the cross-fading slides are
+     absolute, so nothing else is left to hold it open */
   .os-why-img img {
-    height: auto !important;
+    height: 100% !important;
+  }
+
+  .os-dots {
+    bottom: clamp(14px, 4.5vw, 30px);
+    gap: 5px;
+  }
+
+  .os-dot {
+    width: 9px;
+    height: 9px;
+  }
+
+  .os-dot.is-active {
+    width: 40px;
   }
 
   /* ---- the journey: year · arrow · band stay on one line, scaled down ---- */

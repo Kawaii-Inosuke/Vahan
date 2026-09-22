@@ -235,7 +235,74 @@
   });
 
   /* ---------------------------------------------------------------------
-     4 · react to viewport changes
+     4 · auto-advancing slideshows
+
+     Any [data-slideshow] block whose children are .os-slide cross-fades
+     through them on a timer; the value is the dwell in milliseconds. A .os-dots
+     rail, if present, tracks the current slide and can jump to one. The timer
+     pauses while the pointer is over the block, while the tab is hidden and
+     while the block is off screen, so it never runs against a reader.
+     --------------------------------------------------------------------- */
+  document.querySelectorAll('[data-slideshow]').forEach(function (box) {
+    var slides = [].slice.call(box.querySelectorAll('.os-slide'));
+    var dots = [].slice.call(box.querySelectorAll('.os-dot'));
+    if (slides.length < 2) return;
+
+    var dwell = parseInt(box.dataset.slideshow, 10) || 5000;
+    var at = Math.max(0, slides.findIndex(function (s) { return s.classList.contains('is-active'); }));
+    var timer = null;
+    var hovering = false;
+    var onScreen = true;
+
+    function show(next) {
+      at = (next + slides.length) % slides.length;
+      slides.forEach(function (slide, i) {
+        var on = i === at;
+        slide.classList.toggle('is-active', on);
+        /* the off-screen frames stay out of the accessibility tree */
+        if (on) slide.removeAttribute('aria-hidden');
+        else slide.setAttribute('aria-hidden', 'true');
+      });
+      dots.forEach(function (dot, i) {
+        dot.classList.toggle('is-active', i === at);
+        dot.setAttribute('aria-selected', i === at ? 'true' : 'false');
+      });
+    }
+
+    function stop() {
+      if (timer) { clearInterval(timer); timer = null; }
+    }
+
+    function start() {
+      stop();
+      if (hovering || !onScreen || document.hidden) return;
+      timer = setInterval(function () { show(at + 1); }, dwell);
+    }
+
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () {
+        show(i);
+        start();          /* a manual pick restarts the dwell from now */
+      });
+    });
+
+    box.addEventListener('mouseenter', function () { hovering = true; stop(); });
+    box.addEventListener('mouseleave', function () { hovering = false; start(); });
+    document.addEventListener('visibilitychange', start);
+
+    if (window.IntersectionObserver) {
+      new IntersectionObserver(function (entries) {
+        onScreen = entries[0].isIntersecting;
+        start();
+      }, { threshold: 0.15 }).observe(box);
+    }
+
+    show(at);
+    start();
+  });
+
+  /* ---------------------------------------------------------------------
+     5 · react to viewport changes
      --------------------------------------------------------------------- */
   var raf = null;
   function onResize() {

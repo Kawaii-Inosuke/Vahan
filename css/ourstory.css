@@ -47,25 +47,64 @@
 
 .os-why-text{
   position:absolute;
-  left:240px; top:1678px;
-  width:776px;
-  font-size:26px;
+  left:240px; top:1669px;
+  width:785px;
+  font-size:24px;
   line-height:1.5;
-  letter-spacing:-.494px;
+  letter-spacing:-.456px;
   color:var(--brown);
 }
-/* the design separates the three blocks with an empty line of body copy */
-.os-why-text p + p{ margin-top:39px; }
+/* the design separates the blocks with an empty line of body copy */
+.os-why-text p + p{ margin-top:36px; }
+.os-why-text b{ font-weight:600; }
 
+/* ---- the founding-story slideshow ----
+   Six frames cross-fade inside the 604 x 701 card; the dot rail sits 39 px off
+   the bottom, the current slide widening into a pill. The aspect-ratio is what
+   holds the card open on mobile, where responsive.css drops the fixed height. */
 .os-why-img{
   position:absolute;
   left:1076px; top:1679px;
   width:604px; height:701px;
+  aspect-ratio:604 / 701;
   border-radius:19.989px;
   overflow:hidden;
   background:#fff;
 }
-.os-why-img img{ width:100%; height:100%; object-fit:cover; }
+.os-why-img img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+.os-slide{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  transition:opacity .9s ease;
+}
+.os-slide.is-active{ opacity:1; }
+
+.os-dots{
+  position:absolute;
+  left:0; right:0; bottom:39px;
+  z-index:2;
+  display:flex; align-items:center; justify-content:center;
+  gap:7.59px;
+}
+.os-dot{
+  flex:none;
+  width:13.915px; height:13.915px;
+  padding:0; border:0;
+  border-radius:99px;
+  background:#d9d9d9;
+  cursor:pointer;
+  -webkit-appearance:none; appearance:none;
+  transition:width .45s cubic-bezier(.16,1,.3,1), background-color .25s ease;
+}
+.os-dot:hover{ background:#fff; }
+.os-dot.is-active{ width:61.983px; }
+
+@media (prefers-reduced-motion: reduce){
+  .os-slide{ transition:none; }
+  .os-dot{ transition:none; }
+}
 
 /* ===================== THE JOURNEY ===================== */
 .os-journey-title{ top:2512px; }

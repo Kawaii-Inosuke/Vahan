@@ -338,9 +338,14 @@
       mark.src = study.logo;
       mark.alt = study.company;
       if (study.logoTileBg) tile.style.background = study.logoTileBg;
-      /* dark wordmarks are knocked out to white on a brand-coloured tile;
-         a mark that ships in its own colours on a light tile is left alone */
+      /* marks that ship tight-cropped sit in a smaller slot than the padded
+         SVG wordmarks; `logoBox` names one as "<width> <height>" of the tile */
       tile.classList.toggle('cs-logo-tile-plain', study.logoTileKnockout === false);
+      if (study.logoBox) {
+        const box = study.logoBox.split(' ');
+        mark.style.width  = box[0];
+        mark.style.height = box[1];
+      }
     }
 
     set('industry', study.industry);
@@ -374,7 +379,8 @@
     storyImg.alt = `${study.company} — ${study.industry}`;
 
     const solution = [];
-    if (study.solutionIntro) solution.push(para(study.solutionIntro));
+    /* the intro can run to more than one paragraph before the bullets */
+    if (study.solutionIntro) asParas(study.solutionIntro).forEach(t => solution.push(para(t)));
     if (study.solutionPoints) {
       const list = document.createElement('div');
       list.className = 'cs-points';
@@ -417,9 +423,16 @@
       quote.querySelector('.cs-quote-text').textContent = t.text;
       quote.querySelector('.cs-quote-name').textContent = t.name;
       quote.querySelector('.cs-quote-role').textContent = t.role;
-      const face = quote.querySelector('.cs-quote-avatar img');
-      face.src = t.avatar || '';
-      face.alt = t.name;
+      /* studies that quote a role rather than a named person ship no portrait;
+         the circle comes out altogether rather than sitting there empty */
+      const avatar = quote.querySelector('.cs-quote-avatar');
+      if (t.avatar) {
+        const face = avatar.querySelector('img');
+        face.src = t.avatar;
+        face.alt = t.name;
+      } else {
+        avatar.remove();
+      }
       const shot = quote.querySelector('.cs-quote-photo img');
       shot.src = t.image || study.storyImage || study.image;
       shot.alt = `${study.company} — ${study.industry}`;
@@ -457,9 +470,9 @@
 
     /* The article is the only block whose height depends on the copy, so the
        browse cards, the footer and the page itself hang off its measured
-       bottom. The design's gaps: 72 px article → cards, 72 px cards →
+       bottom. The design's gaps: 84 px article → cards, 84 px cards →
        footer, and a 600 px footer. */
-    const ARTICLE_TOP = 2670, GAP = 72, CARDS_H = 605, FOOTER_H = 600;
+    const ARTICLE_TOP = 2802, GAP = 84, CARDS_H = 605, FOOTER_H = 600;
     const article = document.querySelector('.cs-article');
     const cards   = document.querySelector('.cs-cards');
     const footer  = document.querySelector('.footer');
