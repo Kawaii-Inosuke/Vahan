@@ -279,12 +279,45 @@
       timer = setInterval(function () { show(at + 1); }, dwell);
     }
 
+    function step(by) {
+      show(at + by);
+      start();            /* a manual move restarts the dwell from now */
+    }
+
     dots.forEach(function (dot, i) {
-      dot.addEventListener('click', function () {
-        show(i);
-        start();          /* a manual pick restarts the dwell from now */
-      });
+      dot.addEventListener('click', function () { show(i); start(); });
     });
+
+    /* The dots are the smallest of the controls, not the only one: the card
+       itself steps forward on a click, follows a horizontal swipe, and takes
+       the arrow keys once focused. */
+    var downX = null, downY = null, dragged = false;
+
+    box.addEventListener('pointerdown', function (e) {
+      downX = e.clientX; downY = e.clientY; dragged = false;
+    });
+    box.addEventListener('pointermove', function (e) {
+      if (downX !== null && Math.abs(e.clientX - downX) > 8) dragged = true;
+    });
+    box.addEventListener('pointercancel', function () { downX = null; });
+    box.addEventListener('pointerup', function (e) {
+      if (downX === null) return;
+      var dx = e.clientX - downX, dy = e.clientY - downY;
+      downX = null;
+      /* a dot runs its own handler — don't act on it twice */
+      if (e.target.closest && e.target.closest('.os-dot')) return;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) step(dx < 0 ? 1 : -1);
+      else if (!dragged) step(1);
+    });
+
+    box.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); }
+    });
+
+    /* a keyboard user pauses it the same way the pointer does */
+    box.addEventListener('focusin', function () { hovering = true; stop(); });
+    box.addEventListener('focusout', function () { hovering = false; start(); });
 
     box.addEventListener('mouseenter', function () { hovering = true; stop(); });
     box.addEventListener('mouseleave', function () { hovering = false; start(); });
