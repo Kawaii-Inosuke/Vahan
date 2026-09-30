@@ -1507,6 +1507,73 @@ body {
     order: 72;
   }
 
+  .p-careers .page>.leaders-title {
+    order: 73;
+    margin-top: clamp(38px, 11vw, 60px);
+  }
+
+  .p-careers .page>.leader-feature,
+  .p-careers .page>.leader-card {
+    order: 74;
+    margin: 14px auto 0;
+    width: calc(100% - var(--pad) * 2) !important;
+    max-width: var(--mw);
+    padding: 16px !important;
+    border-radius: var(--r);
+    gap: 18px !important;
+  }
+
+  .p-careers .page>.leader-feature {
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .p-careers .leader-feature-photo,
+  .p-careers .leader-photo {
+    flex: none;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+  }
+
+  .p-careers .leader-feature-photo {
+    aspect-ratio: 507 / 441;
+  }
+
+  .p-careers .leader-feature-text {
+    gap: 14px;
+  }
+
+  .p-careers .leader-feature-name,
+  .p-careers .leader-name {
+    font-size: 19px !important;
+  }
+
+  .p-careers .leader-feature-bio {
+    width: 100% !important;
+    gap: 12px;
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+  }
+
+  .p-careers .leader-info {
+    height: auto !important;
+    padding-bottom: 6px;
+  }
+
+  .p-careers .leader-role {
+    margin-top: 6px;
+    font-size: 14px !important;
+    white-space: normal;
+  }
+
+  .p-careers .leader-link {
+    margin-top: 14px;
+    font-size: 16px !important;
+  }
+
   .p-careers .page>.insights-title {
     order: 75;
     margin-top: clamp(38px, 11vw, 60px);

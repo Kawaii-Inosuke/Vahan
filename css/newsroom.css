@@ -311,7 +311,9 @@
 
 .nr-media-inq .nr-media-title,
 .nr-media-inq .nr-media-sub{ left:62px; color:var(--brown); }
-.nr-media-inq .nr-media-btn{ left:62px; }
+.nr-media-inq .nr-media-btn{ left:62px; width:250px; }
+/* grain photo over the peach gradient, per the Figma "392 1" layer */
+.nr-media-inq .nr-media-bg{ opacity:.49; object-position:center; }
 
 @media (prefers-reduced-motion:reduce){
   .nr-featured-track{ animation:none; }
