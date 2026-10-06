@@ -1,13 +1,13 @@
 /* =========================================================================
    Vahan — Careers Page
-   Figma: JmFGyR5BxquecSttAjGEsh  ·  node 2818:527  ·  1920 × 12195
+   Figma: JmFGyR5BxquecSttAjGEsh  ·  node 2854:490  ·  1920 × 12932
 
    Loads on top of styles.css: nav, buttons, glows, header art, CTA card and
    footer are the shared site pieces; everything below re-positions them at
    their careers-page coordinates or adds the sections unique to this page.
    ========================================================================= */
 
-.page{ height:12195px; }
+.page{ height:12932px; }
 
 /* ===================== HERO ===================== */
 /* the hero is a two-column split: copy on the left, the India reach map on
@@ -107,12 +107,12 @@
 }
 
 /* ===================== OPEN ROLES ===================== */
-.roles-title{ left:504px; top:3837.0740px; width:913px; }
+.roles-title{ left:504px; top:4887.0742px; width:913px; }
 
 /* --- filter dropdowns (Department / Role Type / Location) --- */
 .role-filters{
   position:absolute;
-  left:537px; top:3955.0740px;
+  left:537px; top:5005.0742px;
   height:54.5547px;
   display:flex; align-items:center; gap:40px;
 }
@@ -163,7 +163,7 @@
 
 .role-empty{
   position:absolute;
-  left:242px; top:4057.6287px;
+  left:242px; top:5107.6289px;
   width:1438px;
   font-size:20px;
   line-height:1.5;
@@ -175,7 +175,7 @@
 /* --- role groups --- */
 .jobs{
   position:absolute;
-  left:242px; top:4057.6287px;
+  left:242px; top:5107.6289px;
   width:1438px;
   display:flex; flex-direction:column; gap:36px;
 }
@@ -294,15 +294,148 @@
   color:rgba(43,24,10,.7);
 }
 
+/* ===================== WHY WE EXIST ===================== */
+.why-title{ left:504px; top:1789.3801px; width:913px; }
+
+.os-why-text{
+  position:absolute;
+  left:240px; top:1909.3801px;
+  width:785px;
+  font-size:24px;
+  line-height:1.5;
+  letter-spacing:-.456px;
+  color:var(--brown);
+}
+/* the design separates the blocks with an empty line of body copy */
+.os-why-text p + p{ margin-top:36px; }
+.os-why-text b{ font-weight:600; }
+
+/* ---- the founding-story slideshow ----
+   Six frames cross-fade inside the 604 x 701 card; the dot rail sits 39 px off
+   the bottom, the current slide widening into a pill. The aspect-ratio is what
+   holds the card open on mobile, where responsive.css drops the fixed height. */
+.os-why-img{
+  position:absolute;
+  left:1076px; top:1919.3801px;
+  width:604px; height:701px;
+  aspect-ratio:604 / 701;
+  border-radius:19.989px;
+  overflow:hidden;
+  background:#fff;
+  cursor:pointer;
+  /* the browser keeps vertical scrolling; horizontal is ours to read as a swipe */
+  touch-action:pan-y;
+}
+.os-why-img:focus-visible{
+  outline:3px solid #f97619;
+  outline-offset:3px;
+}
+.os-why-img img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+.os-slide{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  transition:opacity .9s ease;
+}
+.os-slide.is-active{ opacity:1; }
+
+.os-dots{
+  position:absolute;
+  left:0; right:0; bottom:39px;
+  z-index:2;
+  display:flex; align-items:center; justify-content:center;
+  gap:7.59px;
+}
+.os-dot{
+  position:relative;
+  flex:none;
+  width:13.915px; height:13.915px;
+  padding:0; border:0;
+  border-radius:99px;
+  background:#d9d9d9;
+  cursor:pointer;
+  -webkit-appearance:none; appearance:none;
+  transition:width .45s cubic-bezier(.16,1,.3,1), background-color .25s ease;
+}
+/* the dot draws at the size the design sets but takes a finger-sized target */
+.os-dot::after{
+  content:"";
+  position:absolute;
+  inset:-11px -5px;
+}
+.os-dot:focus-visible{
+  outline:3px solid #fff;
+  outline-offset:2px;
+}
+.os-dot:hover{ background:#fff; }
+.os-dot.is-active{ width:61.983px; }
+
+@media (prefers-reduced-motion: reduce){
+  .os-slide{ transition:none; }
+  .os-dot{ transition:none; }
+}
+
+/* ===================== THE JOURNEY ===================== */
+.journey-title{ left:418px; top:2755.3801px; }
+
+/* One row = year · arrow · gradient band, laid out on the 240 → 1680 stage.
+   Rows repeat every 162 px; the dotted connector hangs off each row except
+   the last. */
+.os-jr{
+  position:absolute;
+  left:258px;
+  width:1404px; height:124px;
+  display:flex; align-items:center;
+}
+.os-jr-year{
+  flex:none;
+  width:100px;
+  font-family:var(--display);
+  font-weight:500;
+  font-size:42px;
+  line-height:70px;
+  text-align:center;
+  color:var(--brown);
+}
+.os-jr-arrow{
+  flex:none;
+  margin-left:57px;
+  width:24px; height:24px;
+}
+.os-jr-band{
+  flex:none;
+  margin-left:61px;
+  width:1162px; height:124px;
+  display:flex; align-items:center;
+  padding:0 22px 0 57px;
+  /* Figma "Vahan gradient" at 25 % — peach at the year end, fading right */
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 1162 124' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)' opacity='0.25'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(141.35 0 0 478.52 -184 62)'><stop stop-color='rgb(255,164,97)' offset='0'/><stop stop-color='rgb(255,187,136)' offset='0.25'/><stop stop-color='rgb(255,210,176)' offset='0.5'/><stop stop-color='rgb(255,232,215)' offset='0.75'/><stop stop-color='rgb(255,255,255)' offset='1'/></radialGradient></defs></svg>");
+  background-size:100% 100%;
+}
+.os-jr-text{
+  font-size:26px;
+  line-height:1.5;
+  letter-spacing:-.494px;
+  color:var(--brown);
+}
+.os-jr-text b{ font-weight:600; color:#f97619; }
+
+.os-jr-dot{
+  position:absolute;
+  left:49px; top:106px;
+  width:2px; height:74px;
+}
+
 /* ===================== LIFE AT VAHAN ===================== */
-.life-title{ top:2884.3801px; }
-.life-sub  { top:2982.3801px; }
+.life-title{ top:3958.3801px; }
+.life-sub  { top:4056.3801px; }
 
 /* Three panels on a 1438 stage: the centre one is larger;
    the flankers are clipped by .life-carousel's overflow:hidden. */
 .life-carousel{
   position:absolute;
-  left:242px; top:3023.3801px;
+  left:242px; top:4097.3801px;
   width:1438px; height:628px;
   overflow:hidden;
 }
@@ -354,7 +487,7 @@
 
 .life-dots{
   position:absolute;
-  left:902px; top:3676.3801px;
+  left:902px; top:4750.3799px;
   height:10.69px;
   display:flex; align-items:center; gap:12px;
 }
@@ -370,8 +503,8 @@
 .life-dot.active{ width:88.22px; opacity:1; }
 
 /* ===================== OUR VALUES ===================== */
-.values-title{ top:1813.3801px; }
-.values-sub{ top:1911.3801px; }
+.values-title{ top:7168.7305px; }
+.values-sub{ top:7266.7305px; }
 
 /* no hover animation here, by design */
 .value-card{
@@ -414,11 +547,11 @@
 /* ===================== JOIN A TEAM MAKING HEADLINES =====================
    One wide press card on the 1440 stage: the headline and its button on the
    left, the team photo on the right — Figma node 2719:694. */
-.news-title{ left:408px; top:6117px; width:1104px; }
+.news-title{ left:408px; top:8215.7305px; width:1104px; }
 
 .news-card{
   position:absolute;
-  left:240px; top:6271px;
+  left:240px; top:8369.7305px;
   width:1440px; height:449px;
   border-radius:24px;
   background:var(--peach);
@@ -465,11 +598,11 @@
 
 /* ===================== INSIGHTS FROM INDIA'S BLUE-COLLAR ECOSYSTEM =====
    Two blog cards on the 1438 content stage — Figma nodes 2719:710 / 2719:726. */
-.insights-title{ left:374px; top:9925px; width:1172px; }
+.insights-title{ left:374px; top:10626.7305px; width:1172px; }
 
 .insights-card{
   position:absolute;
-  top:10079px;
+  top:10780.7305px;
   width:699px; height:748px;
   padding:35.093px;
   border-radius:24px;
@@ -535,17 +668,17 @@
 /* ===================== BACKED BY THE BEST ===================== */
 .backers-band{
   position:absolute;
-  left:0; top:6844px;
+  left:0; top:8944.7305px;
   width:1920px; height:560px;
   background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 1920 560' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23g)' opacity='0.52'/><defs><radialGradient id='g' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(0 -138.15 171.11 0 960 969.73)'><stop stop-color='rgb(255,164,97)' offset='0'/><stop stop-color='rgb(255,187,136)' offset='0.25'/><stop stop-color='rgb(255,210,176)' offset='0.5'/><stop stop-color='rgb(255,232,215)' offset='0.75'/><stop stop-color='rgb(255,255,255)' offset='1'/></radialGradient></defs></svg>");
   background-size:100% 100%;
 }
-.backers-title{ top:6936px; }
+.backers-title{ top:9036.7305px; }
 .backer{ position:absolute; }
 
 /* ===================== PERKS & BENEFITS ===================== */
-.perks-title{ top:7530px; }
-.perks-sub{ left:471px; top:7628px; }
+.perks-title{ top:9630.7305px; }
+.perks-sub{ left:471px; top:9728.7305px; }
 
 .perk-card{
   position:absolute;
@@ -588,97 +721,8 @@
   opacity:.7;
 }
 
-/* ===================== MEET OUR LEADERSHIP ===================== */
-.leaders-title{ left:497px; top:8526px; width:932px; }
-
-.leader-feature{
-  position:absolute;
-  left:243px; top:8656px;
-  width:1440px; height:525px;
-  padding:32px 42px;
-  border-radius:24px;
-  background:#ffeee0;
-  display:flex; align-items:center; gap:32px;
-}
-.leader-feature-photo{
-  flex:none;
-  width:507px; height:441px;
-  border-radius:19.989px;
-  overflow:hidden;
-}
-.leader-feature-photo img,
-.leader-photo img{
-  width:100%; height:100%;
-  object-fit:cover;
-  transition:transform .6s cubic-bezier(.16,1,.3,1);
-}
-.leader-feature:hover .leader-feature-photo img,
-.leader-card:hover .leader-photo img{ transform:scale(1.04); }
-.leader-feature-text{
-  flex:1 1 0;
-  min-width:0;
-  display:flex; flex-direction:column; gap:45px;
-  color:#000;
-}
-.leader-feature-name{
-  font-weight:600;
-  font-size:26px;
-  line-height:normal;
-}
-.leader-feature-bio{
-  width:783px;
-  display:flex; flex-direction:column; gap:30px;
-  font-size:22px;
-  line-height:normal;
-}
-
-.leader-card{
-  position:absolute;
-  top:9226px;
-  width:450px; height:573px;
-  padding:24px 25px;
-  border-radius:24px;
-  background:#ffeee0;
-  display:flex; flex-direction:column; align-items:center; gap:32px;
-}
-.leader-photo{
-  flex:1 1 0;
-  min-height:0;
-  width:100%;
-  border-radius:19.989px;
-  overflow:hidden;
-}
-.leader-info{
-  flex:none;
-  width:100%; height:154px;
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-  text-align:center;
-  color:#000;
-}
-.leader-name{
-  font-weight:600;
-  font-size:26px;
-  line-height:normal;
-}
-.leader-role{
-  margin-top:12px;
-  font-size:20px;
-  line-height:normal;
-  white-space:nowrap;
-}
-.leader-link{
-  margin-top:32px;
-  font-weight:600;
-  font-size:24px;
-  line-height:normal;
-  color:var(--orange);
-  text-decoration:none;
-  transition:opacity .2s;
-}
-.leader-link:hover{ opacity:.75; }
-
 /* ===================== CTA ===================== */
-.cta{ top:10953px; height:551.2695px; }
+.cta{ top:11655px; height:551.2695px; }
 .cta-bg{ height:551.2695px; }
 .cta-text{
   left:95px; top:95px;
@@ -739,4 +783,4 @@
 .cta-faces-pill .hero-pill-dot{ width:5.964px; height:5.964px; }
 
 /* ===================== FOOTER ===================== */
-.footer{ top:11594.7305px; }
+.footer{ top:12332.2695px; }

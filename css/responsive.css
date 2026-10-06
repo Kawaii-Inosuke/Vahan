@@ -1329,8 +1329,8 @@ body {
   }
 
   /* ---------- CAREERS ---------------------------------------------------- */
-  /* the desktop canvas runs Learn → Values → Life → Open Roles; the stack
-     follows the same sequence */
+  /* the desktop canvas runs Learn → Why We Exist → Journey → Life → Open
+     Roles → Values; the stack follows the same sequence */
   /* the desktop collage is three absolutely-hung strips; on mobile they
      become a plain row and the two glass pills drop underneath */
   .p-careers .page>.hero-art {
@@ -1385,17 +1385,26 @@ body {
     order: 31;
   }
 
-  .p-careers .page>.values-title {
-    order: 40;
+  .p-careers .page>.why-title {
+    order: 33;
     margin-top: clamp(38px, 11vw, 60px);
   }
 
-  .p-careers .page>.values-sub {
-    order: 41;
+  .p-careers .page>.os-why-text {
+    order: 34;
   }
 
-  .p-careers .page>.value-card {
-    order: 42;
+  .p-careers .page>.os-why-img {
+    order: 35;
+  }
+
+  .p-careers .page>.journey-title {
+    order: 36;
+    margin-top: clamp(38px, 11vw, 60px);
+  }
+
+  .p-careers .page>.os-journey {
+    order: 37;
   }
 
   .p-careers .page>.life-title {
@@ -1430,6 +1439,16 @@ body {
 
   .p-careers .page>.jobs {
     order: 53;
+  }
+
+  .p-careers .page>.values-title {
+    order: 54;
+    margin-top: clamp(38px, 11vw, 60px);
+  }
+
+  .p-careers .page>.values-sub,
+  .p-careers .page>.value-card {
+    order: 54;
   }
 
   .p-careers .page>.news-title {
@@ -1505,73 +1524,6 @@ body {
 
   .p-careers .page>.perk-card {
     order: 72;
-  }
-
-  .p-careers .page>.leaders-title {
-    order: 73;
-    margin-top: clamp(38px, 11vw, 60px);
-  }
-
-  .p-careers .page>.leader-feature,
-  .p-careers .page>.leader-card {
-    order: 74;
-    margin: 14px auto 0;
-    width: calc(100% - var(--pad) * 2) !important;
-    max-width: var(--mw);
-    padding: 16px !important;
-    border-radius: var(--r);
-    gap: 18px !important;
-  }
-
-  .p-careers .page>.leader-feature {
-    margin-top: 20px;
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .p-careers .leader-feature-photo,
-  .p-careers .leader-photo {
-    flex: none;
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 1 / 1;
-    border-radius: 12px;
-  }
-
-  .p-careers .leader-feature-photo {
-    aspect-ratio: 507 / 441;
-  }
-
-  .p-careers .leader-feature-text {
-    gap: 14px;
-  }
-
-  .p-careers .leader-feature-name,
-  .p-careers .leader-name {
-    font-size: 19px !important;
-  }
-
-  .p-careers .leader-feature-bio {
-    width: 100% !important;
-    gap: 12px;
-    font-size: 14px !important;
-    line-height: 1.55 !important;
-  }
-
-  .p-careers .leader-info {
-    height: auto !important;
-    padding-bottom: 6px;
-  }
-
-  .p-careers .leader-role {
-    margin-top: 6px;
-    font-size: 14px !important;
-    white-space: normal;
-  }
-
-  .p-careers .leader-link {
-    margin-top: 14px;
-    font-size: 16px !important;
   }
 
   .p-careers .page>.insights-title {
@@ -4386,7 +4338,8 @@ body {
   }
 
   /* ---- why we exist ---- */
-  .p-ourstory .page>.os-why-text {
+  .p-ourstory .page>.os-why-text,
+  .p-careers .page>.os-why-text {
     margin: 18px auto 0;
     max-width: var(--mw);
     padding: 0 var(--pad);
@@ -4399,7 +4352,8 @@ body {
     margin-top: 14px;
   }
 
-  .p-ourstory .page>.os-why-img {
+  .p-ourstory .page>.os-why-img,
+  .p-careers .page>.os-why-img {
     width: calc(100% - var(--pad) * 2) !important;
     max-width: var(--mw);
     margin: 22px auto 0;
@@ -4427,7 +4381,8 @@ body {
   }
 
   /* ---- the journey: year · arrow · band stay on one line, scaled down ---- */
-  .p-ourstory .page>.os-journey {
+  .p-ourstory .page>.os-journey,
+  .p-careers .page>.os-journey {
     max-width: var(--mw);
     margin: 0 auto;
     padding: 0 var(--pad);

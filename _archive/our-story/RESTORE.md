@@ -1,8 +1,9 @@
 # Our Story page — temporarily removed
 
 Taken off the live site on 2026-10-06. Nothing was deleted; everything the page
-needs is in this folder, except `assets/our story/`, which was left in place
-because `newsroom.html` also uses an image from it.
+needs is in this folder, except two asset folders that stay live because other
+pages use them: `assets/our story/` (`newsroom.html`) and
+`assets/Our Story page slideshow/` (the Why We Exist slideshow on `careers.html`).
 
 ## What was moved here
 
@@ -10,7 +11,6 @@ because `newsroom.html` also uses an image from it.
 | ----------------------------------------------------- | ------------------------------------ |
 | `_archive/our-story/our-story.html`                   | `our-story.html`                     |
 | `_archive/our-story/css/ourstory.css`                 | `css/ourstory.css`                   |
-| `_archive/our-story/assets/Our Story page slideshow/` | `assets/Our Story page slideshow/`   |
 
 ## What was changed in place
 
@@ -38,7 +38,6 @@ Run both steps from the repo root.
 ```sh
 mv _archive/our-story/our-story.html                    our-story.html
 mv _archive/our-story/css/ourstory.css                  css/ourstory.css
-mv "_archive/our-story/assets/Our Story page slideshow" "assets/Our Story page slideshow"
 rm -rf _archive/our-story
 ```
 
